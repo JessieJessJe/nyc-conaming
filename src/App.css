@@ -249,5 +249,11 @@ font-style: normal; */
   width: 100vw;
   height: 100vh;
   background-color: #226600;
-  
+
+}
+
+#three-cam-btn{
+  position: relative;
+  z-index: 100;
+  top:5%;
 }
