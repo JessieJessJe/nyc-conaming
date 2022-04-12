@@ -12,7 +12,7 @@ import data from "../data/mydata.json"
 
 let key = 0;
 
-function Box(props) {
+function Node({position, color}) {
     // This reference will give us direct access to the mesh
     const mesh = useRef()
     // Set up state for the hovered and active state
@@ -21,16 +21,19 @@ function Box(props) {
     // Subscribe this component to the render-loop, rotate the mesh every frame
     // useFrame((state, delta) => (mesh.current.rotation.x += 0.001))
     // Return view, these are regular three.js elements expressed in JSX
+
+
     return (
       <mesh
-        {...props}
+        position={position}
         ref={mesh}
-        scale={active ? 1.5 : 1}
+        scale={hovered ? 1.5 : 1}
         onClick={(event) => setActive(!active)}
         onPointerOver={(event) => setHover(true)}
         onPointerOut={(event) => setHover(false)}>
         <boxGeometry args={[1, 1, 1]} />
-        <meshStandardMaterial color={hovered ? 'hotpink' : 'orange'} />
+        {/* <meshStandardMaterial color={hovered ? 'hotpink' : 'orange'} /> */}
+        <meshStandardMaterial color={color} />
       </mesh>
     )
   }
@@ -51,7 +54,7 @@ function Nodes({year}){
                 pColor = groupColor[data_filtered[key].group];
 
             console.log(pZ)
-            nodes.push(<Box key={`${pX}+${pY}+${pZ}+${key}`} position={[pX, pY, pZ]} />)
+            nodes.push(<Node key={`${pX}+${pY}+${pZ}+${key}`} position={[pX, pY, pZ]} color={pColor}/>)
           
     }
 
@@ -169,7 +172,7 @@ function VizThree(){
                     options={options_year}
                     value={year}
                     onChange={handleYear}
-                />
+                    />
             </div>
 
         </div>
@@ -177,7 +180,7 @@ function VizThree(){
         >
         <PerspectiveCamera 
             makeDefault = {camera}
-            fov={80} near={1} far={1000} position={[0, 0, 120]} />
+            fov={45} near={1} far={1000} position={[0, 0, 120]} />
 
         <OrthographicCamera
             makeDefault = {!camera}
