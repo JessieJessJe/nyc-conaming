@@ -8,26 +8,37 @@
   src: url(./fonts/ToyTrial-Regular.otf);
 }
 
-.App, .landing-plate-wrapper {
-  display: grid;
-  
+@font-face {
+  font-family: Basteleur;
+  src: url(./fonts/Basteleur-Bold.otf);
+}
+
+#landing-page-content, .landing-plate-wrapper {
+  display: grid; 
   grid-template-columns: repeat(12, 1fr);
   grid-template-rows: repeat(12, 1fr);
 
 }
 
-.landing-page {
-  width: 100vw;
-  height: 100vh;
-  position: sticky;
-  top: 0;
-  left: 0;
+body{    
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 .App{
   width: 100vw;
   height: 300vh;
   background-color:#f1edeb;
+ 
+}
+
+.sectionTitle{
+
+  font-family: toy; 
+  margin-top: 2rem;
+  font-size: 3rem;
+
+  text-align: center;
 }
 
 .landing-plate-plate{
@@ -47,6 +58,7 @@
 
   color: #f1edeb;
 
+  z-index: 20;
   
 }
 /* 
@@ -54,9 +66,21 @@ https://css-tricks.com/things-watch-working-css-3d/ */
 .landing-plate-wrapper{
   width: 100vw;
   height: 100vh;
-  transform-style: preserve-3d;
+  /* transform-style: preserve-3d; */
   transform-origin: top left;
   perspective: 40em;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+
+#plate-1, #plate-3, #plate-4{
+  margin-right: 3%;
+}
+
+#plate-2{
+  margin-left: 3%;
 }
 
 #plate-1{
@@ -66,8 +90,9 @@ https://css-tricks.com/things-watch-working-css-3d/ */
   justify-self: end;
   background-color: black;
   transform-origin: top right;
-  transform: rotateY(45deg);
+  transform: rotateY(25deg);
   text-shadow: -1px 0px #c6c6c6;
+  
 }
 
 #plate-2{
@@ -77,7 +102,7 @@ https://css-tricks.com/things-watch-working-css-3d/ */
   justify-self: start;
   background-color: #226600;
   transform-origin: top left;
-  transform: rotateY(-15deg);
+  transform: rotateY(-25deg);
   text-shadow: 1px 0px #c6c6c6;
 }
 
@@ -88,7 +113,7 @@ https://css-tricks.com/things-watch-working-css-3d/ */
   justify-self: end;
   background-color: #8a5100;
   transform-origin: top right;
-  transform: rotateY(45deg);
+  transform: rotateY(25deg);
   text-shadow: -1px 0px #c6c6c6;
 
 }
@@ -99,40 +124,130 @@ https://css-tricks.com/things-watch-working-css-3d/ */
   justify-self: end;
   background-color: #226600;
   transform-origin: top right;
-  transform: rotateY(45deg);
+  transform: rotateY(25deg);
   text-shadow: -1px 0px #c6c6c6;
 
 }
 
 .landing-pole{
   height: 100vh;
-  width: 1px;
+  
   /* background-color: #f5e56d; */
-  background-color: white;
-  grid-row: 1/-1
+  /* background-color: white; */
+  grid-row: 1/-1;
+  z-index: 10;
   
 }
 
 #landing-pole-1{
+  width: 1px;
   grid-column:3;
   justify-self: end;
+
+  position: relative;
+
 }
 
 #landing-pole-2{
+  width: 1px;
   grid-column:4;
   justify-self: start;
 }
 
-.landing-page-subtitle{
-  font-family: toy;
+#landing-page-wrapper{
   position: absolute;
-  grid-row: 7;
-  grid-column: 6;
+  top:0;
+  left:0;
+  z-index: -10;
+}
+
+#landing-page-content{
+ position:absolute;
+ top: 0px;
+ left:0px;
+ width: 100vw;
+ height: 100vh;
+}
+
+#landing-page-subtitle{
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  font-family: toy;
+  grid-row: 9;
+  margin-top: 2rem;
+  grid-column: 7;
   font-size: 3rem;
 
   text-align: left;
+  z-index: 10;
+
+ 
 }
 
 /* font-family: rift,sans-serif;
 font-weight: 400;
 font-style: normal; */
+
+/* font-family: ivypresto-display,serif;
+font-weight: 700;
+font-style: normal; */
+
+#landing-page-text{
+ width: 40vw;
+ height: 50vh;
+ /* background-color: white; */
+ position:absolute;
+ transform: translateY(-100);
+ grid-row: 13;
+ grid-column: 7;
+ z-index: 10;
+}
+
+#intro-wrapper{
+  position: relative;
+  width: 100vw;
+  height: 300vh;
+  z-index: 0;
+}
+
+#images{
+  padding-left: 5%;
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  gap:2%;
+
+  position: relative; 
+  top: 80vh;
+
+  z-index: 100;
+
+}
+
+#intro-content{
+  position: fixed; 
+  top: 100vh;
+  width: 100%;
+  opacity: 1;
+
+   
+}
+
+#header-wrapper{
+  background-color: white;
+  position: fixed;
+  top:0;
+  width: 100vw;
+  height: 5vh;
+  border: #226600 1px solid;
+  z-index: 50;
+}
+
+#three-wrapper{
+  width: 100vw;
+  height: 100vh;
+  background-color: #226600;
+  
+}

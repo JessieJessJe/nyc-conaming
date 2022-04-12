@@ -1,11 +1,16 @@
-import LandingPlate from './components/LandingPlate'
+import React, { useState, useContext } from "react";
+import { SectionProvider } from './utils/sectionContext';
+
+import Display from './components/Display'
 import './App.css';
 
 function App() {
   return (
+    <SectionProvider>
     <div className="App">
-     <LandingPlate />
+     <Display />
     </div>
+    </SectionProvider>
   );
 }
 
