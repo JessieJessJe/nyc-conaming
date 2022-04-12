@@ -36,19 +36,25 @@ function Box(props) {
   }
 
 
-function Nodes(){
+function Nodes({year}){
     let nodes = [];
-        for (let key in data){
+
+    let data_filtered = year === "all" ? data : data.filter(d => d.year == year);
+
+   
+    for (let key in data_filtered){
                 
-            let pX = - normLong(data[key].long),
-                pY = normLat(data[key].lat),
-                pZ = normZ(data[key].year),
-                pColor = groupColor[data[key].group];
-            
-            nodes.push(<Box key={`${pX}+${pY}+${pZ}`} position={[pX, pY, pZ]} />)
-            
-            }
-        
+            let pX = - normLong(data_filtered[key].long),
+                pY = normLat(data_filtered[key].lat),
+                pZ = normZ(data_filtered[key].year),
+                // pZ = normZ(currentYear),
+                pColor = groupColor[data_filtered[key].group];
+
+            console.log(pZ)
+            nodes.push(<Box key={`${pX}+${pY}+${pZ}+${key}`} position={[pX, pY, pZ]} />)
+          
+    }
+
         return(
             <React.Fragment>
             {nodes}
@@ -58,7 +64,6 @@ function Nodes(){
 
 function BoroughMap({shape}){
     let linelist = [];
-    let geometry;
 
     const ref = useRef(null)
 
@@ -69,7 +74,7 @@ function BoroughMap({shape}){
             linelist.push(new THREE.Vector3(px, py, 1)) 
        
         })
-        console.log(linelist)
+       
         ref.current.setFromPoints(linelist)
         
     }, [])
@@ -91,9 +96,9 @@ function NYCMap(){
     let boroughs = []
 
         NYCGeoJson.features.forEach((feature)=>{
-            feature.geometry.coordinates.forEach((shape)=>{
+            feature.geometry.coordinates.forEach((shape, i)=>{
                 // wireframe(shape, mapM)
-                boroughs.push(< BoroughMap shape={shape} key={ `${key + shape[0][0][1]}+nyc`}/>)
+                boroughs.push(< BoroughMap shape={shape} key={ `${key + shape[0][0][1]}+nyc+${i}`}/>)
          
             })
         })
@@ -109,6 +114,20 @@ function NYCMap(){
 
 }
 
+
+const Dropdown = ({ label, value, options, onChange }) => {
+    return (
+      <label>
+        {label}
+        <select value={value} onChange={onChange}>
+          {options.map((option) => (
+            <option key={option.value} value={option.value}>{option.label}</option>
+          ))}
+        </select>
+      </label>
+    );
+  };
+
 function VizThree(){
 
     const [camera, setCamera ] = useState(true);
@@ -116,9 +135,19 @@ function VizThree(){
     const { setSection } = useContext(SectionContext);
     const scrollPosition = useScrollPosition();
     const margin_left = 0.2 * window.innerWidth;
-
     const aspect = window.innerWidth / window.innerHeight;
 
+    const options_year = [
+        { label: '2002', value: "2002" },
+        { label: '2011', value: "2011" },
+        { label: '2021', value: "2021" },
+        { label: 'all', value: 'all' },
+    ];
+    const [year, setYear] = React.useState('all');
+    const handleYear = (event) => {
+        setYear(event.target.value);
+      };
+    
     const toggleCamera = ()=>{
         setCamera(!camera)
     }
@@ -130,11 +159,21 @@ function VizThree(){
 
         <div id='three-wrapper'>
 
-        <button id='three-cam-btn' onClick={toggleCamera}>Switch View</button>
+        <div id='three-filter-wrapper'> 
 
+            <button id='three-cam-btn' onClick={toggleCamera}>Select Camera</button>
+            <div>
+                    <Dropdown
+                    key="dropdown"
+                    label="Select Year"
+                    options={options_year}
+                    value={year}
+                    onChange={handleYear}
+                />
+            </div>
+
+        </div>
         <Canvas
-      
-        //   camera = { {fov:80, near: 1, far: 1000, position: [0, 0, 120]} }      
         >
         <PerspectiveCamera 
             makeDefault = {camera}
@@ -153,7 +192,7 @@ function VizThree(){
  
         <OrbitControls />
 
-        <Nodes />
+        <Nodes year={year} />
 
         <NYCMap />
 
