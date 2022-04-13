@@ -5,7 +5,7 @@ import Header from './Header'
 import useScrollPosition from "../utils/useScrollPosition";
 
 import { SectionContext } from '../utils/sectionContext';
-import VizThree from './VizThree';
+import Visualization from './Visualization';
  
 function Display(){
     const scrollPosition = useScrollPosition();
@@ -33,7 +33,7 @@ return (
         <Header opacity={Header_opacity}/>
         <LandingPlate opacity={LandingPlate_opacity} />   
         <Introduction opacity={Introduction_opacity}/>
-        <VizThree />
+        <Visualization />
 
     </React.Fragment>
 

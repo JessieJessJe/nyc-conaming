@@ -248,12 +248,12 @@ font-style: normal; */
 #three-wrapper{
   width: 100vw;
   height: 100vh;
-  background-color: #226600;
+  background-color: black;
 
 }
 
 #three-filter-wrapper{
   position: relative;
   z-index: 100;
-  top:5%;
+  top:0%;
 }
