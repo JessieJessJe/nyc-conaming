@@ -65,7 +65,7 @@ function Visualization(){
  
         <OrbitControls />
 
-        <Nodes year={year} />
+        {/* <Nodes year={year} /> */}
 
         <TextsLazy year={year} />
 
