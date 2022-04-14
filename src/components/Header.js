@@ -13,7 +13,7 @@ function Header({opacity}){
             opacity: opacity, 
           };
 
-          console.log(opacity)
+       
     }, [opacity])
   
 

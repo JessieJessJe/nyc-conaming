@@ -34,7 +34,7 @@ function AreaMap({shape}){
  
     <line key={key} rotation-y={Math.PI}>
     <bufferGeometry ref={ref}/>
-    <lineBasicMaterial color="white"  lineWidth={1} />
+    <lineBasicMaterial color="black"  lineWidth={1} />
     </line>
     )
 

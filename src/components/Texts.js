@@ -9,7 +9,7 @@ import { normLat, normLong, normZ, groupColor } from "../utils/helper"
 
 import data from "../data/mydata.json"
 
-function Line({pX, pY, pZ, year}){
+function Line({pX, pY, pZ, year, handlePointOut, handlePointOver, hovered}){
 
   const geometry = useMemo(()=>{
 
@@ -24,13 +24,17 @@ function Line({pX, pY, pZ, year}){
   return(
   
       <line 
+      onPointerOver={handlePointOver}
+      onPointerOut={handlePointOut}
 
         onUpdate={(line) =>{ line.computeLineDistances()}}
         geometry={geometry}>
+
+                  
      
           <lineDashedMaterial 
-            color={0xefefef}
-            opacity={0.5}
+            color="black"
+            opacity={hovered ? 0.8 : 0.3}
             transparent={true}
             linewidth={1}
             scale={2}
@@ -65,14 +69,18 @@ function Line({pX, pY, pZ, year}){
               // everything.add(line)
 
 
-function MyText({pX, pY, pZ, pColor, content}){
+function MyText({pX, pY, pZ, pColor, content, year, i}){
 
   const [hovered, setHover] = useState(false)
   const [billboardMaterial] = useState(() => createBillboardMaterial(new  THREE.MeshBasicMaterial()))
+  
   useEffect(() => {
     document.body.style.cursor = hovered ? 'pointer' : 'auto'
   }, [hovered])
+
   return(
+
+    <React.Fragment>
             <Text 
             anchorX='left' 
             fontSize={1} 
@@ -85,15 +93,23 @@ function MyText({pX, pY, pZ, pColor, content}){
             outlineOffsetY={.1}
             outlineOffsetZ={.1}
             outlineBlur={.5}
-            outlineOpacity={hovered? 0.6 : 0}
+            outlineOpacity={hovered? 0.4 : 0}
             outlineColor={pColor}
 
-          
+         
             onPointerOver={(event) => setHover(true)}
             onPointerOut={(event) => setHover(false)}>
 
             {content}
         </Text>
+        <Line pX={pX} pY={pY} pZ={pZ} key={`line-${i}`} year={year}
+
+              handlePointOver={(event) => setHover(true)}
+              handlePointOut={(event) => setHover(false)}
+              hovered = {hovered}
+        />
+
+  </React.Fragment>
   )
 }
 
@@ -114,17 +130,17 @@ function Texts({year}){
             pColor = groupColor[d.group];
 
         textlist.push(             
-          <MyText pX={pX} pY={pY} pZ={pZ} key={`text-${i}`} pColor={pColor} content={d.coname} />
+          <MyText pX={pX} pY={pY} pZ={pZ} key={`text-${i}`} pColor={pColor} content={d.coname} year={year} i={i} />
           )
-        linelist.push(
-          <Line pX={pX} pY={pY} pZ={pZ} key={`line-${i}`} year={year}/>
-        )
+        // linelist.push(
+        //   <Line pX={pX} pY={pY} pZ={pZ} key={`line-${i}`} year={year}/>
+        // )
 
     })
     return (
         <React.Fragment>
           {textlist}
-          {linelist}
+          {/* {linelist} */}
         </React.Fragment>
       )
     

@@ -12,8 +12,9 @@ import NYCMap from "./NYCMap"
 import TextsLazy from './TextsLazy';
 
 
-
 function Visualization(){
+
+    const ref = useRef();
 
     const [camera, setCamera ] = useState(true);
 
@@ -21,6 +22,15 @@ function Visualization(){
     const scrollPosition = useScrollPosition();
     const margin_left = 0.2 * window.innerWidth;
     const aspect = window.innerWidth / window.innerHeight;
+
+    useEffect(()=>{
+        if (scrollPosition >= window.innerHeight * 2 ){
+            document.getElementById("three-wrapper").position = 'sticky'
+        }else{
+            document.getElementById("three-wrapper").position = 'relative'
+        }
+
+    }, scrollPosition)
 
 
     const [year, setYear] = React.useState('all');
@@ -37,7 +47,7 @@ function Visualization(){
     return(
         <React.Fragment>
 
-        <div id='three-wrapper'>
+        <div id='three-wrapper' ref={ref}>
 
         <Filter 
             year = {year}
@@ -46,8 +56,9 @@ function Visualization(){
             toggleCamera = {toggleCamera}
         />
 
-        <Canvas>
+        <Canvas width="100%" height="100%">
 
+        <Suspense fallback={null}>
         <PerspectiveCamera 
             makeDefault = {camera}
             fov={45} near={1} far={1000} position={[0, 0, 120]} />
@@ -71,6 +82,9 @@ function Visualization(){
 
         <NYCMap />
 
+        {/* <Sky /> */}
+
+        </ Suspense>
         </Canvas>
 
         </div>
