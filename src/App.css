@@ -13,6 +13,14 @@
   src: url(./fonts/Basteleur-Bold.otf);
 }
 
+@font-face {
+  font-family: Raw;
+  src: url(./fonts/Raw-Bold.otf);
+}
+
+
+
+
 #landing-page-content, .landing-plate-wrapper {
   display: grid; 
   grid-template-columns: repeat(12, 1fr);
