@@ -50,8 +50,8 @@ function Introduction(){
             <div id='intro-content'>
                     <div className='sectionTitle' id="intro-title">say something</div>
 
-                    click on the street signs to get information.
-                    landmark images scroll away.
+                    {/* click on the street signs to get information.
+                    landmark images scroll away. */}
             </div>
 
             <div id='images'>

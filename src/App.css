@@ -40,6 +40,18 @@ body{
  
 }
 
+#three-filter-wrapper{
+ font-family: Raw;
+}
+
+#three-filter-wrapper > div{
+  margin: 1rem
+ }
+
+ #three-filter-wrapper > button{
+  margin: 1rem
+ }
+
 .sectionTitle{
 
   font-family: toy; 

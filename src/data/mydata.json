@@ -7,7 +7,9 @@
     "lat": 40.8082553,
     "long": -73.95256669999999,
     "year": "2002",
-    "group": 5
+    "group": 5,
+    "borough": "Manhattan",
+    "keywords": []
   },
   {
     "id": "20021",
@@ -17,7 +19,9 @@
     "lat": 40.8212612,
     "long": -73.9460266,
     "year": "2002",
-    "group": 5
+    "group": 5,
+    "borough": "Manhattan",
+    "keywords": []
   },
   {
     "id": "20022",
@@ -27,7 +31,9 @@
     "lat": 40.826967,
     "long": -73.87974700000001,
     "year": "2002",
-    "group": 5
+    "group": 5,
+    "borough": "Bronx",
+    "keywords": []
   },
   {
     "id": "20023",
@@ -37,7 +43,9 @@
     "lat": 40.8200322,
     "long": -73.856699,
     "year": "2002",
-    "group": 5
+    "group": 5,
+    "borough": "Bronx",
+    "keywords": []
   },
   {
     "id": "20024",
@@ -47,7 +55,9 @@
     "lat": 40.6336276,
     "long": -74.0369505,
     "year": "2002",
-    "group": 5
+    "group": 5,
+    "borough": "Brooklyn",
+    "keywords": []
   },
   {
     "id": "20025",
@@ -57,7 +67,9 @@
     "lat": 40.6085009,
     "long": -73.9759425,
     "year": "2002",
-    "group": 5
+    "group": 5,
+    "borough": "Brooklyn",
+    "keywords": []
   },
   {
     "id": "20026",
@@ -67,7 +79,11 @@
     "lat": 40.72870450000001,
     "long": -73.97145669999999,
     "year": "2002",
-    "group": 5
+    "group": 5,
+    "borough": "Manhattan",
+    "keywords": [
+      "firefighter"
+    ]
   },
   {
     "id": "20027",
@@ -77,7 +93,9 @@
     "lat": 40.612735,
     "long": -74.011712,
     "year": "2002",
-    "group": 5
+    "group": 5,
+    "borough": "Brooklyn",
+    "keywords": []
   },
   {
     "id": "20028",
@@ -87,7 +105,9 @@
     "lat": 40.66161520000001,
     "long": -73.9793732,
     "year": "2002",
-    "group": 5
+    "group": 5,
+    "borough": "Brooklyn",
+    "keywords": []
   },
   {
     "id": "20029",
@@ -97,7 +117,9 @@
     "lat": 40.7339548,
     "long": -73.7234646,
     "year": "2002",
-    "group": 5
+    "group": 5,
+    "borough": "Queens",
+    "keywords": []
   },
   {
     "id": "200210",
@@ -107,7 +129,9 @@
     "lat": 40.7915312,
     "long": -73.9447036,
     "year": "2002",
-    "group": 5
+    "group": 5,
+    "borough": "Manhattan",
+    "keywords": []
   },
   {
     "id": "200211",
@@ -117,7 +141,9 @@
     "lat": 40.8005138,
     "long": -73.9381432,
     "year": "2002",
-    "group": 5
+    "group": 5,
+    "borough": "Manhattan",
+    "keywords": []
   },
   {
     "id": "200212",
@@ -127,7 +153,11 @@
     "lat": 40.6775064,
     "long": -73.8168692,
     "year": "2002",
-    "group": 5
+    "group": 5,
+    "borough": "Queens",
+    "keywords": [
+      "firefighter"
+    ]
   },
   {
     "id": "200213",
@@ -137,7 +167,11 @@
     "lat": 40.5720165,
     "long": -74.0949016,
     "year": "2002",
-    "group": 4
+    "group": 4,
+    "borough": "Staten Island",
+    "keywords": [
+      "911 heroes"
+    ]
   },
   {
     "id": "200214",
@@ -147,7 +181,11 @@
     "lat": 40.7501605,
     "long": -73.8919671,
     "year": "2002",
-    "group": 4
+    "group": 4,
+    "borough": "Queens",
+    "keywords": [
+      "911 heroes"
+    ]
   },
   {
     "id": "200215",
@@ -157,7 +195,11 @@
     "lat": 40.7249978,
     "long": -73.8713384,
     "year": "2002",
-    "group": 4
+    "group": 4,
+    "borough": "Queens",
+    "keywords": [
+      "911 heroes"
+    ]
   },
   {
     "id": "200216",
@@ -167,7 +209,11 @@
     "lat": 40.705578,
     "long": -73.870943,
     "year": "2002",
-    "group": 4
+    "group": 4,
+    "borough": "Queens",
+    "keywords": [
+      "911 heroes"
+    ]
   },
   {
     "id": "200217",
@@ -177,7 +223,11 @@
     "lat": 40.7235853,
     "long": -73.8912819,
     "year": "2002",
-    "group": 4
+    "group": 4,
+    "borough": "Queens",
+    "keywords": [
+      "911 heroes"
+    ]
   },
   {
     "id": "200218",
@@ -187,7 +237,11 @@
     "lat": 40.7576012,
     "long": -73.8866843,
     "year": "2002",
-    "group": 4
+    "group": 4,
+    "borough": "Queens",
+    "keywords": [
+      "911 heroes"
+    ]
   },
   {
     "id": "200219",
@@ -197,7 +251,11 @@
     "lat": 40.8327501,
     "long": -73.9050863,
     "year": "2002",
-    "group": 4
+    "group": 4,
+    "borough": "Bronx",
+    "keywords": [
+      "911 heroes"
+    ]
   },
   {
     "id": "200220",
@@ -207,7 +265,11 @@
     "lat": 40.89537410000001,
     "long": -73.8606994,
     "year": "2002",
-    "group": 4
+    "group": 4,
+    "borough": "Bronx",
+    "keywords": [
+      "911 heroes"
+    ]
   },
   {
     "id": "200221",
@@ -217,7 +279,11 @@
     "lat": 40.6149411,
     "long": -73.91895199999999,
     "year": "2002",
-    "group": 4
+    "group": 4,
+    "borough": "Brooklyn",
+    "keywords": [
+      "911 heroes"
+    ]
   },
   {
     "id": "200222",
@@ -227,7 +293,11 @@
     "lat": 40.5950888,
     "long": -73.9379716,
     "year": "2002",
-    "group": 4
+    "group": 4,
+    "borough": "Brooklyn",
+    "keywords": [
+      "911 heroes"
+    ]
   },
   {
     "id": "200223",
@@ -237,7 +307,11 @@
     "lat": 40.6256107,
     "long": -74.1100332,
     "year": "2002",
-    "group": 4
+    "group": 4,
+    "borough": "Staten Island",
+    "keywords": [
+      "911 heroes"
+    ]
   },
   {
     "id": "200224",
@@ -247,7 +321,11 @@
     "lat": 40.6233634,
     "long": -74.01086579999999,
     "year": "2002",
-    "group": 4
+    "group": 4,
+    "borough": "Brooklyn",
+    "keywords": [
+      "911 heroes"
+    ]
   },
   {
     "id": "200225",
@@ -257,7 +335,11 @@
     "lat": 40.7683022,
     "long": -73.7896043,
     "year": "2002",
-    "group": 4
+    "group": 4,
+    "borough": "Queens",
+    "keywords": [
+      "911 heroes"
+    ]
   },
   {
     "id": "200226",
@@ -267,7 +349,11 @@
     "lat": 40.6082802,
     "long": -74.0139906,
     "year": "2002",
-    "group": 4
+    "group": 4,
+    "borough": "Brooklyn",
+    "keywords": [
+      "911 heroes"
+    ]
   },
   {
     "id": "200227",
@@ -277,7 +363,11 @@
     "lat": 40.7543519,
     "long": -73.8794607,
     "year": "2002",
-    "group": 4
+    "group": 4,
+    "borough": "Queens",
+    "keywords": [
+      "911 heroes"
+    ]
   },
   {
     "id": "200228",
@@ -287,7 +377,11 @@
     "lat": 40.7459214,
     "long": -73.9124641,
     "year": "2002",
-    "group": 4
+    "group": 4,
+    "borough": "Queens",
+    "keywords": [
+      "911 heroes"
+    ]
   },
   {
     "id": "200229",
@@ -297,7 +391,11 @@
     "lat": 40.5331123,
     "long": -74.1533433,
     "year": "2002",
-    "group": 4
+    "group": 4,
+    "borough": "Staten Island",
+    "keywords": [
+      "911 heroes"
+    ]
   },
   {
     "id": "200230",
@@ -307,7 +405,11 @@
     "lat": 40.540213,
     "long": -74.1944481,
     "year": "2002",
-    "group": 4
+    "group": 4,
+    "borough": "Staten Island",
+    "keywords": [
+      "911 heroes"
+    ]
   },
   {
     "id": "200231",
@@ -317,7 +419,11 @@
     "lat": 40.5372185,
     "long": -74.2306167,
     "year": "2002",
-    "group": 4
+    "group": 4,
+    "borough": "Staten Island",
+    "keywords": [
+      "911 heroes"
+    ]
   },
   {
     "id": "200232",
@@ -327,7 +433,11 @@
     "lat": 40.549417,
     "long": -74.1710099,
     "year": "2002",
-    "group": 4
+    "group": 4,
+    "borough": "Staten Island",
+    "keywords": [
+      "911 heroes"
+    ]
   },
   {
     "id": "200233",
@@ -337,7 +447,11 @@
     "lat": 40.5421109,
     "long": -74.21501239999999,
     "year": "2002",
-    "group": 4
+    "group": 4,
+    "borough": "Staten Island",
+    "keywords": [
+      "911 heroes"
+    ]
   },
   {
     "id": "200234",
@@ -347,7 +461,11 @@
     "lat": 40.5126818,
     "long": -74.2437752,
     "year": "2002",
-    "group": 4
+    "group": 4,
+    "borough": "Staten Island",
+    "keywords": [
+      "911 heroes"
+    ]
   },
   {
     "id": "200235",
@@ -357,7 +475,11 @@
     "lat": 40.5804079,
     "long": -74.1692118,
     "year": "2002",
-    "group": 4
+    "group": 4,
+    "borough": "Staten Island",
+    "keywords": [
+      "911 heroes"
+    ]
   },
   {
     "id": "200236",
@@ -367,7 +489,11 @@
     "lat": 40.53868490000001,
     "long": -74.15724999999999,
     "year": "2002",
-    "group": 4
+    "group": 4,
+    "borough": "Staten Island",
+    "keywords": [
+      "911 heroes"
+    ]
   },
   {
     "id": "200237",
@@ -377,7 +503,11 @@
     "lat": 40.5515441,
     "long": -74.1601278,
     "year": "2002",
-    "group": 4
+    "group": 4,
+    "borough": "Staten Island",
+    "keywords": [
+      "911 heroes"
+    ]
   },
   {
     "id": "200238",
@@ -387,7 +517,11 @@
     "lat": 40.5388151,
     "long": -74.1792256,
     "year": "2002",
-    "group": 4
+    "group": 4,
+    "borough": "Staten Island",
+    "keywords": [
+      "911 heroes"
+    ]
   },
   {
     "id": "200239",
@@ -397,7 +531,11 @@
     "lat": 40.545949,
     "long": -74.19669999999999,
     "year": "2002",
-    "group": 4
+    "group": 4,
+    "borough": "Staten Island",
+    "keywords": [
+      "911 heroes"
+    ]
   },
   {
     "id": "200240",
@@ -407,7 +545,11 @@
     "lat": 40.5373953,
     "long": -74.1660988,
     "year": "2002",
-    "group": 4
+    "group": 4,
+    "borough": "Staten Island",
+    "keywords": [
+      "911 heroes"
+    ]
   },
   {
     "id": "200241",
@@ -417,7 +559,11 @@
     "lat": 40.530312,
     "long": -74.1873686,
     "year": "2002",
-    "group": 4
+    "group": 4,
+    "borough": "Staten Island",
+    "keywords": [
+      "911 heroes"
+    ]
   },
   {
     "id": "200242",
@@ -427,7 +573,11 @@
     "lat": 40.5557953,
     "long": -74.13470319999999,
     "year": "2002",
-    "group": 4
+    "group": 4,
+    "borough": "Staten Island",
+    "keywords": [
+      "911 heroes"
+    ]
   },
   {
     "id": "200243",
@@ -437,7 +587,11 @@
     "lat": 40.56531409999999,
     "long": -74.1383213,
     "year": "2002",
-    "group": 4
+    "group": 4,
+    "borough": "Staten Island",
+    "keywords": [
+      "911 heroes"
+    ]
   },
   {
     "id": "200244",
@@ -447,7 +601,11 @@
     "lat": 40.5366797,
     "long": -74.1835309,
     "year": "2002",
-    "group": 4
+    "group": 4,
+    "borough": "Staten Island",
+    "keywords": [
+      "911 heroes"
+    ]
   },
   {
     "id": "200245",
@@ -457,7 +615,11 @@
     "lat": 40.5385651,
     "long": -74.22309539999999,
     "year": "2002",
-    "group": 4
+    "group": 4,
+    "borough": "Staten Island",
+    "keywords": [
+      "911 heroes"
+    ]
   },
   {
     "id": "200246",
@@ -467,7 +629,11 @@
     "lat": 40.5441084,
     "long": -74.1791834,
     "year": "2002",
-    "group": 4
+    "group": 4,
+    "borough": "Staten Island",
+    "keywords": [
+      "911 heroes"
+    ]
   },
   {
     "id": "200247",
@@ -477,7 +643,11 @@
     "lat": 40.5313557,
     "long": -74.2223021,
     "year": "2002",
-    "group": 4
+    "group": 4,
+    "borough": "Staten Island",
+    "keywords": [
+      "911 heroes"
+    ]
   },
   {
     "id": "200248",
@@ -487,7 +657,11 @@
     "lat": 40.5445192,
     "long": -74.1255073,
     "year": "2002",
-    "group": 4
+    "group": 4,
+    "borough": "Staten Island",
+    "keywords": [
+      "911 heroes"
+    ]
   },
   {
     "id": "200249",
@@ -497,7 +671,11 @@
     "lat": 40.5473436,
     "long": -74.1472057,
     "year": "2002",
-    "group": 4
+    "group": 4,
+    "borough": "Staten Island",
+    "keywords": [
+      "911 heroes"
+    ]
   },
   {
     "id": "200250",
@@ -507,7 +685,11 @@
     "lat": 40.5950543,
     "long": -74.15782150000001,
     "year": "2002",
-    "group": 4
+    "group": 4,
+    "borough": "Staten Island",
+    "keywords": [
+      "911 heroes"
+    ]
   },
   {
     "id": "200251",
@@ -517,7 +699,11 @@
     "lat": 40.6056079,
     "long": -74.1652589,
     "year": "2002",
-    "group": 4
+    "group": 4,
+    "borough": "Staten Island",
+    "keywords": [
+      "911 heroes"
+    ]
   },
   {
     "id": "200252",
@@ -527,7 +713,11 @@
     "lat": 40.5839373,
     "long": -74.1507578,
     "year": "2002",
-    "group": 4
+    "group": 4,
+    "borough": "Staten Island",
+    "keywords": [
+      "911 heroes"
+    ]
   },
   {
     "id": "200253",
@@ -537,7 +727,11 @@
     "lat": 40.59702000000001,
     "long": -74.06957,
     "year": "2002",
-    "group": 4
+    "group": 4,
+    "borough": "Staten Island",
+    "keywords": [
+      "911 heroes"
+    ]
   },
   {
     "id": "200254",
@@ -547,7 +741,11 @@
     "lat": 40.6020939,
     "long": -74.07795039999999,
     "year": "2002",
-    "group": 4
+    "group": 4,
+    "borough": "Staten Island",
+    "keywords": [
+      "911 heroes"
+    ]
   },
   {
     "id": "200255",
@@ -557,7 +755,11 @@
     "lat": 40.6131803,
     "long": -74.14373119999999,
     "year": "2002",
-    "group": 4
+    "group": 4,
+    "borough": "Staten Island",
+    "keywords": [
+      "911 heroes"
+    ]
   },
   {
     "id": "200256",
@@ -567,7 +769,11 @@
     "lat": 40.58018879999999,
     "long": -74.0887717,
     "year": "2002",
-    "group": 4
+    "group": 4,
+    "borough": "Staten Island",
+    "keywords": [
+      "911 heroes"
+    ]
   },
   {
     "id": "200257",
@@ -577,7 +783,11 @@
     "lat": 40.58162799999999,
     "long": -74.0934406,
     "year": "2002",
-    "group": 4
+    "group": 4,
+    "borough": "Staten Island",
+    "keywords": [
+      "911 heroes"
+    ]
   },
   {
     "id": "200258",
@@ -587,7 +797,11 @@
     "lat": 40.6046105,
     "long": -74.1237476,
     "year": "2002",
-    "group": 4
+    "group": 4,
+    "borough": "Staten Island",
+    "keywords": [
+      "911 heroes"
+    ]
   },
   {
     "id": "200259",
@@ -597,7 +811,11 @@
     "lat": 40.5791271,
     "long": -74.1098201,
     "year": "2002",
-    "group": 4
+    "group": 4,
+    "borough": "Staten Island",
+    "keywords": [
+      "911 heroes"
+    ]
   },
   {
     "id": "200260",
@@ -607,7 +825,11 @@
     "lat": 40.5946246,
     "long": -74.0702128,
     "year": "2002",
-    "group": 4
+    "group": 4,
+    "borough": "Staten Island",
+    "keywords": [
+      "911 heroes"
+    ]
   },
   {
     "id": "200261",
@@ -617,7 +839,11 @@
     "lat": 40.573308,
     "long": -74.1003259,
     "year": "2002",
-    "group": 4
+    "group": 4,
+    "borough": "Staten Island",
+    "keywords": [
+      "911 heroes"
+    ]
   },
   {
     "id": "200262",
@@ -627,7 +853,11 @@
     "lat": 40.6285632,
     "long": -74.1132062,
     "year": "2002",
-    "group": 4
+    "group": 4,
+    "borough": "Staten Island",
+    "keywords": [
+      "911 heroes"
+    ]
   },
   {
     "id": "200263",
@@ -637,7 +867,11 @@
     "lat": 40.6164692,
     "long": -74.1311301,
     "year": "2002",
-    "group": 4
+    "group": 4,
+    "borough": "Staten Island",
+    "keywords": [
+      "911 heroes"
+    ]
   },
   {
     "id": "200264",
@@ -647,7 +881,11 @@
     "lat": 40.6320225,
     "long": -74.1117026,
     "year": "2002",
-    "group": 4
+    "group": 4,
+    "borough": "Staten Island",
+    "keywords": [
+      "911 heroes"
+    ]
   },
   {
     "id": "200265",
@@ -657,7 +895,11 @@
     "lat": 40.7313474,
     "long": -73.9825664,
     "year": "2002",
-    "group": 4
+    "group": 4,
+    "borough": "Manhattan",
+    "keywords": [
+      "911 heroes"
+    ]
   },
   {
     "id": "200266",
@@ -667,7 +909,11 @@
     "lat": 40.6258579,
     "long": -74.1191145,
     "year": "2002",
-    "group": 4
+    "group": 4,
+    "borough": "Brooklyn",
+    "keywords": [
+      "911 heroes"
+    ]
   },
   {
     "id": "200267",
@@ -677,7 +923,11 @@
     "lat": 40.7569812,
     "long": -73.88941609999999,
     "year": "2002",
-    "group": 4
+    "group": 4,
+    "borough": "Queens",
+    "keywords": [
+      "911 heroes"
+    ]
   },
   {
     "id": "200268",
@@ -687,7 +937,11 @@
     "lat": 40.702623496,
     "long": -73.8554208,
     "year": "2002",
-    "group": 4
+    "group": 4,
+    "borough": "Queens",
+    "keywords": [
+      "911 heroes"
+    ]
   },
   {
     "id": "200269",
@@ -697,7 +951,11 @@
     "lat": 40.7257707,
     "long": -73.8402497,
     "year": "2002",
-    "group": 4
+    "group": 4,
+    "borough": "Queens",
+    "keywords": [
+      "911 heroes"
+    ]
   },
   {
     "id": "200270",
@@ -707,7 +965,11 @@
     "lat": 40.7214661,
     "long": -73.8797563,
     "year": "2002",
-    "group": 4
+    "group": 4,
+    "borough": "Queens",
+    "keywords": [
+      "911 heroes"
+    ]
   },
   {
     "id": "200271",
@@ -717,7 +979,11 @@
     "lat": 40.7076394,
     "long": -73.9329743,
     "year": "2002",
-    "group": 4
+    "group": 4,
+    "borough": "Brooklyn",
+    "keywords": [
+      "911 heroes"
+    ]
   },
   {
     "id": "200272",
@@ -727,7 +993,11 @@
     "lat": 40.5886959,
     "long": -73.9914058,
     "year": "2002",
-    "group": 4
+    "group": 4,
+    "borough": "Brooklyn",
+    "keywords": [
+      "911 heroes"
+    ]
   },
   {
     "id": "200273",
@@ -737,7 +1007,11 @@
     "lat": 40.66744430000001,
     "long": -73.7903096,
     "year": "2002",
-    "group": 4
+    "group": 4,
+    "borough": "Queens",
+    "keywords": [
+      "911 heroes"
+    ]
   },
   {
     "id": "200274",
@@ -747,7 +1021,11 @@
     "lat": 40.6744233,
     "long": -73.75711199999999,
     "year": "2002",
-    "group": 4
+    "group": 4,
+    "borough": "Queens",
+    "keywords": [
+      "911 heroes"
+    ]
   },
   {
     "id": "200275",
@@ -757,7 +1035,11 @@
     "lat": 40.5286987,
     "long": -74.17825049999999,
     "year": "2002",
-    "group": 4
+    "group": 4,
+    "borough": "Staten Island",
+    "keywords": [
+      "911 heroes"
+    ]
   },
   {
     "id": "200276",
@@ -767,7 +1049,11 @@
     "lat": 40.6690038,
     "long": -73.8050031,
     "year": "2002",
-    "group": 4
+    "group": 4,
+    "borough": "Queens",
+    "keywords": [
+      "911 heroes"
+    ]
   },
   {
     "id": "200277",
@@ -777,7 +1063,11 @@
     "lat": 40.7236285,
     "long": -74.01157719999999,
     "year": "2002",
-    "group": 4
+    "group": 4,
+    "borough": "Manhattan",
+    "keywords": [
+      "911 heroes"
+    ]
   },
   {
     "id": "200278",
@@ -787,7 +1077,11 @@
     "lat": 40.8114057,
     "long": -73.9077786,
     "year": "2002",
-    "group": 4
+    "group": 4,
+    "borough": "Bronx",
+    "keywords": [
+      "911 heroes"
+    ]
   },
   {
     "id": "200279",
@@ -797,7 +1091,11 @@
     "lat": 40.6626611,
     "long": -73.98504559999999,
     "year": "2002",
-    "group": 4
+    "group": 4,
+    "borough": "Brooklyn",
+    "keywords": [
+      "911 heroes"
+    ]
   },
   {
     "id": "200280",
@@ -807,7 +1105,11 @@
     "lat": 40.61256909999999,
     "long": -74.1307054,
     "year": "2002",
-    "group": 4
+    "group": 4,
+    "borough": "Staten Island",
+    "keywords": [
+      "911 heroes"
+    ]
   },
   {
     "id": "200281",
@@ -817,7 +1119,11 @@
     "lat": 40.5408015,
     "long": -74.1950465,
     "year": "2002",
-    "group": 4
+    "group": 4,
+    "borough": "Staten Island",
+    "keywords": [
+      "911 heroes"
+    ]
   },
   {
     "id": "200282",
@@ -827,7 +1133,11 @@
     "lat": 40.7724456,
     "long": -73.7999926,
     "year": "2002",
-    "group": 4
+    "group": 4,
+    "borough": "Staten Island",
+    "keywords": [
+      "911 heroes"
+    ]
   },
   {
     "id": "200283",
@@ -837,7 +1147,11 @@
     "lat": 40.72203349999999,
     "long": -73.88563409999999,
     "year": "2002",
-    "group": 4
+    "group": 4,
+    "borough": "Queens",
+    "keywords": [
+      "911 heroes"
+    ]
   },
   {
     "id": "200284",
@@ -847,7 +1161,11 @@
     "lat": 40.6332615,
     "long": -74.11196249999999,
     "year": "2002",
-    "group": 4
+    "group": 4,
+    "borough": "Queens",
+    "keywords": [
+      "911 heroes"
+    ]
   },
   {
     "id": "200285",
@@ -857,7 +1175,11 @@
     "lat": 40.7241362,
     "long": -73.76392609999999,
     "year": "2002",
-    "group": 4
+    "group": 4,
+    "borough": "Queens",
+    "keywords": [
+      "911 heroes"
+    ]
   },
   {
     "id": "200286",
@@ -867,7 +1189,11 @@
     "lat": 40.6102694,
     "long": -74.07175819999999,
     "year": "2002",
-    "group": 4
+    "group": 4,
+    "borough": "Staten Island",
+    "keywords": [
+      "911 heroes"
+    ]
   },
   {
     "id": "200287",
@@ -877,7 +1203,11 @@
     "lat": 40.6114945,
     "long": -74.1402622,
     "year": "2002",
-    "group": 4
+    "group": 4,
+    "borough": "Staten Island",
+    "keywords": [
+      "911 heroes"
+    ]
   },
   {
     "id": "200288",
@@ -887,7 +1217,11 @@
     "lat": 40.6122662,
     "long": -74.1360698,
     "year": "2002",
-    "group": 4
+    "group": 4,
+    "borough": "Staten Island",
+    "keywords": [
+      "911 heroes"
+    ]
   },
   {
     "id": "200289",
@@ -897,7 +1231,11 @@
     "lat": 40.6149365,
     "long": -74.116976,
     "year": "2002",
-    "group": 4
+    "group": 4,
+    "borough": "Staten Island",
+    "keywords": [
+      "911 heroes"
+    ]
   },
   {
     "id": "200290",
@@ -907,7 +1245,11 @@
     "lat": 40.71956290000001,
     "long": -73.8759706,
     "year": "2002",
-    "group": 4
+    "group": 4,
+    "borough": "Queens",
+    "keywords": [
+      "911 heroes"
+    ]
   },
   {
     "id": "200291",
@@ -917,7 +1259,11 @@
     "lat": 40.6217531,
     "long": -74.1196765,
     "year": "2002",
-    "group": 4
+    "group": 4,
+    "borough": "Staten Island",
+    "keywords": [
+      "911 heroes"
+    ]
   },
   {
     "id": "200292",
@@ -927,7 +1273,11 @@
     "lat": 40.5720165,
     "long": -74.0949016,
     "year": "2002",
-    "group": 4
+    "group": 4,
+    "borough": "Staten Island",
+    "keywords": [
+      "911 heroes"
+    ]
   },
   {
     "id": "200293",
@@ -937,7 +1287,11 @@
     "lat": 40.7029838,
     "long": -73.8880482,
     "year": "2002",
-    "group": 4
+    "group": 4,
+    "borough": "Queens",
+    "keywords": [
+      "911 heroes"
+    ]
   },
   {
     "id": "20210",
@@ -947,7 +1301,9 @@
     "lat": 40.6910528,
     "long": -73.8133943,
     "year": "2021",
-    "group": 3
+    "group": 3,
+    "borough": "Queens",
+    "keywords": []
   },
   {
     "id": "20211",
@@ -957,7 +1313,9 @@
     "lat": 40.7176028,
     "long": -73.79646029999999,
     "year": "2021",
-    "group": 2
+    "group": 2,
+    "borough": "Queens",
+    "keywords": []
   },
   {
     "id": "20212",
@@ -967,7 +1325,9 @@
     "lat": 40.68368890000001,
     "long": -73.8337902,
     "year": "2021",
-    "group": 3
+    "group": 3,
+    "borough": "Queens",
+    "keywords": []
   },
   {
     "id": "20213",
@@ -977,7 +1337,11 @@
     "lat": 40.7877698,
     "long": -73.9474512,
     "year": "2021",
-    "group": 2
+    "group": 2,
+    "borough": "Manhattan",
+    "keywords": [
+      "league"
+    ]
   },
   {
     "id": "20214",
@@ -987,7 +1351,11 @@
     "lat": 40.8132328,
     "long": -73.90908739999999,
     "year": "2021",
-    "group": 2
+    "group": 2,
+    "borough": "Bronx",
+    "keywords": [
+      "career"
+    ]
   },
   {
     "id": "20215",
@@ -997,7 +1365,9 @@
     "lat": 40.7942448,
     "long": -73.9511546,
     "year": "2021",
-    "group": 3
+    "group": 3,
+    "borough": "Manhattan",
+    "keywords": []
   },
   {
     "id": "20216",
@@ -1007,7 +1377,9 @@
     "lat": 40.79771830000001,
     "long": -73.9321015,
     "year": "2021",
-    "group": 0
+    "group": 0,
+    "borough": "Manhattan",
+    "keywords": []
   },
   {
     "id": "20217",
@@ -1017,7 +1389,9 @@
     "lat": 40.66952939999999,
     "long": -73.862847,
     "year": "2021",
-    "group": 0
+    "group": 0,
+    "borough": "Brooklyn",
+    "keywords": []
   },
   {
     "id": "20218",
@@ -1027,7 +1401,11 @@
     "lat": 40.5409949,
     "long": -74.1470669,
     "year": "2021",
-    "group": 1
+    "group": 1,
+    "borough": "Staten Island",
+    "keywords": [
+      "she"
+    ]
   },
   {
     "id": "20219",
@@ -1037,7 +1415,11 @@
     "lat": 40.5649802,
     "long": -74.1550944,
     "year": "2021",
-    "group": 2
+    "group": 2,
+    "borough": "Staten Island",
+    "keywords": [
+      "business"
+    ]
   },
   {
     "id": "202110",
@@ -1047,7 +1429,12 @@
     "lat": 40.545974,
     "long": -74.2297827,
     "year": "2021",
-    "group": 0
+    "group": 0,
+    "borough": "Staten Island",
+    "keywords": [
+      "9/11",
+      "recovery"
+    ]
   },
   {
     "id": "202111",
@@ -1057,7 +1444,9 @@
     "lat": 40.612735,
     "long": -74.011712,
     "year": "2021",
-    "group": 2
+    "group": 2,
+    "borough": "Brooklyn",
+    "keywords": []
   },
   {
     "id": "202112",
@@ -1067,7 +1456,11 @@
     "lat": 40.8627253,
     "long": -73.90229479999999,
     "year": "2021",
-    "group": 1
+    "group": 1,
+    "borough": "Bronx",
+    "keywords": [
+      "she"
+    ]
   },
   {
     "id": "202113",
@@ -1077,7 +1470,9 @@
     "lat": 40.7143722,
     "long": -74.0004774,
     "year": "2021",
-    "group": 2
+    "group": 2,
+    "borough": "Manhattan",
+    "keywords": []
   },
   {
     "id": "202114",
@@ -1087,7 +1482,11 @@
     "lat": 40.8563009,
     "long": -73.8676435,
     "year": "2021",
-    "group": 1
+    "group": 1,
+    "borough": "Bronx",
+    "keywords": [
+      "she"
+    ]
   },
   {
     "id": "202115",
@@ -1097,7 +1496,11 @@
     "lat": 40.7628425,
     "long": -73.9339816,
     "year": "2021",
-    "group": 1
+    "group": 1,
+    "borough": "Queens",
+    "keywords": [
+      "she"
+    ]
   },
   {
     "id": "202116",
@@ -1107,7 +1510,11 @@
     "lat": 40.6809276,
     "long": -73.9476785,
     "year": "2021",
-    "group": -1
+    "group": -1,
+    "borough": "Brooklyn",
+    "keywords": [
+      "school"
+    ]
   },
   {
     "id": "202117",
@@ -1117,7 +1524,9 @@
     "lat": 40.6876061,
     "long": -73.9717129,
     "year": "2021",
-    "group": 2
+    "group": 2,
+    "borough": "Brooklyn",
+    "keywords": []
   },
   {
     "id": "202118",
@@ -1127,7 +1536,9 @@
     "lat": 40.7013974,
     "long": -73.9828512,
     "year": "2021",
-    "group": -1
+    "group": -1,
+    "borough": "Brooklyn",
+    "keywords": []
   },
   {
     "id": "202119",
@@ -1137,7 +1548,11 @@
     "lat": 40.6826465,
     "long": -73.97541559999999,
     "year": "2021",
-    "group": 1
+    "group": 1,
+    "borough": "Brooklyn",
+    "keywords": [
+      "she"
+    ]
   },
   {
     "id": "202120",
@@ -1147,7 +1562,11 @@
     "lat": 40.6825563,
     "long": -73.9619276,
     "year": "2021",
-    "group": 2
+    "group": 2,
+    "borough": "Brooklyn",
+    "keywords": [
+      "career"
+    ]
   },
   {
     "id": "202121",
@@ -1157,7 +1576,9 @@
     "lat": 40.689699,
     "long": -73.982957,
     "year": "2021",
-    "group": 2
+    "group": 2,
+    "borough": "Brooklyn",
+    "keywords": []
   },
   {
     "id": "202122",
@@ -1167,7 +1588,9 @@
     "lat": 40.8323889,
     "long": -73.864573,
     "year": "2021",
-    "group": -1
+    "group": -1,
+    "borough": "Bronx",
+    "keywords": []
   },
   {
     "id": "202123",
@@ -1177,7 +1600,11 @@
     "lat": 40.742646,
     "long": -73.87676,
     "year": "2021",
-    "group": 1
+    "group": 1,
+    "borough": "Queens",
+    "keywords": [
+      "she"
+    ]
   },
   {
     "id": "202124",
@@ -1187,7 +1614,9 @@
     "lat": 40.652921,
     "long": -73.95938509999999,
     "year": "2021",
-    "group": -1
+    "group": -1,
+    "borough": "Brooklyn",
+    "keywords": []
   },
   {
     "id": "202125",
@@ -1197,7 +1626,9 @@
     "lat": 40.8449165,
     "long": -73.9174034,
     "year": "2021",
-    "group": 3
+    "group": 3,
+    "borough": "Bronx",
+    "keywords": []
   },
   {
     "id": "202126",
@@ -1207,7 +1638,12 @@
     "lat": 40.8441929,
     "long": -73.91745,
     "year": "2021",
-    "group": 1
+    "group": 1,
+    "borough": "Bronx",
+    "keywords": [
+      "association",
+      "she"
+    ]
   },
   {
     "id": "202127",
@@ -1217,7 +1653,11 @@
     "lat": 40.8217274,
     "long": -73.9064758,
     "year": "2021",
-    "group": 1
+    "group": 1,
+    "borough": "Bronx",
+    "keywords": [
+      "she"
+    ]
   },
   {
     "id": "202128",
@@ -1227,7 +1667,11 @@
     "lat": 40.8240665,
     "long": -73.9186345,
     "year": "2021",
-    "group": -1
+    "group": -1,
+    "borough": "Bronx",
+    "keywords": [
+      "school"
+    ]
   },
   {
     "id": "202129",
@@ -1237,7 +1681,12 @@
     "lat": 40.8488184,
     "long": -73.8546562,
     "year": "2021",
-    "group": 2
+    "group": 2,
+    "borough": "Bronx",
+    "keywords": [
+      "business",
+      "board"
+    ]
   },
   {
     "id": "202130",
@@ -1247,7 +1696,11 @@
     "lat": 40.846145,
     "long": -73.8617144,
     "year": "2021",
-    "group": 1
+    "group": 1,
+    "borough": "Bronx",
+    "keywords": [
+      "she"
+    ]
   },
   {
     "id": "202131",
@@ -1257,7 +1710,11 @@
     "lat": 40.8484445,
     "long": -73.8204104,
     "year": "2021",
-    "group": 2
+    "group": 2,
+    "borough": "Bronx",
+    "keywords": [
+      "league"
+    ]
   },
   {
     "id": "202132",
@@ -1267,7 +1724,12 @@
     "lat": 40.8460897,
     "long": -73.8164728,
     "year": "2021",
-    "group": 1
+    "group": 1,
+    "borough": "Bronx",
+    "keywords": [
+      "woman",
+      "she"
+    ]
   },
   {
     "id": "202133",
@@ -1277,7 +1739,9 @@
     "lat": 40.7335,
     "long": -73.72609609999999,
     "year": "2021",
-    "group": -1
+    "group": -1,
+    "borough": "Queens",
+    "keywords": []
   },
   {
     "id": "202134",
@@ -1287,7 +1751,9 @@
     "lat": 40.7185353,
     "long": -73.869575,
     "year": "2021",
-    "group": 2
+    "group": 2,
+    "borough": "Queens",
+    "keywords": []
   },
   {
     "id": "202135",
@@ -1297,7 +1763,9 @@
     "lat": 40.6897101,
     "long": -73.8633435,
     "year": "2021",
-    "group": 2
+    "group": 2,
+    "borough": "Queens",
+    "keywords": []
   },
   {
     "id": "202136",
@@ -1307,7 +1775,12 @@
     "lat": 40.7225788,
     "long": -73.85138309999999,
     "year": "2021",
-    "group": 0
+    "group": 0,
+    "borough": "Queens",
+    "keywords": [
+      "9/11",
+      "recovery"
+    ]
   },
   {
     "id": "202137",
@@ -1317,7 +1790,11 @@
     "lat": 40.728962,
     "long": -73.8475642,
     "year": "2021",
-    "group": 3
+    "group": 3,
+    "borough": "Queens",
+    "keywords": [
+      "rabbi"
+    ]
   },
   {
     "id": "202138",
@@ -1327,7 +1804,13 @@
     "lat": 40.684816,
     "long": -73.99908099999999,
     "year": "2021",
-    "group": -1
+    "group": -1,
+    "borough": "Brooklyn",
+    "keywords": [
+      "school",
+      "children",
+      "award"
+    ]
   },
   {
     "id": "202139",
@@ -1337,7 +1820,11 @@
     "lat": 40.6781784,
     "long": -73.9441579,
     "year": "2021",
-    "group": 2
+    "group": 2,
+    "borough": "Brooklyn",
+    "keywords": [
+      "board"
+    ]
   },
   {
     "id": "202140",
@@ -1347,7 +1834,9 @@
     "lat": 40.6682422,
     "long": -73.973857,
     "year": "2021",
-    "group": 0
+    "group": 0,
+    "borough": "Brooklyn",
+    "keywords": []
   },
   {
     "id": "202141",
@@ -1357,7 +1846,11 @@
     "lat": 40.6674769,
     "long": -73.9811658,
     "year": "2021",
-    "group": -1
+    "group": -1,
+    "borough": "Brooklyn",
+    "keywords": [
+      "award"
+    ]
   },
   {
     "id": "202142",
@@ -1367,7 +1860,9 @@
     "lat": 40.6836302,
     "long": -73.989791,
     "year": "2021",
-    "group": 0
+    "group": 0,
+    "borough": "Brooklyn",
+    "keywords": []
   },
   {
     "id": "202143",
@@ -1377,7 +1872,9 @@
     "lat": 40.6891515,
     "long": -73.9884695,
     "year": "2021",
-    "group": 3
+    "group": 3,
+    "borough": "Brooklyn",
+    "keywords": []
   },
   {
     "id": "202144",
@@ -1387,7 +1884,9 @@
     "lat": 40.8233663,
     "long": -73.947191,
     "year": "2021",
-    "group": -1
+    "group": -1,
+    "borough": "Manhattan",
+    "keywords": []
   },
   {
     "id": "202145",
@@ -1397,7 +1896,11 @@
     "lat": 40.6082274,
     "long": -73.9423625,
     "year": "2021",
-    "group": 2
+    "group": 2,
+    "borough": "Brooklyn",
+    "keywords": [
+      "board"
+    ]
   },
   {
     "id": "202146",
@@ -1407,7 +1910,9 @@
     "lat": 40.5604738,
     "long": -74.1012466,
     "year": "2021",
-    "group": -1
+    "group": -1,
+    "borough": "Staten Island",
+    "keywords": []
   },
   {
     "id": "202147",
@@ -1417,7 +1922,12 @@
     "lat": 40.6837389,
     "long": -73.769544,
     "year": "2021",
-    "group": 3
+    "group": 3,
+    "borough": "Queens",
+    "keywords": [
+      "pastor",
+      "church"
+    ]
   },
   {
     "id": "202148",
@@ -1427,7 +1937,9 @@
     "lat": 40.6952236,
     "long": -73.7718677,
     "year": "2021",
-    "group": 2
+    "group": 2,
+    "borough": "Queens",
+    "keywords": []
   },
   {
     "id": "202149",
@@ -1437,7 +1949,11 @@
     "lat": 40.7379575,
     "long": -73.8614235,
     "year": "2021",
-    "group": 1
+    "group": 1,
+    "borough": "Queens",
+    "keywords": [
+      "she"
+    ]
   },
   {
     "id": "202150",
@@ -1447,7 +1963,11 @@
     "lat": 40.7413989,
     "long": -73.8816969,
     "year": "2021",
-    "group": 1
+    "group": 1,
+    "borough": "Queens",
+    "keywords": [
+      "she"
+    ]
   },
   {
     "id": "202151",
@@ -1457,7 +1977,11 @@
     "lat": 40.76292970000001,
     "long": -73.8752919,
     "year": "2021",
-    "group": 1
+    "group": 1,
+    "borough": "Queens",
+    "keywords": [
+      "she"
+    ]
   },
   {
     "id": "202152",
@@ -1467,7 +1991,9 @@
     "lat": 40.8173232,
     "long": -73.9386045,
     "year": "2021",
-    "group": -1
+    "group": -1,
+    "borough": "Manhattan",
+    "keywords": []
   },
   {
     "id": "202153",
@@ -1477,7 +2003,9 @@
     "lat": 40.7084091,
     "long": -73.95791609999999,
     "year": "2021",
-    "group": 2
+    "group": 2,
+    "borough": "Brooklyn",
+    "keywords": []
   },
   {
     "id": "202154",
@@ -1487,7 +2015,11 @@
     "lat": 40.5952283,
     "long": -73.7512564,
     "year": "2021",
-    "group": 1
+    "group": 1,
+    "borough": "Queens",
+    "keywords": [
+      "she"
+    ]
   },
   {
     "id": "202155",
@@ -1497,7 +2029,11 @@
     "lat": 40.6094937,
     "long": -73.75366799999999,
     "year": "2021",
-    "group": 1
+    "group": 1,
+    "borough": "Queens",
+    "keywords": [
+      "she"
+    ]
   },
   {
     "id": "202156",
@@ -1507,7 +2043,11 @@
     "lat": 40.669334,
     "long": -73.776997,
     "year": "2021",
-    "group": 2
+    "group": 2,
+    "borough": "Queens",
+    "keywords": [
+      "board"
+    ]
   },
   {
     "id": "202157",
@@ -1517,7 +2057,11 @@
     "lat": 40.6618406,
     "long": -73.7461852,
     "year": "2021",
-    "group": 2
+    "group": 2,
+    "borough": "Queens",
+    "keywords": [
+      "career"
+    ]
   },
   {
     "id": "202158",
@@ -1527,7 +2071,9 @@
     "lat": 40.73461820000001,
     "long": -73.986211,
     "year": "2021",
-    "group": 3
+    "group": 3,
+    "borough": "Manhattan",
+    "keywords": []
   },
   {
     "id": "202159",
@@ -1537,7 +2083,12 @@
     "lat": 40.8648123,
     "long": -73.919394,
     "year": "2021",
-    "group": 2
+    "group": 2,
+    "borough": "Manhattan",
+    "keywords": [
+      "business",
+      "board"
+    ]
   },
   {
     "id": "202160",
@@ -1547,7 +2098,11 @@
     "lat": 40.84722989999999,
     "long": -73.9397819,
     "year": "2021",
-    "group": -1
+    "group": -1,
+    "borough": "Manhattan",
+    "keywords": [
+      "award"
+    ]
   },
   {
     "id": "202161",
@@ -1557,7 +2112,11 @@
     "lat": 40.86892,
     "long": -73.9175552,
     "year": "2021",
-    "group": 2
+    "group": 2,
+    "borough": "Manhattan",
+    "keywords": [
+      "business"
+    ]
   },
   {
     "id": "202162",
@@ -1567,7 +2126,9 @@
     "lat": 40.8394861,
     "long": -73.9360329,
     "year": "2021",
-    "group": 1
+    "group": 1,
+    "borough": "Manhattan",
+    "keywords": []
   },
   {
     "id": "202163",
@@ -1577,7 +2138,9 @@
     "lat": 40.642378476,
     "long": -74.0770704,
     "year": "2021",
-    "group": 2
+    "group": 2,
+    "borough": "Staten Island",
+    "keywords": []
   },
   {
     "id": "202164",
@@ -1587,7 +2150,9 @@
     "lat": 40.6265547,
     "long": -74.109403,
     "year": "2021",
-    "group": 2
+    "group": 2,
+    "borough": "Staten Island",
+    "keywords": []
   },
   {
     "id": "202165",
@@ -1597,7 +2162,11 @@
     "lat": 40.6396059,
     "long": -74.0920782,
     "year": "2021",
-    "group": 1
+    "group": 1,
+    "borough": "Staten Island",
+    "keywords": [
+      "she"
+    ]
   },
   {
     "id": "202166",
@@ -1607,7 +2176,11 @@
     "lat": 40.6425707,
     "long": -74.0865426,
     "year": "2021",
-    "group": 2
+    "group": 2,
+    "borough": "Staten Island",
+    "keywords": [
+      "career"
+    ]
   },
   {
     "id": "202167",
@@ -1617,7 +2190,9 @@
     "lat": 40.8152948,
     "long": -73.90260669999999,
     "year": "2021",
-    "group": 2
+    "group": 2,
+    "borough": "Bronx",
+    "keywords": []
   },
   {
     "id": "202168",
@@ -1627,7 +2202,11 @@
     "lat": 40.8446523,
     "long": -73.88723519999999,
     "year": "2021",
-    "group": 1
+    "group": 1,
+    "borough": "Bronx",
+    "keywords": [
+      "she"
+    ]
   },
   {
     "id": "202169",
@@ -1637,7 +2216,9 @@
     "lat": 40.82138399999999,
     "long": -73.9048653,
     "year": "2021",
-    "group": 2
+    "group": 2,
+    "borough": "Bronx",
+    "keywords": []
   },
   {
     "id": "202170",
@@ -1647,7 +2228,11 @@
     "lat": 40.8337469,
     "long": -73.8888161,
     "year": "2021",
-    "group": 3
+    "group": 3,
+    "borough": "Bronx",
+    "keywords": [
+      "pastor"
+    ]
   },
   {
     "id": "202171",
@@ -1657,7 +2242,12 @@
     "lat": 40.8204033,
     "long": -73.91397309999999,
     "year": "2021",
-    "group": 3
+    "group": 3,
+    "borough": "Bronx",
+    "keywords": [
+      "pastor",
+      "church"
+    ]
   },
   {
     "id": "202172",
@@ -1667,7 +2257,9 @@
     "lat": 40.8158701,
     "long": -73.900472,
     "year": "2021",
-    "group": -1
+    "group": -1,
+    "borough": "Bronx",
+    "keywords": []
   },
   {
     "id": "202173",
@@ -1677,7 +2269,9 @@
     "lat": 40.8472391,
     "long": -73.88199949999999,
     "year": "2021",
-    "group": 1
+    "group": 1,
+    "borough": "Bronx",
+    "keywords": []
   },
   {
     "id": "202174",
@@ -1687,7 +2281,12 @@
     "lat": 40.85642989999999,
     "long": -73.8868179,
     "year": "2021",
-    "group": -1
+    "group": -1,
+    "borough": "Bronx",
+    "keywords": [
+      "school",
+      "award"
+    ]
   },
   {
     "id": "202175",
@@ -1697,7 +2296,9 @@
     "lat": 40.85642989999999,
     "long": -73.8868179,
     "year": "2021",
-    "group": -1
+    "group": -1,
+    "borough": "Bronx",
+    "keywords": []
   },
   {
     "id": "202176",
@@ -1707,7 +2308,9 @@
     "lat": 40.8534729,
     "long": -73.88938019999999,
     "year": "2021",
-    "group": -1
+    "group": -1,
+    "borough": "Bronx",
+    "keywords": []
   },
   {
     "id": "202177",
@@ -1717,7 +2320,9 @@
     "lat": 40.8547728,
     "long": -73.88824009999999,
     "year": "2021",
-    "group": -1
+    "group": -1,
+    "borough": "Bronx",
+    "keywords": []
   },
   {
     "id": "202178",
@@ -1727,7 +2332,9 @@
     "lat": 40.7780641,
     "long": -73.9521899,
     "year": "2021",
-    "group": -1
+    "group": -1,
+    "borough": "Bronx",
+    "keywords": []
   },
   {
     "id": "202179",
@@ -1737,7 +2344,9 @@
     "lat": 40.8534729,
     "long": -73.88938019999999,
     "year": "2021",
-    "group": 2
+    "group": 2,
+    "borough": "Bronx",
+    "keywords": []
   },
   {
     "id": "202180",
@@ -1747,7 +2356,12 @@
     "lat": 40.5865212,
     "long": -73.9675719,
     "year": "2021",
-    "group": 2
+    "group": 2,
+    "borough": "Brooklyn",
+    "keywords": [
+      "board",
+      "league"
+    ]
   },
   {
     "id": "202181",
@@ -1757,7 +2371,9 @@
     "lat": 40.5969922,
     "long": -73.9732223,
     "year": "2021",
-    "group": 1
+    "group": 1,
+    "borough": "Brooklyn",
+    "keywords": []
   },
   {
     "id": "202182",
@@ -1767,7 +2383,11 @@
     "lat": 40.6663291,
     "long": -73.85034739999999,
     "year": "2021",
-    "group": 1
+    "group": 1,
+    "borough": "Queens",
+    "keywords": [
+      "she"
+    ]
   },
   {
     "id": "202183",
@@ -1777,7 +2397,11 @@
     "lat": 40.7846784,
     "long": -73.809107,
     "year": "2021",
-    "group": 3
+    "group": 3,
+    "borough": "Queens",
+    "keywords": [
+      "pastor"
+    ]
   },
   {
     "id": "202184",
@@ -1787,7 +2411,9 @@
     "lat": 40.739528,
     "long": -73.92512099999999,
     "year": "2021",
-    "group": 1
+    "group": 1,
+    "borough": "Queens",
+    "keywords": []
   },
   {
     "id": "202185",
@@ -1797,7 +2423,9 @@
     "lat": 40.7562576,
     "long": -73.9245044,
     "year": "2021",
-    "group": -1
+    "group": -1,
+    "borough": "Queens",
+    "keywords": []
   },
   {
     "id": "202186",
@@ -1807,7 +2435,12 @@
     "lat": 40.7427315,
     "long": -73.9540547,
     "year": "2021",
-    "group": 0
+    "group": 0,
+    "borough": "Queens",
+    "keywords": [
+      "detective",
+      "9/11"
+    ]
   },
   {
     "id": "202187",
@@ -1817,7 +2450,9 @@
     "lat": 40.7445947,
     "long": -73.91555919999999,
     "year": "2021",
-    "group": 2
+    "group": 2,
+    "borough": "Queens",
+    "keywords": []
   },
   {
     "id": "202188",
@@ -1827,7 +2462,12 @@
     "lat": 40.7601029,
     "long": -73.9147768,
     "year": "2021",
-    "group": 2
+    "group": 2,
+    "borough": "Queens",
+    "keywords": [
+      "career",
+      "league"
+    ]
   },
   {
     "id": "202189",
@@ -1837,7 +2477,9 @@
     "lat": 40.6161572,
     "long": -74.08331989999999,
     "year": "2021",
-    "group": 2
+    "group": 2,
+    "borough": "Staten Island",
+    "keywords": []
   },
   {
     "id": "202190",
@@ -1847,7 +2489,11 @@
     "lat": 40.86203829999999,
     "long": -73.8969603,
     "year": "2021",
-    "group": 2
+    "group": 2,
+    "borough": "Bronx",
+    "keywords": [
+      "career"
+    ]
   },
   {
     "id": "202191",
@@ -1857,7 +2503,9 @@
     "lat": 40.7668321,
     "long": -73.9092898,
     "year": "2021",
-    "group": 2
+    "group": 2,
+    "borough": "Queens",
+    "keywords": []
   },
   {
     "id": "20110",
@@ -1867,7 +2515,11 @@
     "lat": 40.8107479,
     "long": -73.9061813,
     "year": "2011",
-    "group": 6
+    "group": 6,
+    "borough": "Bronx",
+    "keywords": [
+      "police"
+    ]
   },
   {
     "id": "20111",
@@ -1877,7 +2529,11 @@
     "lat": 40.6626604,
     "long": -73.89736909999999,
     "year": "2011",
-    "group": 7
+    "group": 7,
+    "borough": "Brooklyn",
+    "keywords": [
+      " human rights"
+    ]
   },
   {
     "id": "20112",
@@ -1887,7 +2543,9 @@
     "lat": 40.7210328,
     "long": -73.991483,
     "year": "2011",
-    "group": 7
+    "group": 7,
+    "borough": "Manhattan",
+    "keywords": []
   },
   {
     "id": "20113",
@@ -1897,7 +2555,11 @@
     "lat": 40.7207713,
     "long": -73.99063869999999,
     "year": "2011",
-    "group": 8
+    "group": 8,
+    "borough": "Manhattan",
+    "keywords": [
+      "school"
+    ]
   },
   {
     "id": "20114",
@@ -1907,7 +2569,9 @@
     "lat": 40.8185395,
     "long": -73.9377063,
     "year": "2011",
-    "group": 7
+    "group": 7,
+    "borough": "Manhattan",
+    "keywords": []
   },
   {
     "id": "20115",
@@ -1917,7 +2581,11 @@
     "lat": 40.81354899999999,
     "long": -73.9513212,
     "year": "2011",
-    "group": 8
+    "group": 8,
+    "borough": "Manhattan",
+    "keywords": [
+      "school"
+    ]
   },
   {
     "id": "20116",
@@ -1927,7 +2595,9 @@
     "lat": 40.7498481,
     "long": -73.8833775,
     "year": "2011",
-    "group": 8
+    "group": 8,
+    "borough": "Queens",
+    "keywords": []
   },
   {
     "id": "20117",
@@ -1937,7 +2607,9 @@
     "lat": 40.7516927,
     "long": -73.8856136,
     "year": "2011",
-    "group": 8
+    "group": 8,
+    "borough": "Queens",
+    "keywords": []
   },
   {
     "id": "20118",
@@ -1947,7 +2619,12 @@
     "lat": 40.65766139999999,
     "long": -73.9532225,
     "year": "2011",
-    "group": 8
+    "group": 8,
+    "borough": "Brooklyn",
+    "keywords": [
+      " art ",
+      "children"
+    ]
   },
   {
     "id": "20119",
@@ -1957,7 +2634,9 @@
     "lat": 40.744031,
     "long": -73.85868099999999,
     "year": "2011",
-    "group": 8
+    "group": 8,
+    "borough": "Queens",
+    "keywords": []
   },
   {
     "id": "201110",
@@ -1967,7 +2646,11 @@
     "lat": 40.7452778,
     "long": -73.8559545,
     "year": "2011",
-    "group": 6
+    "group": 6,
+    "borough": "Queens",
+    "keywords": [
+      "combat"
+    ]
   },
   {
     "id": "201111",
@@ -1977,7 +2660,9 @@
     "lat": 40.6155887,
     "long": -73.9353623,
     "year": "2011",
-    "group": 6
+    "group": 6,
+    "borough": "Brooklyn",
+    "keywords": []
   },
   {
     "id": "201112",
@@ -1987,7 +2672,11 @@
     "lat": 40.617814,
     "long": -74.006434,
     "year": "2011",
-    "group": 8
+    "group": 8,
+    "borough": "Brooklyn",
+    "keywords": [
+      "award"
+    ]
   },
   {
     "id": "201113",
@@ -1997,7 +2686,12 @@
     "lat": 40.6593093,
     "long": -73.99910899999999,
     "year": "2011",
-    "group": 8
+    "group": 8,
+    "borough": "Brooklyn",
+    "keywords": [
+      "school",
+      "award"
+    ]
   },
   {
     "id": "201114",
@@ -2007,7 +2701,11 @@
     "lat": 40.674622,
     "long": -73.99741399999999,
     "year": "2011",
-    "group": 6
+    "group": 6,
+    "borough": "Brooklyn",
+    "keywords": [
+      "9/11"
+    ]
   },
   {
     "id": "201115",
@@ -2017,7 +2715,9 @@
     "lat": 40.6379937,
     "long": -74.021332,
     "year": "2011",
-    "group": 8
+    "group": 8,
+    "borough": "Brooklyn",
+    "keywords": []
   },
   {
     "id": "201116",
@@ -2027,7 +2727,12 @@
     "lat": 40.6269175,
     "long": -73.9832029,
     "year": "2011",
-    "group": 8
+    "group": 8,
+    "borough": "Brooklyn",
+    "keywords": [
+      " art ",
+      "children"
+    ]
   },
   {
     "id": "201117",
@@ -2037,7 +2742,11 @@
     "lat": 40.7926708,
     "long": -73.81748189999999,
     "year": "2011",
-    "group": 8
+    "group": 8,
+    "borough": "Queens",
+    "keywords": [
+      "civic"
+    ]
   },
   {
     "id": "201118",
@@ -2047,7 +2756,9 @@
     "lat": 40.769133,
     "long": -73.8173487,
     "year": "2011",
-    "group": 6
+    "group": 6,
+    "borough": "Queens",
+    "keywords": []
   },
   {
     "id": "201119",
@@ -2057,7 +2768,12 @@
     "lat": 40.5901601,
     "long": -74.1591952,
     "year": "2011",
-    "group": 8
+    "group": 8,
+    "borough": "Staten Island",
+    "keywords": [
+      "school",
+      "children"
+    ]
   },
   {
     "id": "201120",
@@ -2067,7 +2783,9 @@
     "lat": 40.778448,
     "long": -73.978313,
     "year": "2011",
-    "group": 8
+    "group": 8,
+    "borough": "Manhattan",
+    "keywords": []
   },
   {
     "id": "201121",
@@ -2077,7 +2795,11 @@
     "lat": 40.8209081,
     "long": -73.9554369,
     "year": "2011",
-    "group": 8
+    "group": 8,
+    "borough": "Manhattan",
+    "keywords": [
+      "school"
+    ]
   },
   {
     "id": "201122",
@@ -2087,7 +2809,9 @@
     "lat": 40.7616606,
     "long": -73.8271371,
     "year": "2011",
-    "group": 8
+    "group": 8,
+    "borough": "Queens",
+    "keywords": []
   },
   {
     "id": "201123",
@@ -2097,7 +2821,9 @@
     "lat": 40.8653977,
     "long": -73.8704003,
     "year": "2011",
-    "group": 8
+    "group": 8,
+    "borough": "Bronx",
+    "keywords": []
   },
   {
     "id": "201124",
@@ -2107,7 +2833,12 @@
     "lat": 40.7183854,
     "long": -73.8405654,
     "year": "2011",
-    "group": 7
+    "group": 7,
+    "borough": "Queens",
+    "keywords": [
+      "district",
+      "attorney"
+    ]
   },
   {
     "id": "201125",
@@ -2117,7 +2848,9 @@
     "lat": 40.6778681,
     "long": -73.99806629999999,
     "year": "2011",
-    "group": 8
+    "group": 8,
+    "borough": "Brooklyn",
+    "keywords": []
   },
   {
     "id": "201126",
@@ -2127,7 +2860,11 @@
     "lat": 40.6708794,
     "long": -73.9719932,
     "year": "2011",
-    "group": 6
+    "group": 6,
+    "borough": "Brooklyn",
+    "keywords": [
+      "combat"
+    ]
   },
   {
     "id": "201127",
@@ -2137,7 +2874,9 @@
     "lat": 40.68124280000001,
     "long": -73.98052919999999,
     "year": "2011",
-    "group": 8
+    "group": 8,
+    "borough": "Brooklyn",
+    "keywords": []
   },
   {
     "id": "201128",
@@ -2147,7 +2886,9 @@
     "lat": 40.7223663,
     "long": -73.94491099999999,
     "year": "2011",
-    "group": 8
+    "group": 8,
+    "borough": "Brooklyn",
+    "keywords": []
   },
   {
     "id": "201129",
@@ -2157,7 +2898,12 @@
     "lat": 40.8082702,
     "long": -73.9188145,
     "year": "2011",
-    "group": 6
+    "group": 6,
+    "borough": "Manhattan",
+    "keywords": [
+      "gun",
+      "violence"
+    ]
   },
   {
     "id": "201130",
@@ -2167,7 +2913,12 @@
     "lat": 40.79544440000001,
     "long": -73.9439562,
     "year": "2011",
-    "group": 7
+    "group": 7,
+    "borough": "Manhattan",
+    "keywords": [
+      "health",
+      " human rights"
+    ]
   },
   {
     "id": "201131",
@@ -2177,7 +2928,13 @@
     "lat": 40.798503,
     "long": -73.96712,
     "year": "2011",
-    "group": 8
+    "group": 8,
+    "borough": "Manhattan",
+    "keywords": [
+      "civic",
+      "children",
+      "award"
+    ]
   },
   {
     "id": "201132",
@@ -2187,7 +2944,11 @@
     "lat": 40.7918764,
     "long": -73.93560579999999,
     "year": "2011",
-    "group": 7
+    "group": 7,
+    "borough": "Manhattan",
+    "keywords": [
+      "district"
+    ]
   },
   {
     "id": "201133",
@@ -2197,7 +2958,11 @@
     "lat": 40.7971153,
     "long": -73.948677,
     "year": "2011",
-    "group": 8
+    "group": 8,
+    "borough": "Manhattan",
+    "keywords": [
+      "museum"
+    ]
   },
   {
     "id": "201134",
@@ -2207,7 +2972,9 @@
     "lat": 40.8023937,
     "long": -73.936767,
     "year": "2011",
-    "group": 6
+    "group": 6,
+    "borough": "Manhattan",
+    "keywords": []
   },
   {
     "id": "201135",
@@ -2217,7 +2984,11 @@
     "lat": 40.7261987,
     "long": -73.9894438,
     "year": "2011",
-    "group": 8
+    "group": 8,
+    "borough": "Manhattan",
+    "keywords": [
+      "award"
+    ]
   },
   {
     "id": "201136",
@@ -2227,7 +2998,9 @@
     "lat": 40.5767088,
     "long": -73.9659964,
     "year": "2011",
-    "group": 8
+    "group": 8,
+    "borough": "Brooklyn",
+    "keywords": []
   },
   {
     "id": "201137",
@@ -2237,7 +3010,11 @@
     "lat": 40.6095377,
     "long": -73.9564998,
     "year": "2011",
-    "group": 8
+    "group": 8,
+    "borough": "Brooklyn",
+    "keywords": [
+      "children"
+    ]
   },
   {
     "id": "201138",
@@ -2247,7 +3024,9 @@
     "lat": 40.5981311,
     "long": -74.1254584,
     "year": "2011",
-    "group": 8
+    "group": 8,
+    "borough": "Staten Island",
+    "keywords": []
   },
   {
     "id": "201139",
@@ -2257,7 +3036,12 @@
     "lat": 40.5760189,
     "long": -74.1173397,
     "year": "2011",
-    "group": 8
+    "group": 8,
+    "borough": "Staten Island",
+    "keywords": [
+      "school",
+      "award"
+    ]
   },
   {
     "id": "201140",
@@ -2267,7 +3051,11 @@
     "lat": 40.599666,
     "long": -74.07079399999999,
     "year": "2011",
-    "group": 8
+    "group": 8,
+    "borough": "Staten Island",
+    "keywords": [
+      "school"
+    ]
   },
   {
     "id": "201141",
@@ -2277,7 +3065,11 @@
     "lat": 40.600134,
     "long": -73.990864,
     "year": "2011",
-    "group": 8
+    "group": 8,
+    "borough": "Brooklyn",
+    "keywords": [
+      "school"
+    ]
   },
   {
     "id": "201142",
@@ -2287,7 +3079,9 @@
     "lat": 40.62677,
     "long": -73.993543,
     "year": "2011",
-    "group": 8
+    "group": 8,
+    "borough": "Brooklyn",
+    "keywords": []
   },
   {
     "id": "201143",
@@ -2297,7 +3091,11 @@
     "lat": 40.8392277,
     "long": -73.94123429999999,
     "year": "2011",
-    "group": 8
+    "group": 8,
+    "borough": "Manhattan",
+    "keywords": [
+      "school"
+    ]
   },
   {
     "id": "201144",
@@ -2307,7 +3105,11 @@
     "lat": 40.6190455,
     "long": -74.1367349,
     "year": "2011",
-    "group": 8
+    "group": 8,
+    "borough": "Staten Island",
+    "keywords": [
+      "children"
+    ]
   },
   {
     "id": "201145",
@@ -2317,7 +3119,9 @@
     "lat": 40.6288129,
     "long": -74.1111221,
     "year": "2011",
-    "group": 7
+    "group": 7,
+    "borough": "Staten Island",
+    "keywords": []
   },
   {
     "id": "201146",
@@ -2327,7 +3131,11 @@
     "lat": 40.5816731,
     "long": -73.842423,
     "year": "2011",
-    "group": 8
+    "group": 8,
+    "borough": "Queens",
+    "keywords": [
+      "civic"
+    ]
   },
   {
     "id": "201147",
@@ -2337,7 +3145,9 @@
     "lat": 40.5794283,
     "long": -73.85099079999999,
     "year": "2011",
-    "group": 8
+    "group": 8,
+    "borough": "Queens",
+    "keywords": []
   },
   {
     "id": "201148",
@@ -2347,7 +3157,9 @@
     "lat": 40.7690589,
     "long": -73.9284651,
     "year": "2011",
-    "group": 8
+    "group": 8,
+    "borough": "Queens",
+    "keywords": []
   },
   {
     "id": "201149",
@@ -2357,7 +3169,9 @@
     "lat": 40.7396378,
     "long": -73.9222559,
     "year": "2011",
-    "group": 7
+    "group": 7,
+    "borough": "Queens",
+    "keywords": []
   },
   {
     "id": "201150",
@@ -2367,7 +3181,9 @@
     "lat": 40.67504479999999,
     "long": -73.9305402,
     "year": "2011",
-    "group": 7
+    "group": 7,
+    "borough": "Brooklyn",
+    "keywords": []
   },
   {
     "id": "201151",
@@ -2377,7 +3193,11 @@
     "lat": 40.6797037,
     "long": -73.9345554,
     "year": "2011",
-    "group": 8
+    "group": 8,
+    "borough": "Brooklyn",
+    "keywords": [
+      "school"
+    ]
   },
   {
     "id": "201152",
@@ -2387,7 +3207,9 @@
     "lat": 40.6854451,
     "long": -73.79324869999999,
     "year": "2011",
-    "group": 7
+    "group": 7,
+    "borough": "Queens",
+    "keywords": []
   },
   {
     "id": "201153",
@@ -2397,7 +3219,11 @@
     "lat": 40.688584,
     "long": -73.80447,
     "year": "2011",
-    "group": 8
+    "group": 8,
+    "borough": "Queens",
+    "keywords": [
+      "children"
+    ]
   },
   {
     "id": "201154",
@@ -2407,7 +3233,11 @@
     "lat": 40.6038779,
     "long": -74.1306307,
     "year": "2011",
-    "group": 8
+    "group": 8,
+    "borough": "Staten Island",
+    "keywords": [
+      "school"
+    ]
   },
   {
     "id": "201155",
@@ -2417,6 +3247,8 @@
     "lat": 40.7748791,
     "long": -73.90890209999999,
     "year": "2011",
-    "group": 8
+    "group": 8,
+    "borough": "Queens",
+    "keywords": []
   }
 ]

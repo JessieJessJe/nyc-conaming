@@ -9,7 +9,7 @@ import { normLat, normLong, normZ, groupColor } from "../utils/helper"
 
 import data from "../data/mydata.json"
 
-function Line({pX, pY, pZ, year, handlePointOut, handlePointOver, hovered}){
+function Line({pX, pY, pZ, year, borough, handlePointOut, handlePointOver, hovered}){
 
   const geometry = useMemo(()=>{
 
@@ -19,7 +19,7 @@ function Line({pX, pY, pZ, year, handlePointOut, handlePointOver, hovered}){
 
     return geometry
 
-  }, [year])
+  }, [year, borough])
 
   return(
   
@@ -47,29 +47,9 @@ function Line({pX, pY, pZ, year, handlePointOut, handlePointOver, hovered}){
 
 }
 
-                //adding each data point's vertical line -----------------------
-              //   const lineM = new THREE.LineDashedMaterial({
-              //     color: 0xefefef,
-              //     opacity: 0.5,
-              //     transparent: true,
-              //     linewidth: 1,
-              //     scale: 2,
-              //     dashSize: 0.5,
-              //     gapSize: 0.5
-              // });
-
-              // const points = [];
-              // points.push( new THREE.Vector3( pX,pY,pZ ) );
-              // points.push( new THREE.Vector3( pX,pY,0 ) );
-           
-              // const lineG = new THREE.BufferGeometry().setFromPoints( points );
-
-              // const line = new THREE.Line( lineG, lineM );
-              // line.computeLineDistances();
-              // everything.add(line)
 
 
-function MyText({pX, pY, pZ, pColor, content, year, i}){
+function MyText({pX, pY, pZ, pColor, content, year, borough, i}){
 
   const [hovered, setHover] = useState(false)
   const [billboardMaterial] = useState(() => createBillboardMaterial(new  THREE.MeshBasicMaterial()))
@@ -102,7 +82,7 @@ function MyText({pX, pY, pZ, pColor, content, year, i}){
 
             {content}
         </Text>
-        <Line pX={pX} pY={pY} pZ={pZ} key={`line-${i}`} year={year}
+        <Line pX={pX} pY={pY} pZ={pZ} key={`line-${i}`} year={year} borough={borough}
 
               handlePointOver={(event) => setHover(true)}
               handlePointOut={(event) => setHover(false)}
@@ -113,11 +93,13 @@ function MyText({pX, pY, pZ, pColor, content, year, i}){
   )
 }
 
-function Texts({year}){
+function Texts({year, borough}){
    
 
-    let data_filtered = year === "all" ? data : data.filter(d => d.year == year);
+    let data_filtered_year = filterYear(data, year)
+    let data_filtered_borough = filterBorough(data_filtered_year, borough)
 
+    let data_filtered = data_filtered_borough
  
     let textlist = [];
     let linelist = [];
@@ -130,7 +112,7 @@ function Texts({year}){
             pColor = groupColor[d.group];
 
         textlist.push(             
-          <MyText pX={pX} pY={pY} pZ={pZ} key={`text-${i}`} pColor={pColor} content={d.coname} year={year} i={i} />
+          <MyText pX={pX} pY={pY} pZ={pZ} key={`text-${i}`} pColor={pColor} content={d.coname} year={year} borough={borough} i={i} />
           )
         // linelist.push(
         //   <Line pX={pX} pY={pY} pZ={pZ} key={`line-${i}`} year={year}/>
@@ -146,3 +128,12 @@ function Texts({year}){
     
 }
 export default Texts;
+
+
+function filterYear(data, year){
+  return year === "all" ? data : data.filter(d => d.year == year);
+}
+
+function filterBorough(data, borough){
+  return borough === "all" ? data : data.filter(d => d.borough == borough);
+}

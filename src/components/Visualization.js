@@ -16,8 +16,6 @@ function Visualization(){
 
     const ref = useRef();
 
-    const [camera, setCamera ] = useState(true);
-
     const { setSection } = useContext(SectionContext);
     const scrollPosition = useScrollPosition();
     const margin_left = 0.2 * window.innerWidth;
@@ -32,12 +30,18 @@ function Visualization(){
 
     }, scrollPosition)
 
-
+//filter states
     const [year, setYear] = React.useState('all');
     const handleYear = (event) => {
         setYear(event.target.value);
       };
-    
+
+    const [borough, setBorough] = React.useState('all');
+    const handleBorough = (event) => {
+        setBorough(event.target.value);
+    };   
+
+    const [camera, setCamera ] = useState(true);
     const toggleCamera = ()=>{
         setCamera(!camera)
     }
@@ -54,6 +58,8 @@ function Visualization(){
             handleYear = {handleYear}
             camera = {camera}
             toggleCamera = {toggleCamera}
+            borough = {borough}
+            handleBorough = {handleBorough}
         />
 
         <Canvas width="100%" height="100%">
@@ -78,7 +84,7 @@ function Visualization(){
 
         {/* <Nodes year={year} /> */}
 
-        <TextsLazy year={year} />
+        <TextsLazy year={year} borough={borough}/>
 
         <NYCMap />
 
