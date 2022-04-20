@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react';
+import { Link, Outlet, useNavigate, useLocation } from "react-router-dom";
 
 import useScrollPosition from "../utils/useScrollPosition";
 
@@ -9,13 +10,17 @@ import build1 from './../images/build1.png';
 import build2 from './../images/build2.png';
 
 function Introduction(){
+    let navigate = useNavigate();
 
     const scrollPosition = useScrollPosition();
     const margin_left = 0.2 * window.innerWidth;
 
     useEffect(()=>{
 
-        if(scrollPosition >= window.innerHeight * 0.55 + window.innerHeight * 0.8){
+        if (scrollPosition >= window.innerHeight * 2){
+            navigate("/visualization")
+        }
+        else if(scrollPosition >= window.innerHeight * 0.55 + window.innerHeight * 0.8){
             document.getElementById('intro-images').style.position = "sticky";
             document.getElementById('intro-images').style.top = "55vh";
 
@@ -25,18 +30,19 @@ function Introduction(){
             
         }
 
-        else if (scrollPosition >= window.innerHeight){
-
-        }
-        
-        else{
+        else if (scrollPosition > 0 ){
             document.getElementById('intro-images').style.position = "relative";
             document.getElementById('intro-images').style.top = "80vh";
 
             document.getElementById('intro-content').style.position = "sticky";
             document.getElementById('intro-content').style.opacity = 0;
-         
+
         }
+        
+        // else if{
+
+        //     navigate("/")
+        // }
 
 
 

@@ -5,7 +5,7 @@ import './index.css';
 import App from './App';
 
 import reportWebVitals from './reportWebVitals';
-import { BrowserRouter, Routes, Route, } from "react-router-dom";
+import { BrowserRouter, Routes, Route} from "react-router-dom";
 
 import ScrollToTop from './utils/ScrollToTop';
 import LandingPlate from './components/LandingPlate'
@@ -16,13 +16,17 @@ ReactDOM.render(
   <React.StrictMode>
       <BrowserRouter>
       <ScrollToTop />
+
+   
         <Routes>
           <Route path="/" element={<App />}>
-          <Route path="landing" element={<LandingPlate />} />
+          <Route path="landing" element={ <LandingPlate  />} />
+         
           <Route path="introduction" element={ <Introduction  />} />
           <Route path="visualization" element={ <Visualization />} />
-          
+         
         </Route> 
+      
       </Routes>
       </BrowserRouter>
 

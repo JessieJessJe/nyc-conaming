@@ -273,7 +273,7 @@ font-style: normal; */
 }
 
 #three-wrapper{
-  position: relative;
+  position: fixed;
   width: 100vw;
   height: 100vh;
   background-color:#f1edeb;

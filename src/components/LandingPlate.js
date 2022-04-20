@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react';
-
+import { Link, Outlet, useNavigate, useLocation } from "react-router-dom";
 import useScrollPosition from "../utils/useScrollPosition";
 
 import plate1 from './../images/plate1.png';
@@ -7,10 +7,10 @@ import plate2 from './../images/plate2.png';
 import plate3 from './../images/plate3.png';
 import build1 from './../images/build1.png';
 import build2 from './../images/build2.png';
-
+import Introduction from './Introduction'
 
 function LandingPlate(){
-
+    const navigate = useNavigate();
     const scrollPosition = useScrollPosition();
 
     useEffect(()=>{
@@ -133,7 +133,7 @@ function LandingPlate(){
 
         }else{
       
-           
+           navigate("/visualization")
         }
         
     
@@ -188,7 +188,7 @@ function LandingPlate(){
             
             </div>
    
-     
+        <Introduction />
         </React.Fragment>
 
     )
