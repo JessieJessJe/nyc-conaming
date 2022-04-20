@@ -1,24 +1,34 @@
 import React, { useState, useEffect, useContext } from 'react';
-import { SectionContext } from '../utils/sectionContext';
+
 import useScrollPosition from "../utils/useScrollPosition";
 
+import plate1 from './../images/plate1.png';
+import plate2 from './../images/plate2.png';
+import plate3 from './../images/plate3.png';
+import build1 from './../images/build1.png';
+import build2 from './../images/build2.png';
+
+
 function LandingPlate(){
-    const { setSection } = useContext(SectionContext);
+
     const scrollPosition = useScrollPosition();
 
     useEffect(()=>{
 
     if (scrollPosition === 0){
 
-        setSection(0);
-
-        document.getElementById("landing-page-content")
-            .style.top = `${0}px`
+        // document.getElementById("landing-page-content")
+        //     .style.top = `${0}px`
         document.getElementById("landing-page-content")
             .style.left = `${0}px`
 
         document.getElementById("landing-page-content")
             .style.transform = ``
+           
+        document.getElementById("landing-page-content")
+        .style.top = `${-400}px`
+
+        //////////
 
         document.getElementsByClassName("landing-plate-wrapper")[0]
             .style.top = `${0}px`
@@ -33,6 +43,16 @@ function LandingPlate(){
 
     }
     else if (scrollPosition < 300){
+
+        document.getElementById("landing-page-content")
+        .style.left = `${0}px`
+
+        document.getElementById("landing-page-content")
+            .style.transform = ``
+        
+        document.getElementById("landing-page-content")
+        .style.top = `${-400}px`
+        //////////////////
 
             document.getElementById("landing-pole-1")
             .style.transform = ``
@@ -59,8 +79,12 @@ function LandingPlate(){
         }
         else if(scrollPosition<800){
         
-            document.getElementById("landing-page-content")
-                .style.top = `${-(scrollPosition-300)}px`
+            // document.getElementById("landing-page-content")
+            //     .style.top = `${-(scrollPosition-300)}px`
+
+                    
+            // document.getElementById("landing-page-content")
+            //     .style.top = `${-(scrollPosition-300)}px`
             
         }else if(scrollPosition<1200){
           
@@ -109,7 +133,7 @@ function LandingPlate(){
 
         }else{
       
-            setSection(1);
+           
         }
         
     
@@ -120,8 +144,10 @@ function LandingPlate(){
     
     return(
         <React.Fragment>
+           
       
             <div className='landing-plate-wrapper'>
+
             <div className='pole_plate landing-pole' id='landing-pole-1'></div>
             <div className='pole_plate landing-pole' id='landing-pole-2'></div>
             <div className='pole_plate landing-plate-plate' id='plate-1'>Memories</div>
@@ -150,10 +176,19 @@ function LandingPlate(){
                 </div>
 
             </div>
-       
- 
             </div>
 
+             <div className='images' id='landing-images'>
+                <img src={plate3} height={400} alt="plate" />
+                <img src={build1} height={250}alt="plate" />
+                <img src={plate1} height={250}alt="plate" />
+                <img src={build2} height={280} alt="plate" />
+                <img src={plate2} height={200} alt="plate" />
+          
+            
+            </div>
+   
+     
         </React.Fragment>
 
     )

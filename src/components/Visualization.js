@@ -3,7 +3,6 @@ import React, { useState, useEffect, useContext, useRef, lazy, Suspense } from '
 import { Canvas, useFrame, extend, useThree } from '@react-three/fiber'
 import {OrbitControls, Sky , Text, OrthographicCamera, PerspectiveCamera } from "@react-three/drei";
 
-import { SectionContext } from '../utils/sectionContext';
 import useScrollPosition from "../utils/useScrollPosition";
 
 import Filter from "./Filter"
@@ -16,7 +15,6 @@ function Visualization(){
 
     const ref = useRef();
 
-    const { setSection } = useContext(SectionContext);
     const scrollPosition = useScrollPosition();
     const margin_left = 0.2 * window.innerWidth;
     const aspect = window.innerWidth / window.innerHeight;

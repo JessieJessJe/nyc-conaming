@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react';
-import { SectionContext } from '../utils/sectionContext';
-import useScrollPosition from "../utils/useScrollPosition";
+
+import { Link} from "react-router-dom";
 
 function Header({opacity}){
 
@@ -23,6 +23,19 @@ function Header({opacity}){
         <div id='header-wrapper' style={divStyle}>
         HEADER memories around the corner
        
+        <nav>
+        <ul className='header-nav'>
+          <li>
+            <Link to="/landing">Home</Link>
+          </li>
+          <li>
+            <Link to="/introduction">About</Link>
+          </li>
+          <li>
+            <Link to="/visualization">Visualization</Link>
+          </li>
+        </ul>
+      </nav>
         </div>
       
 

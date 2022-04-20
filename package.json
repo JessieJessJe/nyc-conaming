@@ -13,6 +13,7 @@
     "processing": "^0.2.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
+    "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.0",
     "three": "^0.139.2",
     "three-stdlib": "^2.9.1",

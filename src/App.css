@@ -78,7 +78,7 @@ body{
 
   color: #f1edeb;
 
-  z-index: 20;
+  z-index: 200;
   
 }
 /* 
@@ -92,7 +92,7 @@ https://css-tricks.com/things-watch-working-css-3d/ */
   position: sticky;
   top: 0;
   left: 0;
-  z-index: 0;
+  z-index: 200;
 }
 
 #plate-1, #plate-3, #plate-4{
@@ -231,7 +231,9 @@ font-style: normal; */
   z-index: 0;
 }
 
-#images{
+
+
+#intro-images, #landing-images{
   padding-left: 5%;
   width: 100vw;
   display: flex;
@@ -244,6 +246,11 @@ font-style: normal; */
 
   z-index: 100;
 
+}
+
+#landing-images{
+  position: fixed;
+  bottom: -5vh;
 }
 
 #intro-content{
@@ -262,7 +269,7 @@ font-style: normal; */
   width: 100vw;
   height: 5vh;
   border: #226600 1px solid;
-  z-index: 50;
+  z-index: 210;
 }
 
 #three-wrapper{
@@ -284,4 +291,14 @@ canvas{
   top: 0;
   width: 100%;
   height: 100%;
+}
+
+.header-nav{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.header-nav > li{
+  display: inline;
 }

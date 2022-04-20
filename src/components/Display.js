@@ -1,16 +1,17 @@
 import React, { useState, useEffect, useContext } from 'react';
+
+import { Link } from "react-router-dom";
+
 import LandingPlate from './LandingPlate'
 import Introduction from './Introduction'
 import Header from './Header'
 import useScrollPosition from "../utils/useScrollPosition";
 
-import { SectionContext } from '../utils/sectionContext';
 import Visualization from './Visualization';
  
 function Display(){
     const scrollPosition = useScrollPosition();
-    const { setSection, section } = useContext(SectionContext);
-
+ 
     const [Header_opacity, setHeader_opacity] = useState( 0 );
 
     let LandingPlate_opacity = 1;
@@ -29,11 +30,19 @@ function Display(){
 return ( 
 
     <React.Fragment>
- 
+{/*  
         <Header opacity={Header_opacity}/>
         <LandingPlate opacity={LandingPlate_opacity} />   
         <Introduction opacity={Introduction_opacity}/>
+        <Visualization /> */}
+
+         
+        <Header opacity={Header_opacity}/>
+
+        <LandingPlate opacity={LandingPlate_opacity} />   
+        <Introduction opacity={Introduction_opacity}/>
         <Visualization />
+
 
     </React.Fragment>
 
