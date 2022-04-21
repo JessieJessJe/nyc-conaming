@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { Link, Outlet, useNavigate, useLocation } from "react-router-dom";
+import { motion } from 'framer-motion';
 
 import useScrollPosition from "../utils/useScrollPosition";
 
@@ -17,10 +18,10 @@ function Introduction(){
 
     useEffect(()=>{
 
-        if (scrollPosition >= window.innerHeight * 2){
+        if (scrollPosition >= window.innerHeight * 4){
             navigate("/visualization")
         }
-        else if(scrollPosition >= window.innerHeight * 0.55 + window.innerHeight * 0.8){
+        else if(scrollPosition >= window.innerHeight * 0.7){
             document.getElementById('intro-images').style.position = "sticky";
             document.getElementById('intro-images').style.top = "55vh";
 
@@ -51,26 +52,49 @@ function Introduction(){
     return(
         <React.Fragment>
 
-        <div id='intro-wrapper'>
+        <motion.div id='intro-wrapper'
+              initial={{ scaleY: 0 }}
+              animate={{ scaleY: 1 }}
+              exit={{ scaleY: 0 }}
+              transition={{ duration: 0.5 }}
+        >
 
             <div id='intro-content'>
-                    <div className='sectionTitle' id="intro-title">say something</div>
+                    <div className='sectionTitle' id="intro-title">1.say something</div>
 
-                    {/* click on the street signs to get information.
-                    landmark images scroll away. */}
+                    <div className='text-norma text-center' id="intro-text">
+
+                    Street names are how we recognize and navigate the physical spaces. They also manifest the intangibles, the local, historical, cultural, or political legacies of spaces.
+
+                    NYC honorary street names, or co-names by the City Council, are one way local activists, communities, and politicians lean on to remap our city in a local sense, interweaving its past, present, and future.
+
+                    </div>
             </div>
 
-            <div className='images' id='intro-images'>
-                <img src={plate3} height={400} alt="plate" />
-                <img src={build1} height={250}alt="plate" />
-                <img src={plate1} height={250}alt="plate" />
-                <img src={build2} height={280} alt="plate" />
-                <img src={plate2} height={200} alt="plate" />
-          
-            
+                    <div className='images' id='intro-images'>
+                        {/* <img src={plate3} height={400} alt="plate" />
+                        <img src={build1} height={250}alt="plate" />
+                        <img src={plate1} height={250}alt="plate" />
+                        <img src={build2} height={280} alt="plate" />
+                        <img src={plate2} height={200} alt="plate" /> */}
+                
+                    
+                    </div>
+                    
+            <div id='intro-content-2'>
+
+            <div className='sectionTitle'>2.say something</div>
+
+            <div className='text-norma text-center' >
+
+            Street names are how we recognize and navigate the physical spaces. They also manifest the intangibles, the local, historical, cultural, or political legacies of spaces.
+
+            NYC honorary street names, or co-names by the City Council, are one way local activists, communities, and politicians lean on to remap our city in a local sense, interweaving its past, present, and future.
+
+            </div>
             </div>
        
-        </div>
+        </motion.div>
       
 
         </React.Fragment>

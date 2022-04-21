@@ -12,7 +12,7 @@ import './App.css';
 function App() {
   const scrollPosition = useScrollPosition();
  
-  const [Header_opacity, setHeader_opacity] = useState( 1 );
+  const [Header_opacity, setHeader_opacity] = useState(1 );
 
   let navigate = useNavigate()
   let location = useLocation()

@@ -3,7 +3,11 @@ import React, { useState, useEffect, useContext, useRef, lazy, Suspense } from '
 import { Canvas, useFrame, extend, useThree } from '@react-three/fiber'
 import {OrbitControls, Sky , Text, OrthographicCamera, PerspectiveCamera } from "@react-three/drei";
 
+import { motion } from 'framer-motion';
+
 import useScrollPosition from "../utils/useScrollPosition";
+
+import Header from './Header';
 
 import Filter from "./Filter"
 import Nodes from "./Nodes"
@@ -26,7 +30,7 @@ function Visualization(){
             document.getElementById("three-wrapper").position = 'relative'
         }
 
-    }, scrollPosition)
+    }, [scrollPosition])
 
 //filter states
     const [year, setYear] = React.useState('all');
@@ -49,7 +53,15 @@ function Visualization(){
     return(
         <React.Fragment>
 
-        <div id='three-wrapper' ref={ref}>
+        <Header />
+
+        <motion.div 
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                      transition={{ duration: 0.5 }}
+        
+        id='three-wrapper' ref={ref}>
 
         <Filter 
             year = {year}
@@ -91,7 +103,7 @@ function Visualization(){
         </ Suspense>
         </Canvas>
 
-        </div>
+        </motion.div>
       
 
         </React.Fragment>

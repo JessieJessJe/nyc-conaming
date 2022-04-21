@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react';
 
-import { Link} from "react-router-dom";
+import { Link, useNavigate} from "react-router-dom";
 
 function Header({opacity}){
 
@@ -8,6 +8,7 @@ function Header({opacity}){
         opacity: opacity, 
       };
 
+    
     useEffect(()=>{
         divStyle = {
             opacity: opacity, 
@@ -16,26 +17,39 @@ function Header({opacity}){
        
     }, [opacity])
   
+    let navigate = useNavigate();
+
+    const handleClick = ()=> {
+        
+            navigate("/")
+        
+    }
 
     return(
         <React.Fragment>
 
         <div id='header-wrapper' style={divStyle}>
-        HEADER memories around the corner
-       
+        <div id='header-words-wrapper' onClick={handleClick}>
+            <span className='header-words' id='header-m'>Memories</span>
+            <span className='header-words' id='header-a'>Around</span>
+            <span className='header-words' id='header-t'>The</span>
+            <span className='header-words' id='header-c'>Corner</span>
+        </div>
+
         <nav>
         <ul className='header-nav'>
           <li>
-            <Link to="/landing">Home</Link>
+            <Link to="/">Home</Link>
           </li>
-          <li>
+          {/* <li>
             <Link to="/introduction">About</Link>
-          </li>
+          </li> */}
           <li>
             <Link to="/visualization">Visualization</Link>
           </li>
         </ul>
       </nav>
+
         </div>
       
 

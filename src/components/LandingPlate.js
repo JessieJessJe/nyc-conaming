@@ -1,5 +1,7 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { Link, Outlet, useNavigate, useLocation } from "react-router-dom";
+import { motion } from 'framer-motion';
+
 import useScrollPosition from "../utils/useScrollPosition";
 
 import plate1 from './../images/plate1.png';
@@ -16,6 +18,12 @@ function LandingPlate(){
     useEffect(()=>{
 
     if (scrollPosition === 0){
+
+        document.getElementById('landing-images').style.transform = ``;
+
+        document.getElementById('landing-images').style.bottom = `-2%`;
+
+        document.getElementById('landing-images-rect').style.transform = ``;
 
         // document.getElementById("landing-page-content")
         //     .style.top = `${0}px`
@@ -42,7 +50,7 @@ function LandingPlate(){
 
 
     }
-    else if (scrollPosition < 300){
+    else if (scrollPosition < window.innerHeight * 0.3){
 
         document.getElementById("landing-page-content")
         .style.left = `${0}px`
@@ -76,61 +84,62 @@ function LandingPlate(){
             document.getElementById("plate-2")
                 .style.transform = `rotateY(${Math.sin( (scrollPosition) /window.innerHeight)*90 - 25}deg)`
 
-        }
-        else if(scrollPosition<800){
         
-            // document.getElementById("landing-page-content")
-            //     .style.top = `${-(scrollPosition-300)}px`
-
-                    
-            // document.getElementById("landing-page-content")
-            //     .style.top = `${-(scrollPosition-300)}px`
-            
-        }else if(scrollPosition<1200){
+        }else if(scrollPosition<window.innerHeight*0.8){
           
-            let level = 800-300;
-            let level_more = (scrollPosition - 800) * 0.5;
-            
+            // let level = 800-300;
+            // let level_more = (scrollPosition - 800) * 0.5;
+          
+            let prev_step = window.innerHeight * 0.3
+
+            let level = 0;
+            let level_more = (scrollPosition - prev_step) * 0.5;
 
             Array.from(document.getElementsByClassName("landing-pole")).forEach((d)=>{
                 // d.style.transform = `translateX(${(800-scrollPosition)/3}px) rotateY(${Math.sin((scrollPosition-level)/window.innerHeight)*30}deg) translateZ(${(800-scrollPosition)/3}px)`
                 // // scale(${Math.sin(-Math.PI/800 * scrollPosition + 1.5 * Math.PI)})
-                d.style.transform = `translate3d(${(800-scrollPosition)*2}px, 0, 0px)`
+                d.style.transform = `translate3d(${(prev_step-scrollPosition)*2}px, 0, 0px)`
             
             })
 
             document.getElementById("plate-1")
                 .style.transform = `
-                translate3d(${(800-scrollPosition)*2}px, 0px, 0px)
+                translate3d(${(prev_step-scrollPosition)*2}px, 0px, 0px)
                 rotateY(${Math.sin((scrollPosition-level + level_more )/window.innerHeight)*90 + 25}deg)
                 
                 `
             document.getElementById("plate-2")
                 .style.transform = `
-                translate3d(${(800-scrollPosition)*2}px, 0px, 0px)
+                translate3d(${(prev_step-scrollPosition)*2}px, 0px, 0px)
                 rotateY(${Math.sin((scrollPosition-level + level_more )/window.innerHeight)*90 - 25}deg)
 
                 `
 
             document.getElementById("plate-3")
                 .style.transform = `
-                translate3d(${(800-scrollPosition)*2}px, 0px, 0px)
+                translate3d(${(prev_step-scrollPosition)*2}px, 0px, 0px)
                 rotateY(${Math.sin((scrollPosition-level + level_more )/window.innerHeight)*90 + 25}deg)
      
                 `
             document.getElementById("plate-4")
                 .style.transform = `
-                translate3d(${(800-scrollPosition)*2}px, 0px, 0px)
+                translate3d(${(prev_step-scrollPosition)*2}px, 0px, 0px)
                 rotateY(${Math.sin((scrollPosition-level + level_more )/window.innerHeight)*90 + 25}deg)
 
                 `
 
             document.getElementById("landing-page-content")
-            .style.left = `${(scrollPosition-800)}px`
+            .style.left = `${(scrollPosition-prev_step)}px`
 
             document.getElementById("landing-page-content")
-            .style.transform = `translateX(${(scrollPosition-800)}px)`
+            .style.transform = `translateX(${(scrollPosition-prev_step)}px)`
+ 
 
+        }else if(scrollPosition < window.innerHeight* 2.9){
+
+            let prev_step = window.innerHeight * 0.9
+            document.getElementById('landing-images-rect').style.transform = `translateY(-${(scrollPosition-prev_step)*1.5}px)`;
+         
         }else{
       
            navigate("/visualization")
@@ -178,15 +187,25 @@ function LandingPlate(){
             </div>
             </div>
 
-             <div className='images' id='landing-images'>
+             <motion.div 
+             
+             initial={{ scaleY: 0 }}
+             animate={{ scaleY: 1 }}
+             exit={{ scaleY: 0 }}
+             transition={{ duration: 0.5 }}
+             
+             className='images' id='landing-images'>
+
+               
                 <img src={plate3} height={400} alt="plate" />
                 <img src={build1} height={250}alt="plate" />
                 <img src={plate1} height={250}alt="plate" />
                 <img src={build2} height={280} alt="plate" />
                 <img src={plate2} height={200} alt="plate" />
-          
+            </motion.div>
             
-            </div>
+            <div id ='landing-images-rect'></div>
+          
    
         <Introduction />
         </React.Fragment>
