@@ -10,9 +10,10 @@ import useScrollPosition from "../utils/useScrollPosition";
 import Header from './Header';
 
 import Filter from "./Filter"
-import Nodes from "./Nodes"
+// import Nodes from "./Nodes"
 import NYCMap from "./NYCMap"
 import TextsLazy from './TextsLazy';
+import Sidebar from './Sidebar';
 
 
 function Visualization(){
@@ -63,14 +64,14 @@ function Visualization(){
         
         id='three-wrapper' ref={ref}>
 
-        <Filter 
+        {/* <Filter 
             year = {year}
             handleYear = {handleYear}
             camera = {camera}
             toggleCamera = {toggleCamera}
             borough = {borough}
             handleBorough = {handleBorough}
-        />
+        /> */}
 
         <Canvas width="100%" height="100%">
 
@@ -101,7 +102,18 @@ function Visualization(){
         {/* <Sky /> */}
 
         </ Suspense>
-        </Canvas>
+        </ Canvas>
+
+        <Sidebar
+        
+        year = {year}
+        handleYear = {handleYear}
+        camera = {camera}
+        toggleCamera = {toggleCamera}
+        borough = {borough}
+        handleBorough = {handleBorough}
+
+        />
 
         </motion.div>
       
