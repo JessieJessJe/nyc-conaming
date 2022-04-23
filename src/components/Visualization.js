@@ -9,7 +9,6 @@ import useScrollPosition from "../utils/useScrollPosition";
 
 import Header from './Header';
 
-import Filter from "./Filter"
 // import Nodes from "./Nodes"
 import NYCMap from "./NYCMap"
 import TextsLazy from './TextsLazy';
