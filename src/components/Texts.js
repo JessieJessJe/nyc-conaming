@@ -11,11 +11,8 @@ import { normLat, normLong, normZ, groupColor } from "../utils/helper"
 
 import data from "../data/mydata.json"
 
-import { FilterContext } from '../utils/filterContext';
 
-
-
-function Line({pX, pY, pZ, year, borough, handlePointOut, handlePointOver, hovered}){
+function Line({pX, pY, pZ, filter, handlePointOut, handlePointOver, hovered}){
 
   const geometry = useMemo(()=>{
 
@@ -25,7 +22,7 @@ function Line({pX, pY, pZ, year, borough, handlePointOut, handlePointOver, hover
 
     return geometry
 
-  }, [year, borough])
+  }, [filter])
 
   return(
   
@@ -55,9 +52,7 @@ function Line({pX, pY, pZ, year, borough, handlePointOut, handlePointOver, hover
 
 
 
-function MyText({pX, pY, pZ, pColor, content, year, borough, i}){
-
-  const {filter, setFilter} = useContext(FilterContext)
+function MyText({pX, pY, pZ, pColor, content, filter, i}){
 
   const [hovered, setHover] = useState(false)
   const [billboardMaterial] = useState(() => createBillboardMaterial(new  THREE.MeshBasicMaterial()))
@@ -90,7 +85,7 @@ function MyText({pX, pY, pZ, pColor, content, year, borough, i}){
 
             {content}
         </Text>
-        <Line pX={pX} pY={pY} pZ={pZ} key={`line-${i}`} year={year} borough={borough}
+        <Line pX={pX} pY={pY} pZ={pZ} key={`line-${i}`} filter={filter}
 
               handlePointOver={(event) => setHover(true)}
               handlePointOut={(event) => setHover(false)}
@@ -101,27 +96,13 @@ function MyText({pX, pY, pZ, pColor, content, year, borough, i}){
   )
 }
 
-function Texts({year, borough}){
+function Texts({filter}){
    
     ///Processing Filtered Data
-    // let data_filtered_year = filterYear(data, year)
-    // let data_filtered_borough = filterBorough(data_filtered_year, borough)
+    let data_filtered = filterData(data, filter)
 
-    const {filter, setFilter} = useContext(FilterContext)
 
-    console.log(filter)
-    let data_filtered;
-
-    if(filter !== undefined){
-      let data_filtered_year = filterYear(data, filter["year"])
-      let data_filtered_borough = filterBorough(data_filtered_year, filter["borough"])
-  
-      data_filtered = data_filtered_borough
-    }else{
-      data_filtered = data;
-    }
-   
-      let textlist = [];
+    let textlist = [];
   
       //Draw Text
       data_filtered.forEach((d, i)=>{
@@ -132,9 +113,10 @@ function Texts({year, borough}){
               pColor = groupColor[d.group];
   
           textlist.push(             
-            <MyText pX={pX} pY={pY} pZ={pZ} key={`text-${i}`} pColor={pColor} content={d.coname} year={year} borough={borough} i={i} />
+            <MyText pX={pX} pY={pY} pZ={pZ} key={`text-${i}`} pColor={pColor} content={d.coname} filter={filter} i={i} />
             )
       })
+
 
 
     return (
@@ -149,17 +131,31 @@ export default Texts;
 
 
 function filterYear(data, year){
-  //prev: year is string
-  // return year === "all" ? data : data.filter(d => d.year == year);
 
-  //current: year is array
-  return data.filter( d =>{
-    return year.forEach( key =>{
-      return d.year == key
+  return year.includes("all") ? data : 
+
+    data.filter( d =>{
+      return year.includes(d.year)
     })
-  })
+
 }
 
 function filterBorough(data, borough){
-  return borough === "all" ? data : data.filter(d => d.borough == borough);
+  // return borough === "all" ? data : data.filter(d => d.borough == borough);
+
+  return borough.includes("all") ? data : 
+
+  data.filter( d =>{
+    return borough.includes(d.borough)
+  })
+
+}
+
+function filterData(data, filter){
+
+  let data_filtered_year = filterYear(data, filter["year"])
+  let data_filtered_borough = filterBorough(data_filtered_year, filter["borough"])
+  let data_filtered = data_filtered_borough
+
+  return data_filtered;
 }

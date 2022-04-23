@@ -2,10 +2,12 @@ import React, { useState, useEffect, useContext, useRef, lazy, Suspense } from '
 
 const Texts = lazy(()=> import("./Texts"));
 
-function TextsLazy({year, borough}){
+function TextsLazy({filter }){
     return (
         <Suspense>
-         <Texts year={year} borough={borough}/>
+         <Texts 
+                 filter={filter}
+        />
        </Suspense>
     )
 }

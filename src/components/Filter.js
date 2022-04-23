@@ -1,4 +1,4 @@
-import React, {useReducer, useState} from 'react';
+import React, {useEffect, useReducer, useState} from 'react';
 
 import Checkbox from '@mui/material/Checkbox';
 import TextField from '@mui/material/TextField';
@@ -24,12 +24,13 @@ const options_year = [ { label: 'all', value: 'all' },
                   ];
               
 const options_borough= [
+                    { label: 'all', value: 'all' },
                     { label: 'Manhattan', value: "Manhattan" },
                     { label: 'Queens', value: "Queens" },
                     { label: 'Brooklyn', value: "Brooklyn" },
                     { label: 'Bronx', value: 'Bronx' },
                     { label: 'Staten Island', value: 'Staten Island' },
-                    { label: 'all', value: 'all' },
+         
                 ];
 
 const Dropdown = ({ label, value, options, onChange }) => {
@@ -45,63 +46,27 @@ const Dropdown = ({ label, value, options, onChange }) => {
     );
   };
 
-const MyCheckbox = ()=>{
+const MyCheckbox = ({filter, updateFilter, category, options})=>{
   const icon = <CheckBoxOutlineBlankIcon fontSize="small" />;
   const checkedIcon = <CheckBoxIcon fontSize="small" />;  
 
 
-  const [selectedYear, setSelectedYear] = useState( [options_year[0]]);
-
-  const handelYear = (value, reason)=>{
-    console.log(reason,'s r')
-    switch (reason){
-      case "removeOption":
-        console.log(value,'value')
-        // setSelectedYear( selectedYear.filter(y => y.label !== value.lable))
-        setSelectedYear( value )
-        console.log(selectedYear, 'state')
-        return selectedYear;
-
-      case "selectOption":
-        console.log(value,'value')
-        setSelectedYear( value )
-        console.log(selectedYear, 'state')
-        return selectedYear;
-
-      default:
-        break;
-   
-    }
-  
-  }
-
-  // const [state, dispatch] = useReducer(reducer, initialState);
+  const [selected, setSelected] = useState( [options[0]]);
 
 
-  // const reducer = (state, action)=>{
-  //   switch (action.type) {
-  //     case "selectOption":
-  //       return { selectedOptions: action.payload.options };
-  
-  //     case "removeOption":
-  //       return {
-  //         selectedOptions: state.selectedOptions.filter(
-  //           (option) => option.id !== action.payload.id
-  //         )
-  //       };
-  //     default:
-  //       throw new Error();
-  //   }
-  // }
+  useEffect(()=>{
 
-      
-    
+    updateFilter(category, selected.map(d => d.value))
+    console.log(filter, 'update global filter')
+
+  }, [selected])
+
   
   return(
     <Autocomplete
     multiple
     id="checkboxes-tags-demo"
-    options={options_year}
+    options={options}
     disableCloseOnSelect
     getOptionLabel={(option) => option.label}
     renderOption={(props, option, { selected }) => (
@@ -117,20 +82,20 @@ const MyCheckbox = ()=>{
     )}
     style={{ width: 500 }}
     renderInput={(params) => (
-      <TextField {...params} label="Select Years" placeholder="Years" />
+      <TextField {...params} label={`Select ${category}`} placeholder= {category} />
     )}
   
-    value={selectedYear}
-    onChange={ (event, value, reason)=>{
-      handelYear(value, reason)
+    value={selected}
+    onChange={ (event, value)=>{
+      setSelected(value)
 
     }}
-    getOptionSelected={(option, value) => option.label === value.label}
+    
   />
   )
 }
 
-function Filter({year, handleYear, camera, toggleCamera, borough, handleBorough}){
+function Filter({filter, updateFilter, toggleCamera}){
 
 
     return(
@@ -138,7 +103,7 @@ function Filter({year, handleYear, camera, toggleCamera, borough, handleBorough}
         <div id='three-filter-wrapper'> 
 
             <button id='three-cam-btn' onClick={toggleCamera}>Select Camera</button>
-            <div>
+            {/* <div>
                     <Dropdown
                     key="dropdown_year"
                     label="Select Year"
@@ -156,9 +121,21 @@ function Filter({year, handleYear, camera, toggleCamera, borough, handleBorough}
                     value={borough}
                     onChange={handleBorough}
                     />
-            </div>
+            </div> */}
 
-            <MyCheckbox />
+            <MyCheckbox         
+            filter={filter}
+            updateFilter={updateFilter}
+            category="year"
+            options= {options_year}
+            />
+
+            <MyCheckbox         
+            filter={filter}
+            updateFilter={updateFilter}
+            category="borough"
+            options= {options_borough}
+            />    
 
         </div>
     )

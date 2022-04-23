@@ -5,18 +5,14 @@ import {OrbitControls, Sky , Text, OrthographicCamera, PerspectiveCamera } from 
 
 import { motion } from 'framer-motion';
 
-import { FilterContext, FilterProvider } from '../utils/filterContext';
-
-
 // import Nodes from "./Nodes"
 import NYCMap from "./NYCMap"
 import TextsLazy from './TextsLazy';
 
 
-function MyThreeScene({year, handleYear, camera, toggleCamera, borough, handleBorough }){
+function MyThreeScene({filter, updateFilter, year, handleYear, camera, toggleCamera, borough, handleBorough }){
 
     const OrthographicCamera_ratio = 8
-    const {filter} = React.useContext(FilterContext)
 
     return (
 
@@ -42,7 +38,9 @@ function MyThreeScene({year, handleYear, camera, toggleCamera, borough, handleBo
 
             <OrbitControls />
 
-            <TextsLazy year={year} borough={borough}/>
+            <TextsLazy 
+                    filter={filter}
+            />
 
             <NYCMap />
 

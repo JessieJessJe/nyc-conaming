@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Filter from "./Filter"
 
-function Sidebar({year, handleYear, camera, toggleCamera, borough, handleBorough}){
+function Sidebar({filter, updateFilter, toggleCamera}){
 
 const [expanded, setExpanded] = useState(false);
 
@@ -17,12 +17,12 @@ const toggleSidebar = () =>{
                 {
                     expanded 
                     ? <SidebarIsOpen toggleSidebar={toggleSidebar} 
-                        year = {year}
-                        handleYear = {handleYear}
-                        camera = {camera}
+                    filter={filter}
+                    updateFilter={updateFilter}
+
+                   
                         toggleCamera = {toggleCamera}
-                        borough = {borough}
-                        handleBorough = {handleBorough}
+             
                     />
                     : <SidebarIsClose toggleSidebar={toggleSidebar} />
                 }
@@ -34,18 +34,17 @@ const toggleSidebar = () =>{
 
 }
 
-function SidebarIsOpen({toggleSidebar, year, handleYear, camera, toggleCamera, borough, handleBorough}){
+function SidebarIsOpen({filter, updateFilter, toggleSidebar, toggleCamera, }){
     return(
     <React.Fragment>
         <button className='sidebar-btn sidebar--expanded' onClick={toggleSidebar}>Close</button> 
 
         <Filter 
-        year = {year}
-        handleYear = {handleYear}
-        camera = {camera}
+                filter={filter}
+                updateFilter={updateFilter}
+ 
         toggleCamera = {toggleCamera}
-        borough = {borough}
-        handleBorough = {handleBorough}
+      
         />
     </React.Fragment>
     )

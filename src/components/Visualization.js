@@ -10,6 +10,7 @@ import useScrollPosition from "../utils/useScrollPosition";
 import Header from './Header';
 import Sidebar from './Sidebar';
 import MyThreeScene from './MyThreeScene';
+import { Preview } from '@mui/icons-material';
 
 
 function Visualization(){
@@ -45,6 +46,24 @@ function Visualization(){
         setCamera(!camera)
     }
 
+    const initFilter = {
+        "year":["all"],
+        "borough":["all"],
+        "angle":["map"],
+        "theme":["all"]
+    }
+
+    const [filter, setFilter] = useState(initFilter);
+
+    const updateFilter = (category, value)=>{
+
+        let updateValue = {};
+        updateValue[category] = value;
+
+        setFilter((prev)=>{
+            return {...prev, ...updateValue}
+        })
+    }
 
     return(
         <React.Fragment>
@@ -59,7 +78,10 @@ function Visualization(){
         
         id='three-wrapper' ref={ref}>
 
-        <MyThreeScene              
+        <MyThreeScene    
+        filter={filter}
+        updateFilter={updateFilter}
+
         year = {year}
         handleYear = {handleYear}
         camera = {camera}
@@ -69,13 +91,12 @@ function Visualization(){
         />
 
         <Sidebar
-        
-        year = {year}
-        handleYear = {handleYear}
-        camera = {camera}
+                filter={filter}
+                updateFilter={updateFilter}
+
+    
         toggleCamera = {toggleCamera}
-        borough = {borough}
-        handleBorough = {handleBorough}
+       
 
         />
 
