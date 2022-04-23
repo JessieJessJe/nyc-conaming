@@ -1,13 +1,19 @@
-import React, { useState, useEffect, useMemo, useRef, lazy, Suspense } from 'react';
+import React, { useState, useEffect, useMemo, useContext, useRef, lazy, Suspense } from 'react';
 
 import { Canvas, useFrame, extend, useThree } from '@react-three/fiber'
 import { meshBounds, Text } from "@react-three/drei";
 import * as THREE from 'three'
 
+
+
 import { createBillboardMaterial } from '../utils/createBillboardMaterial'
 import { normLat, normLong, normZ, groupColor } from "../utils/helper"
 
 import data from "../data/mydata.json"
+
+import { FilterContext } from '../utils/filterContext';
+
+
 
 function Line({pX, pY, pZ, year, borough, handlePointOut, handlePointOver, hovered}){
 
@@ -50,6 +56,8 @@ function Line({pX, pY, pZ, year, borough, handlePointOut, handlePointOver, hover
 
 
 function MyText({pX, pY, pZ, pColor, content, year, borough, i}){
+
+  const {filter, setFilter} = useContext(FilterContext)
 
   const [hovered, setHover] = useState(false)
   const [billboardMaterial] = useState(() => createBillboardMaterial(new  THREE.MeshBasicMaterial()))
@@ -95,30 +103,40 @@ function MyText({pX, pY, pZ, pColor, content, year, borough, i}){
 
 function Texts({year, borough}){
    
+    ///Processing Filtered Data
+    // let data_filtered_year = filterYear(data, year)
+    // let data_filtered_borough = filterBorough(data_filtered_year, borough)
 
-    let data_filtered_year = filterYear(data, year)
-    let data_filtered_borough = filterBorough(data_filtered_year, borough)
+    const {filter, setFilter} = useContext(FilterContext)
 
-    let data_filtered = data_filtered_borough
- 
-    let textlist = [];
-    let linelist = [];
+    console.log(filter)
+    let data_filtered;
 
-    data_filtered.forEach((d, i)=>{
+    if(filter !== undefined){
+      let data_filtered_year = filterYear(data, filter["year"])
+      let data_filtered_borough = filterBorough(data_filtered_year, filter["borough"])
+  
+      data_filtered = data_filtered_borough
+    }else{
+      data_filtered = data;
+    }
+   
+      let textlist = [];
+  
+      //Draw Text
+      data_filtered.forEach((d, i)=>{
+  
+          let pX = - normLong(d.long),
+              pY = normLat(d.lat),
+              pZ = normZ(d.year),
+              pColor = groupColor[d.group];
+  
+          textlist.push(             
+            <MyText pX={pX} pY={pY} pZ={pZ} key={`text-${i}`} pColor={pColor} content={d.coname} year={year} borough={borough} i={i} />
+            )
+      })
 
-        let pX = - normLong(d.long),
-            pY = normLat(d.lat),
-            pZ = normZ(d.year),
-            pColor = groupColor[d.group];
 
-        textlist.push(             
-          <MyText pX={pX} pY={pY} pZ={pZ} key={`text-${i}`} pColor={pColor} content={d.coname} year={year} borough={borough} i={i} />
-          )
-        // linelist.push(
-        //   <Line pX={pX} pY={pY} pZ={pZ} key={`line-${i}`} year={year}/>
-        // )
-
-    })
     return (
         <React.Fragment>
           {textlist}
@@ -131,7 +149,15 @@ export default Texts;
 
 
 function filterYear(data, year){
-  return year === "all" ? data : data.filter(d => d.year == year);
+  //prev: year is string
+  // return year === "all" ? data : data.filter(d => d.year == year);
+
+  //current: year is array
+  return data.filter( d =>{
+    return year.forEach( key =>{
+      return d.year == key
+    })
+  })
 }
 
 function filterBorough(data, borough){

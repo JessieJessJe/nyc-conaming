@@ -56,19 +56,22 @@ const MyCheckbox = ()=>{
     console.log(reason,'s r')
     switch (reason){
       case "removeOption":
-      
-        setSelectedYear( selectedYear.filter(y => y.label !== value.lable))
-        console.log(selectedYear, 'state')
-        return selectedYear;
-      case "selectOption":
+        console.log(value,'value')
+        // setSelectedYear( selectedYear.filter(y => y.label !== value.lable))
         setSelectedYear( value )
         console.log(selectedYear, 'state')
         return selectedYear;
+
+      case "selectOption":
+        console.log(value,'value')
+        setSelectedYear( value )
+        console.log(selectedYear, 'state')
+        return selectedYear;
+
       default:
         break;
    
     }
-    console.log(selectedYear, 'state')
   
   }
 
@@ -120,8 +123,7 @@ const MyCheckbox = ()=>{
     value={selectedYear}
     onChange={ (event, value, reason)=>{
       handelYear(value, reason)
-      console.log(value, 'v')
-      console.log(reason, 'reason')
+
     }}
     getOptionSelected={(option, value) => option.label === value.label}
   />
