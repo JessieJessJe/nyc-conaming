@@ -9,15 +9,18 @@ import ScrollToTop from './utils/ScrollToTop';
 
 import AnimatedRoutes from './components/AnimatedRoutes'
 
+import { FilterProvider } from './utils/filterContext';
+
 ReactDOM.render(
   <React.StrictMode>
+    
       <BrowserRouter>
-      {/* <ScrollToTop /> */}
+      <FilterProvider>
 
       <AnimatedRoutes />
-
+      </FilterProvider>
       </BrowserRouter>
-
+    
   </React.StrictMode>,
   document.getElementById('root')
 );
