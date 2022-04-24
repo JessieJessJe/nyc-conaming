@@ -79,9 +79,23 @@ export function filterSearch(data, term){
     })
 }
       
+function filterTheme(data, term){
+//term are the words to filter OUT
+
+    return data.filter(d => {
+
+        let result = true;
+
+        term.forEach( f =>{
+            if (f !== "" && d.reason.includes(f)) result = false;  
+        })
+        return result;
+    })
+}
+
 export function filterData(data, filter){
-      
-        let data_filtered_year = filterYear(data, filter["year"])
+        let data_theme = filterTheme( data, filter["theme"])
+        let data_filtered_year = filterYear(data_theme, filter["year"])
         let data_filtered_borough = filterBorough(data_filtered_year, filter["borough"])
         
         if (filter["search"] === null){
@@ -97,7 +111,7 @@ export const initFilter = {
         "year":["all"],
         "borough":["all"],
         "angle":["map"],
-        "theme":["all"],
+        "theme":[""],
         "search":null,
         "reset": false,
     }

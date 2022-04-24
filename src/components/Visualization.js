@@ -41,18 +41,51 @@ function Visualization(){
     const [filter, setFilter] = useState(initFilter);
 
     const updateFilter = (category, value)=>{
+        let updateSearch = {};
 
-        if(category ==="init"){
-            setFilter(initFilter);
-        }else{
+        switch(category){
+            case "init":
+                setFilter(initFilter);
+                break;
+            case "theme_false":
+                //if not exist, insert
+                if (!filter["theme"].includes(value)){
+                    
+                    setFilter((prev)=>{
+                        return {...prev, 
+                            "theme": [...prev["theme"], value]}
+                    })
 
-            let updateValue = {};
-            updateValue[category] = value;
-    
-            setFilter((prev)=>{
-                return {...prev, ...updateValue}
-            })
+                    console.log(filter, 'update filter')
+                }
+
+                return;
+
+            case "theme_true":
+      
+                    // updateSearch["theme"] = filter["theme"].filter(f => f !== value)
+
+                    setFilter((prev)=>{
+                        return{...prev, 
+                            "theme": prev["theme"].filter(f => f !== value)}
+                    })
+                
+                return;
+
+
+            default:
+                let updateValue = {};
+                updateValue[category] = value;
+        
+                setFilter((prev)=>{
+                    return {...prev, ...updateValue}
+                })
+                return;
         }
+        
+
+
+
 
     }
 
