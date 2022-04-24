@@ -8,6 +8,7 @@ import * as THREE from 'three'
 
 import { createBillboardMaterial } from '../utils/createBillboardMaterial'
 import { normLat, normLong, normZ, groupColor } from "../utils/helper"
+import { filterData } from '../utils/helper';
 
 import data from "../data/mydata.json"
 
@@ -121,8 +122,9 @@ function Texts({filter}){
 
     return (
         <React.Fragment>
+          
           {textlist}
-          {/* {linelist} */}
+         
         </React.Fragment>
       )
     
@@ -130,32 +132,3 @@ function Texts({filter}){
 export default Texts;
 
 
-function filterYear(data, year){
-
-  return year.includes("all") ? data : 
-
-    data.filter( d =>{
-      return year.includes(d.year)
-    })
-
-}
-
-function filterBorough(data, borough){
-  // return borough === "all" ? data : data.filter(d => d.borough == borough);
-
-  return borough.includes("all") ? data : 
-
-  data.filter( d =>{
-    return borough.includes(d.borough)
-  })
-
-}
-
-function filterData(data, filter){
-
-  let data_filtered_year = filterYear(data, filter["year"])
-  let data_filtered_borough = filterBorough(data_filtered_year, filter["borough"])
-  let data_filtered = data_filtered_borough
-
-  return data_filtered;
-}

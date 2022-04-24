@@ -17,11 +17,12 @@ const toggleSidebar = () =>{
                 {
                     expanded 
                     ? <SidebarIsOpen toggleSidebar={toggleSidebar} 
+                    
                     filter={filter}
                     updateFilter={updateFilter}
 
                    
-                        toggleCamera = {toggleCamera}
+                    toggleCamera = {toggleCamera}
              
                     />
                     : <SidebarIsClose toggleSidebar={toggleSidebar} />
@@ -34,14 +35,15 @@ const toggleSidebar = () =>{
 
 }
 
-function SidebarIsOpen({filter, updateFilter, toggleSidebar, toggleCamera, }){
+function SidebarIsOpen({filter,updateFilter, toggleSidebar, toggleCamera, }){
     return(
     <React.Fragment>
         <button className='sidebar-btn sidebar--expanded' onClick={toggleSidebar}>Close</button> 
 
         <Filter 
-                filter={filter}
-                updateFilter={updateFilter}
+        
+        filter={filter}
+        updateFilter={updateFilter}
  
         toggleCamera = {toggleCamera}
       

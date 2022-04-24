@@ -10,7 +10,7 @@ import NYCMap from "./NYCMap"
 import TextsLazy from './TextsLazy';
 
 
-function MyThreeScene({filter, updateFilter, year, handleYear, camera, toggleCamera, borough, handleBorough }){
+function MyThreeScene({filter, camera}){
 
     const OrthographicCamera_ratio = 8
 

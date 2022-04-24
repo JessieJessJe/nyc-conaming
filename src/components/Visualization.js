@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext, useRef, lazy, Suspense } from 'react';
+import React, { useState, useEffect, useContext, useRef, lazy, Suspense, useMemo } from 'react';
 
 import { Canvas, useFrame, extend, useThree } from '@react-three/fiber'
 import {OrbitControls, Sky , Text, OrthographicCamera, PerspectiveCamera } from "@react-three/drei";
@@ -12,6 +12,7 @@ import Sidebar from './Sidebar';
 import MyThreeScene from './MyThreeScene';
 import { Preview } from '@mui/icons-material';
 
+import {initFilter, getPureFilter} from '../utils/helper'
 
 function Visualization(){
 
@@ -31,39 +32,31 @@ function Visualization(){
     }, [scrollPosition])
 
 //filter states
-    const [year, setYear] = React.useState('all');
-    const handleYear = (event) => {
-        setYear(event.target.value);
-      };
-
-    const [borough, setBorough] = React.useState('all');
-    const handleBorough = (event) => {
-        setBorough(event.target.value);
-    };   
 
     const [camera, setCamera ] = useState(true);
     const toggleCamera = ()=>{
         setCamera(!camera)
     }
 
-    const initFilter = {
-        "year":["all"],
-        "borough":["all"],
-        "angle":["map"],
-        "theme":["all"]
-    }
-
     const [filter, setFilter] = useState(initFilter);
 
     const updateFilter = (category, value)=>{
 
-        let updateValue = {};
-        updateValue[category] = value;
+        if(category ==="init"){
+            setFilter(initFilter);
+        }else{
 
-        setFilter((prev)=>{
-            return {...prev, ...updateValue}
-        })
+            let updateValue = {};
+            updateValue[category] = value;
+    
+            setFilter((prev)=>{
+                return {...prev, ...updateValue}
+            })
+        }
+
     }
+
+    const filterMemo = useMemo(()=> (filter), [getPureFilter(filter)])
 
     return(
         <React.Fragment>
@@ -79,20 +72,16 @@ function Visualization(){
         id='three-wrapper' ref={ref}>
 
         <MyThreeScene    
-        filter={filter}
-        updateFilter={updateFilter}
+        filter={filterMemo}
 
-        year = {year}
-        handleYear = {handleYear}
         camera = {camera}
-        toggleCamera = {toggleCamera}
-        borough = {borough}
-        handleBorough = {handleBorough}
+      
         />
 
         <Sidebar
-                filter={filter}
-                updateFilter={updateFilter}
+
+        filter={filter}
+        updateFilter={updateFilter}
 
     
         toggleCamera = {toggleCamera}

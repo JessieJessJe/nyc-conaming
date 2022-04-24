@@ -1,10 +1,13 @@
-import React, {useEffect, useReducer, useState} from 'react';
+import React, {useEffect, useReducer, useState, useMemo} from 'react';
 
 import Checkbox from '@mui/material/Checkbox';
 import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
 import CheckBoxOutlineBlankIcon from '@mui/icons-material/CheckBoxOutlineBlank';
 import CheckBoxIcon from '@mui/icons-material/CheckBox';
+
+import { filterData, getPureFilter } from '../utils/helper';
+import data from "../data/mydata.json"
 
 const termlist = [['detective','nypd','9/11','police','recovery','september 11, 2001'],
                     ['woman','polish','association','she'],                 
@@ -15,6 +18,17 @@ const termlist = [['detective','nypd','9/11','police','recovery','september 11, 
                     ['gun','marine','9/11', 'combat','violence','police','september 11, 2001'],
                     ['district','attorney','health',' hiv ',' human rights','hiv/aids'],
                     ['school',' art ','civic','children','museum','award']]
+
+const options_theme = [{ label: 'all', value: 'all' },
+                        {label: '1', value:['detective','nypd','9/11','police','recovery','september 11, 2001']},
+                        {label: '1', value:['woman','polish','association','she']},                 
+                        {label: '1', value:['staten island','business','career','board','jazz','council','league']},
+                        {label: '1', value:['baptist','pastor','church', 'america','rabbi']},
+                        {label: '1', value:['911 heroes']},
+                        {label: '1', value:['september 11, 2001', 'fdny','firefighter']},
+                        {label: '1', value:['gun','marine','9/11', 'combat','violence','police','september 11, 2001']},
+                        {label: '1', value:['district','attorney','health',' hiv ',' human rights','hiv/aids']},
+                        {label: '1', value:['school',' art ','civic','children','museum','award']}]
 
 const options_year = [ { label: 'all', value: 'all' },
                       { label: '2002', value: "2002" },
@@ -33,40 +47,47 @@ const options_borough= [
          
                 ];
 
-const Dropdown = ({ label, value, options, onChange }) => {
-    return (
-      <label>
-        {label}
-        <select value={value} onChange={onChange}>
-          {options.map((option) => (
-            <option key={option.value} value={option.value}>{option.label}</option>
-          ))}
-        </select>
-      </label>
-    );
-  };
-
-const MyCheckbox = ({filter, updateFilter, category, options})=>{
+const MyCheckbox = ({ filter, updateFilter, category, options})=>{
   const icon = <CheckBoxOutlineBlankIcon fontSize="small" />;
   const checkedIcon = <CheckBoxIcon fontSize="small" />;  
+  const filterMemo = useMemo(()=> (filter), [getPureFilter(filter)])
 
+  const [selected, setSelected] = useState( [options[0]] );
 
-  const [selected, setSelected] = useState( [options[0]]);
+  //TO DO: all vs others checkboxes 
+  const handleSelected = (value) =>{
+    
+    // if (value[value.length-1].label === "all"){
+    //   setSelected( [options[0] ])
+    // }else{
+    //   setSelected(value.filter(v => v.lable !== "all"))
+    // }
 
+    setSelected(value)
+  }
 
   useEffect(()=>{
-
-    updateFilter(category, selected.map(d => d.value))
-    console.log(filter, 'update global filter')
-
+  
+      updateFilter(category, selected.map(d => d.value))
+    
   }, [selected])
+
+  //handle filter reset
+  useEffect(()=>{
+
+    if (filter["reset"]){
+      setSelected([options[0]])
+    }
+
+  }, [filterMemo])
 
   
   return(
     <Autocomplete
     multiple
     id="checkboxes-tags-demo"
-    options={options}
+    options={options} 
+    disableClearable
     disableCloseOnSelect
     getOptionLabel={(option) => option.label}
     renderOption={(props, option, { selected }) => (
@@ -87,7 +108,7 @@ const MyCheckbox = ({filter, updateFilter, category, options})=>{
   
     value={selected}
     onChange={ (event, value)=>{
-      setSelected(value)
+      handleSelected( value)
 
     }}
     
@@ -95,35 +116,78 @@ const MyCheckbox = ({filter, updateFilter, category, options})=>{
   )
 }
 
+
+const SearchField = ({filter, updateFilter})=>{
+  const filterMemo = useMemo(()=> (filter), [getPureFilter(filter)])
+
+  let data_filtered = filterData(data, filter)
+  const [search, setSearch] = useState("");
+
+  useEffect(()=>{
+
+    if(!filter["reset"]){
+      updateFilter("search", search)
+    }
+
+  }, [search])
+
+  //handle filter reset
+  useEffect(()=>{
+
+    if (filter["reset"]){
+      setSearch("")
+      updateFilter("reset", false)
+    }
+
+
+  }, [filterMemo])
+
+  return(  
+  <Autocomplete
+    freeSolo
+    id="free-solo-2-demo"
+    options={data_filtered.map((d) => d.coname).concat(data_filtered.map((d) => d.location))}
+    renderInput={(params) => (
+      <TextField
+        {...params}
+        label="Search locations"
+        InputProps={{
+          ...params.InputProps,
+          type: 'search',
+        }}
+      />
+    )}
+    value={search}
+    onChange= {(event, value, reason)=>{
+
+      if (value === null){
+        setSearch("")
+      }else{
+        setSearch(value);
+      }
+    }}
+  />
+  
+  )
+
+}
+
+
 function Filter({filter, updateFilter, toggleCamera}){
 
+  const resetFilter = ()=>{
+    updateFilter("init")
+    updateFilter("reset", true)
+  }
 
     return(
 
         <div id='three-filter-wrapper'> 
 
             <button id='three-cam-btn' onClick={toggleCamera}>Select Camera</button>
-            {/* <div>
-                    <Dropdown
-                    key="dropdown_year"
-                    label="Select Year"
-                    options={options_year}
-                    value={year}
-                    onChange={handleYear}
-                    />
-            </div>
 
-            <div>
-                    <Dropdown
-                    key="dropdown_borough"
-                    label="Select Borough"
-                    options={options_borough}
-                    value={borough}
-                    onChange={handleBorough}
-                    />
-            </div> */}
-
-            <MyCheckbox         
+            <MyCheckbox 
+      
             filter={filter}
             updateFilter={updateFilter}
             category="year"
@@ -137,6 +201,12 @@ function Filter({filter, updateFilter, toggleCamera}){
             options= {options_borough}
             />    
 
+            <SearchField 
+             filter={filter}
+             updateFilter={updateFilter}
+            />
+
+        <button id='three-reset-btn' onClick={resetFilter}>Reset</button>  
         </div>
     )
 }

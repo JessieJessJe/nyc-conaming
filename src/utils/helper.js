@@ -50,3 +50,64 @@ export function normZ(year){
     //     "6":"0x3440eb",
     //     "7":"0x34ebeb",
     //     "8":"0xe67a00"};
+
+
+export function filterYear(data, year){
+
+        return year.includes("all") ? data : 
+      
+          data.filter( d =>{
+            return year.includes(d.year)
+          })
+      
+      }
+      
+export function filterBorough(data, borough){
+        // return borough === "all" ? data : data.filter(d => d.borough == borough);
+      
+        return borough.includes("all") ? data : 
+      
+        data.filter( d =>{
+          return borough.includes(d.borough)
+        })
+      
+      }
+
+export function filterSearch(data, term){
+    return data.filter( d=>{
+        return d.coname.includes(term) || d.location.includes(term)
+    })
+}
+      
+export function filterData(data, filter){
+      
+        let data_filtered_year = filterYear(data, filter["year"])
+        let data_filtered_borough = filterBorough(data_filtered_year, filter["borough"])
+        
+        if (filter["search"] === null){
+            return data_filtered_borough;
+        }else{
+            return filterSearch(data_filtered_borough, filter["search"]);
+
+        }
+
+      }
+
+export const initFilter = {
+        "year":["all"],
+        "borough":["all"],
+        "angle":["map"],
+        "theme":["all"],
+        "search":null,
+        "reset": false,
+    }
+
+export function getPureFilter(filter){
+   return Object.keys(filter)
+          .filter( k => k !== "reset")
+          .reduce((obj, key) =>{
+              return Object.assign(obj, {
+                  [key]: filter[key]
+              })
+          }, {})
+}
