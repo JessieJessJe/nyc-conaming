@@ -30,6 +30,9 @@ export  const groupColor ={
         "7":0x34ebeb,
         "8":0xe67a00};
 
+export function getGroupColor(){
+  return Object.values(groupColor).map( hex => '#' + hex.toString(16) )
+}
 
 
 export function normZ(year){

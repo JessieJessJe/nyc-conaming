@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from 'react';
+import BarChart from './BarChart';
 import Filter from "./Filter"
+
+
 
 function Sidebar({filter, updateFilter, toggleCamera}){
 
@@ -25,7 +28,9 @@ const toggleSidebar = () =>{
                     toggleCamera = {toggleCamera}
              
                     />
-                    : <SidebarIsClose toggleSidebar={toggleSidebar} />
+                    : <SidebarIsClose 
+                    filter={filter}
+                    toggleSidebar={toggleSidebar} />
                 }
            
 
@@ -52,9 +57,12 @@ function SidebarIsOpen({filter,updateFilter, toggleSidebar, toggleCamera, }){
     )
 }
 
-function SidebarIsClose({toggleSidebar}){
+function SidebarIsClose({filter, toggleSidebar}){
     return(
+        <React.Fragment>
         <button className='sidebar-btn' onClick={toggleSidebar}>Open</button> 
+        <BarChart filter={filter} />
+        </React.Fragment>
     )
 }
 
