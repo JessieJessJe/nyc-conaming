@@ -3,7 +3,7 @@ import React, { useState, useEffect, useContext, useRef, lazy, Suspense } from '
 import { Canvas, useFrame, extend, useThree } from '@react-three/fiber'
 import {OrbitControls, Sky , Text, OrthographicCamera, PerspectiveCamera } from "@react-three/drei";
 
-import { motion } from 'framer-motion';
+// import { motion } from 'framer-motion';
 
 // import Nodes from "./Nodes"
 import NYCMap from "./NYCMap"
@@ -18,7 +18,7 @@ function MyThreeScene({filter, camera}){
 
         <React.Fragment>
 
-            <Canvas width="100%" height="100%">
+            <Canvas width="100%" height="100%"  resolution={512}>
 
             <Suspense fallback={null}>
 
@@ -28,11 +28,13 @@ function MyThreeScene({filter, camera}){
                 right={window.innerWidth / OrthographicCamera_ratio}
                 top={window.innerHeight / OrthographicCamera_ratio}
                 bottom={-window.innerHeight / OrthographicCamera_ratio}
-                near={-10} far={1000} position={[100, 0, 500]} 
+                near={-10} far={1000} position={[0, 0, 100]} 
                 zoom={2}/>
 
             <ambientLight />
-            <pointLight position={[10, 10, 10]} />
+            <pointLight 
+            position={[10, 10, 10]} 
+            intensity={20} />
 
             <OrbitControls />
 
@@ -42,7 +44,7 @@ function MyThreeScene({filter, camera}){
 
             <NYCMap />
 
-            {/* <Sky /> */}
+            <Sky />
 
             </ Suspense>
             </ Canvas>
