@@ -101,6 +101,7 @@ function Visualization(){
                       animate={{ opacity: 1 }}
                       exit={{ opacity: 0 }}
                       transition={{ duration: 0.5 }}
+                      layout
         
         id='three-wrapper' ref={ref}>
 
