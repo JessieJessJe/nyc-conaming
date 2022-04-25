@@ -143,7 +143,7 @@ function Filter({filter, updateFilter, toggleCamera}){
 
     return(
 
-        <div id='three-filter-wrapper'> 
+        <React.Fragment> 
 
             <button id='three-cam-btn' onClick={toggleCamera}>Select Camera</button>
 
@@ -176,7 +176,7 @@ function Filter({filter, updateFilter, toggleCamera}){
             />
 
         <button id='three-reset-btn' onClick={resetFilter}>Reset</button>  
-        </div>
+        </React.Fragment>
     )
 }
 

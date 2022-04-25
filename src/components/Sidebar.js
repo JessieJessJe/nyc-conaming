@@ -15,9 +15,28 @@ const toggleSidebar = () =>{
     return(
 
         <div className={expanded ? "sidebar sidebar--expanded" : "sidebar"} >
+
+            <div className='barchart-wrapper'>
+            <button className='sidebar-btn' onClick={toggleSidebar}>Close</button> 
+           <BarChart filter={filter} />
+            </div> 
+
+            <div className={expanded ? "filter-wrapper filter-wrapper--expanded" : "filter-wrapper"}> 
+                
             
 
-                {
+                <div className={expanded ? "filter-content-wrapper filter-content-wrapper--expanded" : "filter-content-wrapper"}> 
+                    <Filter 
+                    
+                    filter={filter}
+                    updateFilter={updateFilter}
+                    toggleCamera = {toggleCamera}
+                
+                    />
+                </div>
+            </div>
+
+                {/* {
                     expanded 
                     ? <SidebarIsOpen toggleSidebar={toggleSidebar} 
                     
@@ -31,7 +50,7 @@ const toggleSidebar = () =>{
                     : <SidebarIsClose 
                     filter={filter}
                     toggleSidebar={toggleSidebar} />
-                }
+                } */}
            
 
         </div>
@@ -61,7 +80,7 @@ function SidebarIsClose({filter, toggleSidebar}){
     return(
         <React.Fragment>
         <button className='sidebar-btn' onClick={toggleSidebar}>Open</button> 
-        <BarChart filter={filter} />
+      
         </React.Fragment>
     )
 }

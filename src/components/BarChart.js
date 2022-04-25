@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 
 import * as d3 from "d3"
-import { filterData, getGroupColor} from '../utils/helper';
+import { filterData, getGroupColor, convertRemToPixels} from '../utils/helper';
 
 import mydata from "../data/mydata.json"
 
@@ -10,29 +10,27 @@ import mydata from "../data/mydata.json"
 
 function BarChart({filter}){
     const ref=useRef();
+    const margin = {top: 100, right: convertRemToPixels(2), bottom: 10, left: convertRemToPixels(0.7)}
 
-    const margin = {top: 100, right: 30, bottom: 10, left: 30}
-    const width = window.innerWidth * 0.1 - margin.left - margin.right;
+    const width = window.innerWidth * 0.05 - margin.left - margin.right;
     const height = window.innerHeight * 0.9 - margin.top - margin.bottom;
-    const w = window.innerWidth * 0.04;
     const data_len = mydata.length;
-  
+
+    //subgroups
+    const subgroups = [0,1,2,3,4,5,6,7,8, -1]
+
+    //color palette
+    const color = d3.scaleOrdinal()
+    .domain(subgroups)
+    .range(getGroupColor())
+
     useEffect(()=>{
         const svg = d3.select(ref.current)
         svg.attr("width", width + margin.left + margin.right)
         .attr("height", height + margin.top + margin.bottom)
+        .attr("transform",
+        "translate(" + margin.left + "," + margin.top + ")")
                 
-
-        //subgroups
-        const subgroups = [0,1,2,3,4,5,6,7,8, -1]
-
-        //color palette
-        const color = d3.scaleOrdinal()
-        .domain(subgroups)
-        .range(getGroupColor())
-
-        console.log(getGroupColor())
-
         ///get data
         
         const data = dataPrep(filterData(mydata, filter), subgroups)
@@ -43,31 +41,49 @@ function BarChart({filter}){
         .range([0, height]);
 
         const stacked = d3.stack().keys(subgroups)(data)
-        console.log(stacked, 'stacked')
+        console.log(stacked, 'stackeds')
 
-        svg.append("g")
-        .call(d3.axisLeft(y));
+        // const stacked_clean = stacked.filter( s => s[0][1] - s[0][0] > 0)
+        // console.log(stacked_clean)
 
         //data input
-        svg.append("g")
-            .attr("transform",
-              "translate(" + margin.left + "," + margin.top + ")")
-
- 
-            .selectAll("rect")
-
+        svg.selectAll("rect")
             .data(stacked)
-            .join("rect")
-            .attr("fill", function(d) { 
-                console.log(d.key, 'key', color(d.key),'color')
-                return color(d.key); })
-            .attr("x", width/2+margin.left - w)
-            .attr("y", d => y(d[0][0]))
-            .attr("height", d => { 
-                console.log(d.key, 'key', y(d[0][1]) - y(d[0][0]),'height')
+            .join(
+                enter => enter                 
+                    .append("rect")
+                    .attr("fill", d => {
+                        console.log(color(d.key), 'color', d.key )
+                        return color(d.key)} )            
+                    .call(
+                    enter => enter.transition().duration(200)
+                    .attr("x", 0)
+                    .attr("y", d => y(d[0][0]))
+                    .attr("height", d => y(d[0][1]) - y(d[0][0]) )
+                    .attr("width", width)
+                ),
 
-                return y(d[0][1]) - y(d[0][0])} )
-            .attr("width", `${w}px`)
+                update => update
+                    .attr("fill", d => color(d.key) )   
+                    .call(
+                    update => update.transition().duration(200)
+                    .attr("x", 0)
+                    .attr("y", d => y(d[0][0]))
+                    .attr("height", d => y(d[0][1]) - y(d[0][0]) )
+                    .attr("width", width)
+                ),
+                        
+                exit => exit.call(
+                    exit => exit.transition().duration(200)
+                    .attr("x", 0)
+                    .attr("y", height)
+                    .attr("height", 0 )
+                    .attr("width", width )
+                    .remove()
+                ),   
+
+            )
+ 
 
     }, [filter])
 

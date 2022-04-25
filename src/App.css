@@ -40,17 +40,7 @@ body{
  
 }
 
-#three-filter-wrapper{
- font-family: Raw;
-}
 
-#three-filter-wrapper > div{
-  margin: 1rem
- }
-
- #three-filter-wrapper > button{
-  margin: 1rem
- }
 
 .sectionTitle{
 
@@ -354,11 +344,6 @@ background-color: black;
 
 }
 
-#three-filter-wrapper{
-  position: absolute;
-  z-index: 100;
-  top:10%;
-}
 
 canvas{
 
@@ -369,12 +354,18 @@ canvas{
 
 
 .sidebar{
+  box-sizing: border-box;
   position:absolute;
   height: 100%;
   top: 0;
   left: 0;
-  width: 10vw;
-  border: #226600 1px solid;
+  width: 5vw;
+  border: black 2px solid;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: stretch;
 }
 
 .sidebar--expanded{
@@ -383,9 +374,40 @@ canvas{
 
 .sidebar-btn{
   
-  position:absolute;
+  position:relative;
   top: 10vh;
-  width: 10vw;
+  width: 2vw;
   right:0
 
 }
+
+
+.filter-wrapper--expanded{
+  width: 45vw;
+}
+
+.filter-content-wrapper{
+  opacity: 0;
+  z-index: -100;
+  position: absolute;
+  top:10%;
+  width: 5vw;
+}
+
+.filter-content-wrapper--expanded{
+  opacity: 1;
+  z-index: 10;
+  width: 40vw;
+}
+
+.filter-content-wrapper{
+  font-family: Raw;
+ }
+ 
+.filter-content-wrapper > div{
+   margin: 1rem
+  }
+ 
+.filter-content-wrapper > button{
+   margin: 1rem
+  }

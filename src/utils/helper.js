@@ -18,19 +18,23 @@ export function normLong(long){
     return norm
     }
 
-export  const groupColor ={
-        "-1":0xcccccc,
-        "0":0x3440eb,
-        "1":0x9ca2ff,
-        "2":0xfc53bc,
-        "3":0xb20061,
-        "4":0x3440eb,
-        "5":0xffcf0a, 
-        "6":0x3440eb,
-        "7":0x34ebeb,
-        "8":0xe67a00};
+
+export const groupColor ={
+    "-1":0xcccccc,
+    "0":0x8029a6,
+    "1":0x9ca2ff,
+    "2":0xfc53bc,
+    "3":0xb20061,
+    "4":0x3440eb,
+    "5":0xffcf0a, 
+    "6":0x2deb36,
+    "7":0x34ebeb,
+    "8":0xe67a00};
 
 export function getGroupColor(){
+    console.log(
+        Object.values(groupColor).map( hex => '#' + hex.toString(16) ), 'color function'
+    )
   return Object.values(groupColor).map( hex => '#' + hex.toString(16) )
 }
 
@@ -40,19 +44,6 @@ export function normZ(year){
     var norm = (year - 2000 + 3)* 1.5
     return norm
     }
-
-
-    // export  const groupColor ={
-    //     "-1":"0xcccccc",
-    //     "0":"0x3440eb",
-    //     "1":"0x9ca2ff",
-    //     "2":"0xfc53bc",
-    //     "3":"0xb20061",
-    //     "4":"0x3440eb",
-    //     "5":"0xffcf0a", 
-    //     "6":"0x3440eb",
-    //     "7":"0x34ebeb",
-    //     "8":"0xe67a00"};
 
 
 export function filterYear(data, year){
@@ -127,4 +118,8 @@ export function getPureFilter(filter){
                   [key]: filter[key]
               })
           }, {})
+}
+
+export function convertRemToPixels(rem) {    
+    return rem * parseFloat(getComputedStyle(document.documentElement).fontSize);
 }
