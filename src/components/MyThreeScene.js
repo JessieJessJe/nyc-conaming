@@ -38,9 +38,9 @@ function MyThreeScene({filter, camera}){
 
             <OrbitControls />
 
-            <TextsLazy 
+            {/* <TextsLazy 
                     filter={filter}
-            />
+            /> */}
 
             <NYCMap />
 
