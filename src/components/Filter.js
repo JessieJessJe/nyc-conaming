@@ -23,15 +23,6 @@ import OutlinedInput from '@mui/material/OutlinedInput';
 import { filterData, getPureFilter } from '../utils/helper';
 import data from "../data/mydata.json"
 
-const termlist = [['detective','nypd','9/11','police','recovery','september 11, 2001'],
-                    ['woman','polish','association','she'],                 
-                    ['staten island','business','career','board','jazz','council','league'],
-                    ['baptist','pastor','church', 'america','rabbi'],
-                    ['911 heroes'],
-                    ['september 11, 2001', 'fdny','firefighter'],
-                    ['gun','marine','9/11', 'combat','violence','police','september 11, 2001'],
-                    ['district','attorney','health',' hiv ',' human rights','hiv/aids'],
-                    ['school',' art ','civic','children','museum','award']]
 
 const options_theme = [{ label: 'all', value: [''] },
                         {label: '0', value:['detective','nypd','9/11','police','recovery','september 11, 2001']},

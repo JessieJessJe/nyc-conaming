@@ -33,6 +33,7 @@ const toggleSidebar = () =>{
                     toggleCamera = {toggleCamera}
                 
                     />
+                      <button className='sidebar-filter-btn' onClick={toggleSidebar}>Close</button> 
                 </div>
             </div>
 

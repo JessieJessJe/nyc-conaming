@@ -18,6 +18,15 @@ export function normLong(long){
     return norm
     }
 
+export  const termlist = [['detective','nypd','9/11','police','recovery','september 11, 2001'],
+    ['woman','polish','association','she'],                 
+    ['staten island','business','career','board','jazz','council','league'],
+    ['baptist','pastor','church', 'america','rabbi'],
+    ['911 heroes'],
+    ['september 11, 2001', 'fdny','firefighter'],
+    ['gun','marine','9/11', 'combat','violence','police','september 11, 2001'],
+    ['district','attorney','health',' hiv ',' human rights','hiv/aids'],
+    ['school',' art ','civic','children','museum','award']]
 
 export const groupColor ={
     "-1":0xcccccc,

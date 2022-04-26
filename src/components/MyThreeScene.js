@@ -95,6 +95,7 @@ function Group({filter}) {
         if (filter["angle"] === "map"){
             setMap(true)
             setTimeline(false)
+            setWordcloud(false)
             camera.position.set(0,0,500)
             mesh.current.rotation.y = 0
             mesh.current.rotation.x = 0
@@ -103,10 +104,15 @@ function Group({filter}) {
         }else if (filter["angle"] === "timeline"){
             setTimeline(true)
             setMap(false)
+            setWordcloud(false)
             camera.position.set(0,0,500)
             mesh.current.rotation.x = 0
             mesh.current.rotation.z = 0
             mesh.current.rotation.y = Math.PI/2;
+        }else{
+            setMap(false)
+            setTimeline(false)
+            setWordcloud(true)
         }
 
     }, [filter["angle"]])
@@ -117,14 +123,18 @@ function Group({filter}) {
 
             <OrbitControls
          
-            enableRotate={map? true : false}
+            // enableRotate={map? true : false}
                   
             enableDamping={true}
-            
+           
+
+            maxAzimuthAngle={timeline? 0 : 2 * Math.PI}
+            minAzimuthAngle={timeline? 0 : -1 * Math.PI}
             
             />
             <TextsLazy 
                 filter={filter}
+                wordcloud={wordcloud}
             />
 
             <NYCMap />

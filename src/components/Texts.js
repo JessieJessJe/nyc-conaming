@@ -8,7 +8,7 @@ import * as THREE from 'three'
 
 import { createBillboardMaterial } from '../utils/createBillboardMaterial'
 import { normLat, normLong, normZ, groupColor } from "../utils/helper"
-import { filterData } from '../utils/helper';
+import { filterData, termlist } from '../utils/helper';
 
 import data from "../data/mydata.json"
 
@@ -97,7 +97,7 @@ function MyText({pX, pY, pZ, pColor, content, filter, i}){
   )
 }
 
-function Texts({filter}){
+function Texts({filter, wordcloud}){
    
     ///Processing Filtered Data
     let data_filtered = filterData(data, filter)
@@ -111,10 +111,15 @@ function Texts({filter}){
           let pX = - normLong(d.long),
               pY = normLat(d.lat),
               pZ = normZ(d.year),
-              pColor = groupColor[d.group];
+              pColor = groupColor[d.group],
+              content = wordcloud && d.group >-1 ? termlist[d.group][0] : d.coname
   
           textlist.push(             
-            <MyText pX={pX} pY={pY} pZ={pZ} key={`text-${i}`} pColor={pColor} content={d.coname} filter={filter} i={i} />
+            <MyText 
+              pX={pX} pY={pY} pZ={pZ} key={`text-${i}`} 
+              pColor={pColor} content={content} filter={filter} i={i} 
+  
+            />
             )
       })
 
