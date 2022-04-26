@@ -72,6 +72,14 @@ function Visualization(){
                 
                 return;
 
+            case "angle":
+                setFilter((prev)=>{ 
+                  return{
+                    ...prev,
+                    "angle": value.value,
+                }
+                  })
+                return; 
 
             default:
                 let updateValue = {};

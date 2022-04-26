@@ -169,9 +169,9 @@ function LandingPlate(){
             <div id='landing-page-content'>
                 <div className='sectionTitle' id='landing-page-subtitle'>
 
-                    Understanding the patterns of 
+                    Understanding the Patterns of 
                     <br/>
-                    NYC honorary street naming history      
+                    NYC Honorary Street Naming History      
                 </div>
 
     

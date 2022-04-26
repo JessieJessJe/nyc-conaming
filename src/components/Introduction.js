@@ -60,7 +60,7 @@ function Introduction(){
         >
 
             <div id='intro-content'>
-                    <div className='sectionTitle' id="intro-title">1.say something</div>
+                    <div className='sectionTitle' id="intro-title">Street matters, manifested</div>
 
                     <div className='text-norma text-center' id="intro-text">
 
@@ -83,7 +83,7 @@ function Introduction(){
                     
             <div id='intro-content-2'>
 
-            <div className='sectionTitle'>2.say something</div>
+            <div className='sectionTitle'>Street names, redefined</div>
 
             <div className='text-norma text-center' >
 

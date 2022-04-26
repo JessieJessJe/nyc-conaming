@@ -11,9 +11,8 @@ import NYCGeoJson from "../data/nyc.json"
 let key = 0;
 
 function AreaMap({shape}){
+     const ref = useRef()
     let linelist = [];
-
-    const ref = useRef(null)
 
     useEffect(()=>{
         shape[0].forEach((loc)=>{
@@ -32,7 +31,7 @@ function AreaMap({shape}){
     return (
 
  
-    <line key={key} rotation-y={Math.PI}>
+    <line key={key} rotation-y={Math.PI} >
     <bufferGeometry ref={ref}/>
     <lineBasicMaterial color="black"  lineWidth={1} />
     </line>

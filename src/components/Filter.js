@@ -150,7 +150,7 @@ function Filter({filter, updateFilter, toggleCamera}){
 
         <React.Fragment> 
 
-            <button id='three-cam-btn' onClick={toggleCamera}>Select Camera</button>
+            {/* <button id='three-cam-btn' onClick={toggleCamera}>Select Camera</button> */}
 
            {/* < IndeterminateCheckbox theme={options_theme[1]} /> */}
 
@@ -481,13 +481,17 @@ const AngleCheckbox = ({ filter, updateFilter, category, options})=>{
 
   //TO DO: all vs others checkboxes 
   const handleSelected = (value) =>{
+    if (value){
+      setSelected(value)
+    }else{
+      setSelected(options[0])
+    }
 
-    setSelected(value)
   }
 
   useEffect(()=>{
-    console.log(selected)
-      updateFilter(category, selected)
+    
+    updateFilter(category, selected)
     
   }, [selected])
 

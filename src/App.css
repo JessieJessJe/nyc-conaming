@@ -18,7 +18,10 @@
   src: url(./fonts/Raw-Bold.otf);
 }
 
-
+@font-face {
+  font-family: ITCGaramond;
+  src: url(./fonts/ITCGaramondStd-BkCond.otf);
+}
 
 
 #landing-page-content, .landing-plate-wrapper {
@@ -44,7 +47,7 @@ body{
 
 .sectionTitle{
 
-  font-family: toy; 
+  font-family: ITCGaramond; 
   margin-top: 2rem;
   font-size: 3rem;
 
@@ -187,7 +190,7 @@ https://css-tricks.com/things-watch-working-css-3d/ */
   width: 100vw;
   height: 100vh;
   position: absolute;
-  font-family: toy;
+  font-family: ITCGaramond;
   grid-row: 9;
   margin-top: 2rem;
   grid-column: 7;
