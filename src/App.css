@@ -360,12 +360,14 @@ canvas{
   top: 0;
   left: 0;
   width: 5vw;
-  border: black 2px solid;
+  border: black 1px solid;
 
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: stretch;
+
+  background-color: white;
 }
 
 .sidebar--expanded{
@@ -375,29 +377,29 @@ canvas{
 .sidebar-btn{
   
   position:relative;
-  top: 10vh;
-  width: 2vw;
-  right:0
+  top: 10%;
+  margin-left: 0.7rem;
 
 }
 
 
 .filter-wrapper--expanded{
   width: 45vw;
+  background-color: white;
 }
 
 .filter-content-wrapper{
+  top: 10vh;
   opacity: 0;
   z-index: -100;
   position: absolute;
-  top:10%;
-  width: 5vw;
+  width: 0vw;
 }
 
 .filter-content-wrapper--expanded{
   opacity: 1;
   z-index: 10;
-  width: 40vw;
+  width: 35vw;
 }
 
 .filter-content-wrapper{

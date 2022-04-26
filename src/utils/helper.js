@@ -107,6 +107,7 @@ export const initFilter = {
         "angle":["map"],
         "theme":[""],
         "search":null,
+        "angle":"map",
         "reset": false,
     }
 

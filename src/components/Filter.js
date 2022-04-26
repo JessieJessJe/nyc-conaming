@@ -62,6 +62,11 @@ const options_borough= [
          
                 ];
 
+const options_angle=[
+                  { label: 'map', value: 'map' },
+                  { label: 'timeline', value: "timeline" },
+                  { label: 'wordcloud', value: "wordcloud" },]
+
 const MyCheckbox = ({ filter, updateFilter, category, options})=>{
   const icon = <CheckBoxOutlineBlankIcon fontSize="small" />;
   const checkedIcon = <CheckBoxIcon fontSize="small" />;  
@@ -102,7 +107,7 @@ const MyCheckbox = ({ filter, updateFilter, category, options})=>{
     multiple
     id="checkboxes-tags-demo"
     options={options} 
-    disableClearable
+    // disableClearable
     disableCloseOnSelect
     // getOptionLabel={(option) => option.label}
     renderOption={(props, option, { selected }) => (
@@ -168,6 +173,13 @@ function Filter({filter, updateFilter, toggleCamera}){
             updateFilter={updateFilter}
             category="borough"
             options= {options_borough}
+            />  
+
+            <AngleCheckbox         
+            filter={filter}
+            updateFilter={updateFilter}
+            category="angle"
+            options= {options_angle}
             />    
 
             <SearchField 
@@ -458,3 +470,67 @@ const MenuProps = {
   },
   variant: "menu"
 };
+
+
+const AngleCheckbox = ({ filter, updateFilter, category, options})=>{
+  const icon = <CheckBoxOutlineBlankIcon fontSize="small" />;
+  const checkedIcon = <CheckBoxIcon fontSize="small" />;  
+  const filterMemo = useMemo(()=> (filter), [getPureFilter(filter)])
+
+  const [selected, setSelected] = useState( options[0] );
+
+  //TO DO: all vs others checkboxes 
+  const handleSelected = (value) =>{
+
+    setSelected(value)
+  }
+
+  useEffect(()=>{
+    console.log(selected)
+      updateFilter(category, selected)
+    
+  }, [selected])
+
+  //handle filter reset
+  useEffect(()=>{
+
+    if (filter["reset"]){
+      setSelected(options[0])
+    }
+
+  }, [filterMemo])
+
+  
+  return(
+    <Autocomplete
+    // multiple
+    id="checkboxes-tags-demo"
+    options={options} 
+    // disableClearable
+    disableCloseOnSelect
+    // getOptionLabel={(option) => option.label}
+    renderOption={(props, option, { selected }) => (
+      <li {...props}>
+        <Checkbox
+          icon={icon}
+          checkedIcon={checkedIcon}
+          style={{ marginRight: 8 }}
+          checked={selected}
+        />
+        {option.label}
+      </li>
+    )}
+    style={{ width: 500 }}
+    renderInput={(params) => (
+      <TextField {...params} label={`Select ${category}`} placeholder= {category} />
+    )}
+  
+    value={selected}
+    onChange={ (event, value)=>{
+      handleSelected( value)
+
+    }}
+    
+  />
+  )
+}

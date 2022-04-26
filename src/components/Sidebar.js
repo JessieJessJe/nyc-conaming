@@ -17,7 +17,7 @@ const toggleSidebar = () =>{
         <div className={expanded ? "sidebar sidebar--expanded" : "sidebar"} >
 
             <div className='barchart-wrapper'>
-            <button className='sidebar-btn' onClick={toggleSidebar}>Close</button> 
+            <button className='sidebar-btn' onClick={toggleSidebar}>{expanded ? ">>>" : "<<<"} </button> 
            <BarChart filter={filter} />
             </div> 
 

@@ -3,8 +3,8 @@ import React, { useState, useEffect, useContext, useRef, lazy, Suspense } from '
 import { Canvas, useFrame, extend, useThree } from '@react-three/fiber'
 import {OrbitControls, Sky , OrthographicCamera } from "@react-three/drei";
 
-import { motion } from 'framer-motion';
-import { MotionCanvas, LayoutOrthographicCamera } from "framer-motion-3d"
+// import { motion } from 'framer-motion';
+// import { MotionCanvas, LayoutOrthographicCamera } from "framer-motion-3d"
 
 // import Nodes from "./Nodes"
 import NYCMap from "./NYCMap"
@@ -19,17 +19,17 @@ function MyThreeScene({filter, camera}){
 
         <React.Fragment>
 
-            <MotionCanvas width="100%" height="100%">
+            <Canvas width="100%" height="100%">
 
             <Suspense fallback={null}>
 
-            <LayoutOrthographicCamera
-                // makeDefault = {true}
-                // left={-window.innerWidth / OrthographicCamera_ratio}
-                // right={window.innerWidth / OrthographicCamera_ratio}
-                // top={window.innerHeight / OrthographicCamera_ratio}
-                // bottom={-window.innerHeight / OrthographicCamera_ratio}
-                // near={-10} far={1000} 
+            <OrthographicCamera
+                makeDefault = {true}
+                left={-window.innerWidth / OrthographicCamera_ratio}
+                right={window.innerWidth / OrthographicCamera_ratio}
+                top={window.innerHeight / OrthographicCamera_ratio}
+                bottom={-window.innerHeight / OrthographicCamera_ratio}
+                near={-10} far={1000} 
                 position={[100, 0, 500]} 
                 zoom={2}/>
 
@@ -47,7 +47,7 @@ function MyThreeScene({filter, camera}){
             {/* <Sky /> */}
 
             </ Suspense>
-            </MotionCanvas>
+            </Canvas>
 
         </React.Fragment>
     )
