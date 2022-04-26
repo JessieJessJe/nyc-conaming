@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 
 import reportWebVitals from './reportWebVitals';
-import { BrowserRouter} from "react-router-dom";
+import { BrowserRouter, HashRouter} from "react-router-dom";
 
 import ScrollToTop from './utils/ScrollToTop';
 
@@ -14,12 +14,12 @@ import { FilterProvider } from './utils/filterContext';
 ReactDOM.render(
   <React.StrictMode>
     
-      <BrowserRouter>
+      <HashRouter>
       <FilterProvider>
 
       <AnimatedRoutes />
       </FilterProvider>
-      </BrowserRouter>
+      </HashRouter>
     
   </React.StrictMode>,
   document.getElementById('root')
