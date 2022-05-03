@@ -7,8 +7,8 @@ import useScrollPosition from "../utils/useScrollPosition";
 import plate1 from './../images/plate1.png';
 import plate2 from './../images/plate2.png';
 import plate3 from './../images/plate3.png';
-import build1 from './../images/build1.png';
-import build2 from './../images/build2.png';
+import plate4 from './../images/plate4.png';
+import plate5 from './../images/plate5.png';
 
 function Introduction(){
     let navigate = useNavigate();

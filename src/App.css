@@ -229,14 +229,17 @@ font-style: normal; */
 }
 
 
+/* intro-images is not used. the style is previous flexbox style */
 
-#intro-images, #landing-images{
+#intro-images{
   padding-left: 5%;
+  padding-right: 5%;
   width: 100vw;
   display: flex;
   flex-direction: row;
   align-items: flex-end;
-  gap:2%;
+  flex-wrap: nowrap;
+  justify-content: space-around;
 
   position: relative; 
   top: 80vh;
@@ -244,11 +247,58 @@ font-style: normal; */
 }
 
 #landing-images{
+  /* padding-left: 5%;
+  padding-right: 5%; */
+  width: 100vw;
+
+  display: grid;
+  /* grid-template-areas: 'img1 img2 img3 img4 img5'; */
+
+  grid-template-columns: repeat(30, 1fr);
+
+  justify-items: center;
+  align-items: end;
+
+  position: relative; 
+  bottom: 0vh;
+
+}
+
+#landing-images{
   position: fixed;
-  bottom: -2%;
   z-index: 10;
 }
 
+#landing-img-0{
+  grid-row: 1;
+  grid-column: 3/span 3; 
+}
+
+
+#landing-img-1{
+  grid-row: 1;
+  grid-column: 5/span 6; 
+}
+
+#landing-img-2{
+  grid-row: 1;
+  grid-column: 10/span 6; 
+}
+
+#landing-img-3{
+  grid-row: 1;
+  grid-column: 15/span 6; 
+}
+
+#landing-img-4{
+  grid-row: 1;
+  grid-column: 19/span 7;  
+}
+
+#landing-img-5{
+  grid-row: 1;
+  grid-column: 25/span 6; 
+}
 
 #landing-images-rect{
   position: fixed;
