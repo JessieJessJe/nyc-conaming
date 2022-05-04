@@ -44,10 +44,10 @@ function ImgPlates({toggleIntro, windowWidth, showNext}){
 const transition_img = {              
     stiffness:314,
     damping: 26,
-    mass: 2.3,
-  
+    mass: 2.3,  
     type: "spring",
-    delay:0
+    delay:0,
+    duration:1
 }
 
 let imageWidth = [ 
@@ -208,7 +208,11 @@ function PlateText({prevScroll, windowHeight, windowWidth, showNext, setNext}){
         }else if (process < 1.5){
             if (plateNum !== 2)  setPlateNum(2)
 
-            if(showNext) setNext(false)
+            if(showNext){
+                setNext(false)
+                document.getElementById('intro-bg-rect-2').style.transform = ``;
+                document.getElementById('intro-content-2').style.transform = ``;
+            } 
         }else{
             if (!showNext) setNext(true);
 
@@ -270,7 +274,8 @@ function Introduction(){
         if (scrollPosition === 0){
 
             bg.style.transform = ``;
-
+            document.getElementById('intro-bg-rect-2').style.transform = ``;
+            document.getElementById('intro-content-2').style.transform = ``;
             setNext(false)
             setIsPlate(false);
 
