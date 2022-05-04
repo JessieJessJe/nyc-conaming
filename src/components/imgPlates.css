@@ -96,3 +96,12 @@
     grid-column: 23/span 4;
   }
   
+  .intro-images-out{
+   position: fixed;
+   top: -45vh;
+  }
+
+  .intro-img-out{
+   grid-row: 1;
+   opacity: 0;
+  }
