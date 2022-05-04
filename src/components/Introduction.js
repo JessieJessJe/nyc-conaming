@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { Link, Outlet, useNavigate, useLocation } from "react-router-dom";
-import { motion } from 'framer-motion';
+import { motion} from 'framer-motion';
 
 import useScrollPosition from "../utils/useScrollPosition";
 import plate0 from './../images/plate0.png';
@@ -17,13 +17,20 @@ const plateInfo=[{
     "year":"2021",
     "reason":`This co-naming will commemorate the contributions of the Guyanese community in Richmond Hill. Guyanese now makes up the second largest immigrant group based on the 2010 census.`,
 },{
-    "title":"Little Guyana Avenue",
-    "location":"Liberty Avenue, Queens, NY",
+    "title":"Healthcare Heroes Way",
+    "location":"West 168th Street, Manhattan, NY",
     "year":"2021",
-    "reason":`This co-naming will commemorate the contributions of the Guyanese community in Richmond Hill. Guyanese now makes up the second largest immigrant group based on the 2010 census.`,
+    "reason":`This co-naming honors the thousands of dedicated medical and nursing professionals, EMT\u2019s, social workers, administrators, custodial and food service staff, volunteers and others vital to the continuity of care during the COVID-19 pandemic, especially those at New York Presbyterian/Columbia University Irving Medical Center.`,
+},{
+    "title":"Private Danny Chen Way",
+    "location":"Elizabeth Street, Manhattan, NY",
+    "year":"2013",
+    "reason":`Danny Chen was born and raised in Chinatown and attended P.S. 130, I.S. 131 and graduated from Pace High School.  He enlisted in the United States Army and served with C Company, 3rd Battalion, 21st Infantry Regiment, 1st Stryker Brigade Combat Team, 25th Infantry Division in Afghanistan.  On October 3, 2011, he committed suicide as a result of being hazed and maltreated by several superiors.  Eight superiors were subsequently found guilty in connection with his death either by court martial or administrative proceedings.  On January 2, 2013, President Obama signed the National Defense Authorization Act which contains provisions requiring the military to take affirmative steps to prevent hazing.`,
 },]
 
-function Plate({isPlate, plateNum, windowHeight, windowWidth}){
+function Plate({isPlate, prevScroll, windowHeight, windowWidth}){
+
+    let navigate = useNavigate();
 
 let imageWidth = [ 
     windowWidth*0.10,
@@ -33,23 +40,52 @@ let imageWidth = [
     windowWidth*0.22,
     windowWidth*0.18 ]
 
+    const scrollPosition = useScrollPosition();
+
+    useEffect(()=>{
+        
+        document.getElementById("intro-plate-wrapper").style.transform = `translateY(-${(scrollPosition-prevScroll)}px)`;
+         
+        //navigation
+        // if (document.getElementById("intro-plate-wrapper").getBoundingClientRect().bottom <= windowHeight){
+        //     navigate("/visualization")
+        // }
+
+
+
+    }, [scrollPosition])
+
+      
+
     return(
         <React.Fragment>
-        <motion.div className="intro-plate" id='plate-content-1'>
+        <div  className="intro-plate" id="intro-plate-wrapper">
 
-        <p className='sectionTitle text-left'>{plateInfo[plateNum]["title"]}</p>
-        <p className='plate-text-loc'>
-        {plateInfo[plateNum]["location"]}
-       </p>
+        {plateInfo.map((plate) => 
+                <motion.div 
 
-       <p className='plate-text-year'>
-        {plateInfo[plateNum]["year"]}
-       </p>
-  
-       <p className='text-normal'>
-        {plateInfo[plateNum]["reason"]}
-       </p>
-        </motion.div>
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.5 }}
+         
+                className="intro-plate-each" key={plate["title"]}>
+        
+                <p className='sectionTitle text-left'>{plate["title"]}</p>
+                <p className='plate-text-loc'>
+                {plate["location"]}
+               </p>
+        
+               <p className='plate-text-year'>
+                {plate["year"]}
+               </p>
+          
+               <p className='text-normal'>
+                {plate["reason"]}
+               </p>
+                </motion.div>
+        )}
+        </div>
 
         <motion.div 
 
@@ -77,6 +113,9 @@ function Introduction(){
 
     const [isPlate, setIsPlate] = useState(true);
     const [plateNum, setPlateNum] = useState(0)
+    const [prevScroll, setPrevScroll] = useState(0)
+
+    let prev_step_plate;
 
     const handleResize = () => {
         setWindowHeight(window.innerHeight);
@@ -100,22 +139,37 @@ function Introduction(){
             let prev_step = windowHeight
             bg.style.transform = `translateY(-${(scrollPosition-prev_step)*1.5}px)`;
 
-        }else if (scrollPosition >= window.innerHeight * 4){
+        }
+        else if (scrollPosition >= window.innerHeight * 4.5){
             navigate("/visualization")
         }else{
 
         } 
 
-        // check position
-        if (bg.getBoundingClientRect().bottom < 0){
 
-            setIsPlate(true)
-            document.getElementById("landing-images").style.opacity = `0`
+        // check position
+        if (bg.getBoundingClientRect().bottom == 0){
+           
+        }
+        else if (bg.getBoundingClientRect().bottom < 0){
+
+            if (!isPlate) {
+                setIsPlate(true)
+                setPrevScroll(scrollPosition)
+                document.getElementById("landing-images").style.opacity = `0`
+            }
+            
             
         }else{
-            setIsPlate(false)
-            document.getElementById("landing-images").style.opacity = `1`
+
+            if(isPlate){
+                setIsPlate(false)
+                document.getElementById("landing-images").style.opacity = `1`
+            }
+             
         }
+
+
 
     }, [scrollPosition])
 
@@ -173,7 +227,7 @@ function Introduction(){
                 windowWidth= {windowWidth}
                 windowHeight= {windowHeight}
                 isPlate = {isPlate}
-                plateNum= {plateNum}/>    
+                prevScroll= {prevScroll}/>    
             }
        
         </motion.div>
