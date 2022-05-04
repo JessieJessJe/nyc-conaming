@@ -14,37 +14,34 @@ function Introduction(){
     let navigate = useNavigate();
 
     const scrollPosition = useScrollPosition();
-    const margin_left = 0.2 * window.innerWidth;
+    
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth)
+    const [windowHeight, setWindowHeight] = useState(window.innerHeight)
+
+    const handleResize = () => {
+        setWindowHeight(window.innerHeight);
+        setWindowWidth(window.innerWidth);
+    }
+
+    useEffect(()=>{
+        window.onresize = handleResize;
+    }, [])
 
     useEffect(()=>{
 
-        if (scrollPosition >= window.innerHeight * 4){
+
+        if (scrollPosition === 0){
+
+            document.getElementById('intro-bg-rect').style.transform = ``;
+
+        }else if( scrollPosition > windowHeight && scrollPosition < windowHeight * 3){
+
+            let prev_step = windowHeight
+            document.getElementById('intro-bg-rect').style.transform = `translateY(-${(scrollPosition-prev_step)*1.5}px)`;
+         
+        }else if (scrollPosition >= window.innerHeight * 4){
             navigate("/visualization")
         }
-        else if(scrollPosition >= window.innerHeight * 0.7){
-            document.getElementById('intro-images').style.position = "sticky";
-            document.getElementById('intro-images').style.top = "55vh";
-
-            document.getElementById('intro-content').style.position = "relative";
-            document.getElementById('intro-content').style.top = "100vh";
-            document.getElementById('intro-content').style.opacity = 1;
-            
-        }
-
-        else if (scrollPosition > 0 ){
-            document.getElementById('intro-images').style.position = "relative";
-            document.getElementById('intro-images').style.top = "80vh";
-
-            document.getElementById('intro-content').style.position = "sticky";
-            document.getElementById('intro-content').style.opacity = 0;
-
-        }
-        
-        // else if{
-
-        //     navigate("/")
-        // }
-
 
 
     }, [scrollPosition])
@@ -59,10 +56,25 @@ function Introduction(){
               transition={{ duration: 0.5 }}
         >
 
-            <div id='intro-content'>
-                    <div className='sectionTitle' id="intro-title">Street matters, manifested</div>
 
-                    <div className='text-norma text-center' id="intro-text">
+
+                    {/* <div className='images' id='intro-images'>
+                        <img src={plate3} height={400} alt="plate" />
+                        <img src={build1} height={250}alt="plate" />
+                        <img src={plate1} height={250}alt="plate" />
+                        <img src={build2} height={280} alt="plate" />
+                        <img src={plate2} height={200} alt="plate" />
+                
+                    
+                    </div> */}
+            
+            <div id ='intro-bg-rect'></div>
+                    
+            <div id='intro-content-0'>
+
+                    <div className='sectionTitle'>Street names, redefined</div>
+
+                    <div className='text-normal text-center' >
 
                     Street names are how we recognize and navigate the physical spaces. They also manifest the intangibles, the local, historical, cultural, or political legacies of spaces.
 
@@ -71,27 +83,25 @@ function Introduction(){
                     </div>
             </div>
 
-                    <div className='images' id='intro-images'>
-                        {/* <img src={plate3} height={400} alt="plate" />
-                        <img src={build1} height={250}alt="plate" />
-                        <img src={plate1} height={250}alt="plate" />
-                        <img src={build2} height={280} alt="plate" />
-                        <img src={plate2} height={200} alt="plate" /> */}
-                
-                    
+            <div id='intro-content-1'>
+                    <div className='sectionTitle' id="intro-title">Street matters, manifested</div>
+
+                    <div className='text-normal text-center'>
+
+                    Street names are how we recognize and navigate the physical spaces. They also manifest the intangibles, the local, historical, cultural, or political legacies of spaces.
+
+                    NYC honorary street names, or co-names by the City Council, are one way local activists, communities, and politicians lean on to remap our city in a local sense, interweaving its past, present, and future.
+
                     </div>
-                    
-            <div id='intro-content-2'>
-
-            <div className='sectionTitle'>Street names, redefined</div>
-
-            <div className='text-norma text-center' >
-
-            Street names are how we recognize and navigate the physical spaces. They also manifest the intangibles, the local, historical, cultural, or political legacies of spaces.
-
-            NYC honorary street names, or co-names by the City Council, are one way local activists, communities, and politicians lean on to remap our city in a local sense, interweaving its past, present, and future.
-
             </div>
+
+            <div className="intro-plate" id='plate-content-1'>
+                    <div className='sectionTitleinPlate'>Little Guyana Avenue</div>
+
+                    <div className='text-normal text-center'>
+
+                    This co-naming will commemorate the contributions of the Guyanese community in Richmond Hill. Guyanese now makes up the second largest immigrant group based on the 2010 census.
+                    </div>
             </div>
        
         </motion.div>

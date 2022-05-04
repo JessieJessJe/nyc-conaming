@@ -54,6 +54,21 @@ body{
   text-align: center;
 }
 
+.sectionTitleinPlate{
+
+  display: inline-block;
+
+  font-family: RAW; 
+  margin: 2rem auto;
+
+  font-size: 3rem;
+  padding: 0.5rem 0.8rem;
+
+  text-align: center;
+  color:white;
+  background-color: black;
+}
+
 #intro-title{
   color: white;
 }
@@ -86,9 +101,7 @@ https://css-tricks.com/things-watch-working-css-3d/ */
   /* transform-style: preserve-3d; */
   transform-origin: top left;
   perspective: 40em;
-  position: sticky;
-  top: 0;
-  left: 0;
+  position: fixed;
   z-index: 200;
 }
 
@@ -300,7 +313,7 @@ font-style: normal; */
   grid-column: 25/span 6; 
 }
 
-#landing-images-rect{
+#intro-bg-rect{
   position: fixed;
   top: 85vh;
   width:100vw;
@@ -309,19 +322,36 @@ font-style: normal; */
   z-index: 0;
 }
 
-#intro-content{
-  position: fixed; 
-  top: 100vh;
-  width: 100%;
-  opacity: 1;
-   
-}
 
-#intro-content-2{
+#intro-content-0{
   position: relative; 
-  width: 100%;
+  top: 130vh;
+  height: 50vh;
+  width: 100vw;
   opacity: 1;
   color:black;
+}
+
+#intro-content-1{
+  position: relative; 
+  top: 150vh;
+  height: 50vh;
+  width: 100vw;
+  opacity: 1;
+  color: white;
+  z-index: 10; 
+}
+
+#plate-content-1{
+  position: absolute; 
+  top: 20vh;
+  height: 50vh;
+  width:100vw;
+  color: black;
+
+  /* responsive */
+  /* z-index: -1;
+  opacity: 0; */
 }
 
 .text-center{
@@ -329,6 +359,14 @@ font-style: normal; */
   padding:2rem 20%;
 }
 
+.intro-plate{
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+}
 
 #intro-text{
   color:white;
@@ -340,7 +378,6 @@ font-style: normal; */
   top:0;
   width: 100vw;
   height: 6vh;
-  border: #226600 1px solid;
   z-index: 210;
 
   display: flex;
