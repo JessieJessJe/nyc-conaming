@@ -200,24 +200,6 @@ function LandingPlate(){
 
             </div>
             </div>
-
-             {/* <motion.div 
-             
-             initial={{ scaleY: 0 }}
-             animate={{ scaleY: 1 }}
-             exit={{ scaleY: 0 }}
-             transition={{ duration: 0.5 }}
-             
-             className='images landing-images' id='landing-images-id'>
-
-                <img className='landing-img-0' src={plate0} width={imageWidth[0]} alt="plate" />
-                <img className='landing-img-1' src={plate1} width={imageWidth[1]} alt="plate" />
-                <img className='landing-img-2' src={plate2} width={imageWidth[2]} alt="plate" />
-                <img className='landing-img-3' src={plate3} width={imageWidth[3]} alt="plate" />
-                <img className='landing-img-4' src={plate4} width={imageWidth[4]} alt="plate" />
-                <img className='landing-img-5' src={plate5} width={imageWidth[5]} alt="plate" />
-
-            </motion.div> */}
           
    
         <Introduction />

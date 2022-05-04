@@ -283,52 +283,14 @@ font-style: normal; */
   z-index: 10; 
 }
 
-.plate-text-year{
-  font-family: ITCGaramond; 
-  margin-bottom: 1rem;
-  font-size: 1.5rem;
-  line-height: 1rem;
-}
 
-.plate-text-loc{
-  margin-bottom: 1rem;
-  font-family: ITCGaramond; 
-  font-style: italic;
-  font-size: 1.5rem;
-  line-height: 1rem;
-
-}
 
 .text-center{
   text-align: left;
   padding:2rem 20%;
 }
 
-.intro-plate{
 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 50vh;
-
-  position: fixed; 
-  top: 20vh;
-  height: 300vh;
-  margin-left: 25vw;
-  margin-right: 25vw;
-  width:50vw;
-  color: black;
-
-}
-
-.intro-plate > p{
-
-  margin: 1rem auto;
-  padding: 0 auto;
-  width: 50vw;
-
-}
 
 #intro-text{
   color:white;
