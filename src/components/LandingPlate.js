@@ -210,19 +210,12 @@ function LandingPlate(){
              
              className='images' id='landing-images'>
 
-{/*                
-                <img src={plate1} height={200} alt="plate" />
-                <img src={plate2} height={240}alt="plate" />
-                <img src={plate3} height={240}alt="plate" />
-                <img src={plate4} height={240} alt="plate" />
-                <img src={plate5} height={200} alt="plate" /> */}
-
-                <img id='landing-img-0' src={plate0} width={imageWidth[0]} alt="plate" />
-                <img id='landing-img-1' src={plate1} width={imageWidth[1]} alt="plate" />
-                <img id='landing-img-2' src={plate2} width={imageWidth[2]} alt="plate" />
-                <img id='landing-img-3' src={plate3} width={imageWidth[3]} alt="plate" />
-                <img id='landing-img-4' src={plate4} width={imageWidth[4]} alt="plate" />
-                <img id='landing-img-5' src={plate5} width={imageWidth[5]} alt="plate" />
+                <img className='landing-img-0' src={plate0} width={imageWidth[0]} alt="plate" />
+                <img className='landing-img-1' src={plate1} width={imageWidth[1]} alt="plate" />
+                <img className='landing-img-2' src={plate2} width={imageWidth[2]} alt="plate" />
+                <img className='landing-img-3' src={plate3} width={imageWidth[3]} alt="plate" />
+                <img className='landing-img-4' src={plate4} width={imageWidth[4]} alt="plate" />
+                <img className='landing-img-5' src={plate5} width={imageWidth[5]} alt="plate" />
 
             </motion.div>
           
