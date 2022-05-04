@@ -13,7 +13,7 @@ import plate5 from './../images/plate5.png';
 
 import Introduction from './Introduction'
 
-
+import './imgPlates.css'
 
 
 function LandingPlate(){
@@ -36,7 +36,7 @@ function LandingPlate(){
 
     if (scrollPosition === 0){
 
-        document.getElementById('landing-images').style.transform = ``;
+        // document.getElementById('landing-images-id').style.transform = ``;
 
 
         document.getElementById("landing-page-content")
@@ -201,14 +201,14 @@ function LandingPlate(){
             </div>
             </div>
 
-             <motion.div 
+             {/* <motion.div 
              
              initial={{ scaleY: 0 }}
              animate={{ scaleY: 1 }}
              exit={{ scaleY: 0 }}
              transition={{ duration: 0.5 }}
              
-             className='images' id='landing-images'>
+             className='images landing-images' id='landing-images-id'>
 
                 <img className='landing-img-0' src={plate0} width={imageWidth[0]} alt="plate" />
                 <img className='landing-img-1' src={plate1} width={imageWidth[1]} alt="plate" />
@@ -217,7 +217,7 @@ function LandingPlate(){
                 <img className='landing-img-4' src={plate4} width={imageWidth[4]} alt="plate" />
                 <img className='landing-img-5' src={plate5} width={imageWidth[5]} alt="plate" />
 
-            </motion.div>
+            </motion.div> */}
           
    
         <Introduction />
