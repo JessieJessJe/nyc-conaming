@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import BarChart from './BarChart';
 import Filter from "./Filter"
 
+import { motion, AnimatePresence } from 'framer-motion';
+
 import {useDetailContextState, useDetailContextUpdater} from "./../utils/detailContext"
 
 function Sidebar({filter, updateFilter, toggleCamera}){
@@ -28,8 +30,11 @@ function Sidebar({filter, updateFilter, toggleCamera}){
     }, [show])
 
     return(
-
-        <div className="sidebar" >
+        <>
+        <AnimatePresence>
+        <motion.div 
+            layout
+            className="sidebar" >
 
             <div 
                 className='barchart-wrapper'
@@ -39,11 +44,19 @@ function Sidebar({filter, updateFilter, toggleCamera}){
             <BarChart filter={filter} />
             </div> 
 
-            <div className= { ` ${show? "filter--hide": ""} ${expanded ? "filter-wrapper filter-wrapper--expanded" : "filter-wrapper"}`} > 
+            <motion.div 
+            layout
+            className= { ` ${show? "filter--hide": ""} ${expanded ? "filter-wrapper filter-wrapper--expanded" : "filter-wrapper"}`} > 
                 
             
 
-                <div className={expanded ? "filter-content-wrapper filter-content-wrapper--expanded" : "filter-content-wrapper"}> 
+                <motion.div 
+                    layout
+                    initial={{x:-30, opacity:0}}
+                    animate={{x:0, opacity:1}}
+                    exit={{x:-30, opacity:0} }
+                    transition={{ duration:0.5, ease:"easeIn"}}
+                    className={expanded ? "filter-content-wrapper filter-content-wrapper--expanded" : "filter-content-wrapper"}> 
                     <Filter 
                     
                     filter={filter}
@@ -51,14 +64,14 @@ function Sidebar({filter, updateFilter, toggleCamera}){
                     toggleCamera = {toggleCamera}
                 
                     />                 
-                </div>
+                </motion.div>
 
                 <div className="goback"           
                 onClick={toggleSidebar}
                     >
                     ✕
                 </div>
-            </div>
+            </motion.div>
 
                 {/* {
                     expanded 
@@ -77,8 +90,9 @@ function Sidebar({filter, updateFilter, toggleCamera}){
                 } */}
            
 
-        </div>
-
+        </motion.div>
+        </AnimatePresence>
+        </>
     )
 
 }

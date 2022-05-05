@@ -4,16 +4,17 @@ import * as d3 from "d3"
 import { filterData, getGroupColor, convertRemToPixels} from '../utils/helper';
 
 import mydata from "../data/mydata.json"
+import { easeSin } from 'd3';
 
 // reference from
 // https://d3-graph-gallery.com/graph/barplot_stacked_basicWide.html
 
 function BarChart({filter}){
     const ref=useRef();
-    const margin = {top: window.innerHeight*0.1, right: convertRemToPixels(2), bottom: 10, left: convertRemToPixels(0.7)}
+    const margin = {top: window.innerHeight*0.1, right: 0, bottom: 0, left: window.innerWidth*0.007}
 
-    const width = window.innerWidth * 0.05 - margin.left - margin.right;
-    const height = window.innerHeight * 0.9 - margin.top - margin.bottom;
+    const width = window.innerWidth * 0.03 - margin.left - margin.right;
+    const height = window.innerHeight * 0.95 - margin.top - margin.bottom;
     const data_len = mydata.length;
 
     //subgroups
@@ -53,7 +54,7 @@ function BarChart({filter}){
                 enter => enter                 
                     .append("rect")
                     .attr("fill", d => {
-                        console.log(color(d.key), 'color', d.key )
+                        
                         return color(d.key)} )            
                     .call(
                     enter => enter.transition().duration(200)
@@ -83,6 +84,22 @@ function BarChart({filter}){
                 ),   
 
             )
+            .on("mouseenter", (event)=>{
+
+                svg.selectAll("rect")
+          
+                .transition()
+                .ease(d3.easeBack)
+                .duration(300)
+                .attr("transform",
+                        "translate( 10, 0)")
+                .transition()
+                .ease(d3.easeBack)
+                .duration(100)
+                .attr("transform",
+                        "translate( 0, 0)")
+
+            })
  
 
     }, [filter])

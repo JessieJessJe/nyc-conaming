@@ -42,6 +42,22 @@ p{
   padding: 0;
 }
 
+  /* unvisited link */
+  a:link {
+    color: black;
+  }
+  
+
+  a:visited {
+    color: black;
+  }
+
+  a:hover{
+    color:white
+  }
+
+
+
 .App{
   width: 100vw;
   height: 300vh;

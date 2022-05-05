@@ -18,6 +18,9 @@ canvas{
     z-index: 20;
 }
 
+.barchart-wrapper:hover{
+    cursor: pointer;
+}
 
   
 .sidebar{
@@ -35,37 +38,34 @@ canvas{
     justify-content: flex-start;
     align-items: stretch; */
   
-    background-color: white;
-  }
-
-
-  
-.sidebar--expanded{
-    width:50vw;
+    /* background-color: white; */
   }
   
 .sidebar-btn{
     
     position:relative;
     top: 10%;
-    margin-left: 0.7rem;
-  
+    margin-left: 0.7rem;  
   }
+
   
 .filter-wrapper{
     opacity: 0;
     position: fixed;
-    height: 100vh;
+
+    height: 85vh;
     left: -50vw;
-    top: 0;
-    z-index: -100;
+    top: 10vh;
+
+    z-index: -200;
 }
 
 .filter-wrapper--expanded{
+
     opacity: 1;
-    width: 45vw;
+    width: 42vw;
     background-color: white;
-    left: 5vw;
+    left: 3vw;
 }
   
 .filter-content-wrapper{

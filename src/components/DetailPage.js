@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext, useRef, lazy, Suspense, useMemo } from 'react';
 
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 
 import { useDetailContextState, useDetailContextUpdater } from '../utils/detailContext';
 
@@ -49,14 +49,19 @@ function DetailPage({clickDetail}){
 return(
 
     <>
-
+    <AnimatePresence>
     {show &&
     
-            <div id="detail-wrapper" >
+            <div 
+            id="detail-wrapper" >
 
             <motion.div 
-            layout
+              layout="position"
 
+              initial={{x:-30, opacity:0}}
+              animate={{x:0, opacity:1}}
+              exit={{x:-30, opacity:0} }
+              transition={{ duration:0.5, ease:"easeIn"}}
 
             className="intro-plate-each" >
 
@@ -69,7 +74,7 @@ return(
             {plate["year"]}
         </p>
 
-        <p className='text-normal' style={{backgroundColor: "#ffffff", zIndex:100}}>
+        <p className='text-normal plate-reason' style={{backgroundColor: "#ffffff", zIndex:100}}>
             {plate["reason"]}
         </p>
             </motion.div>
@@ -86,7 +91,7 @@ return(
 
         </div>
     }
-    
+    </AnimatePresence>
 
     </>
 )

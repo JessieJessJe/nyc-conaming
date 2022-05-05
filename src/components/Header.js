@@ -38,14 +38,14 @@ function Header({opacity}){
 
         <nav>
         <ul className='header-nav'>
-          <li>
-            <Link to="/">Home</Link>
+          <li className='header-nav-link'>
+            <Link to="/" style={{ textDecoration: 'none' }}>Home</Link>
           </li>
           {/* <li>
             <Link to="/introduction">About</Link>
           </li> */}
-          <li>
-            <Link to="/visualization">Visualization</Link>
+          <li className='header-nav-link'>
+            <Link to="/visualization" style={{ textDecoration: 'none' }}>Visualization</Link>
           </li>
         </ul>
       </nav>

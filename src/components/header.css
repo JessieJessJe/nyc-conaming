@@ -20,39 +20,61 @@
     cursor: pointer;
   }
   
-.header-words{
+.header-words, .header-nav{
     font-family: Raw;
     font-size: 1.2rem;
     padding: 0.3vh 0.5vw;
     margin: 0.5vh 0.2vw;
-    color:white
+    color:white;
+    transition: transform 0.5s ease-in;
 }
   
   #header-m{
-  background-color: black;
+    background-color: black;
+  }
+
+  #header-m:hover{
+    background-color: #8a5100;
   }
   
   #header-a{
     background-color: #226600;
   }
+
+  #header-a:hover{
+    background-color: black;
+  }
   
   #header-t{
     background-color: #8a5100;
+  }
+
+  #header-t:hover{
+    background-color: #226600;
   }
   
   #header-c{
     background-color: #226600;
   }
-  
-  .header-nav{
-    list-style-type: none;
-    margin: 0;
-    padding-right: 1vw;
+
+  #header-c:hover{
+    background-color: black;
   }
+
+
+.header-nav-link{
+  display: inline;
+  padding: 0.5vh 0.5vw;
+
+  color:black;
+  list-style-type: none;
+}
+
+.header-nav-link:hover{
+  color:#226600 ;
+  background-color: black;
+
+  transition: transform 0.5s ease-in;
+}
   
-  .header-nav > li{
-    display: inline;
-    padding: 0.5vh 0.5vw;
-  }
-  
-  
+

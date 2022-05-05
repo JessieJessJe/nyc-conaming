@@ -170,7 +170,7 @@ function PlateTextEach({plateNum, windowHeight, windowWidth}){
         {plate["year"]}
        </p>
   
-       <p className='text-normal' style={{backgroundColor: "#ffffff", zIndex:100}}>
+       <p className='text-normal plate-reason' style={{backgroundColor: "#ffffff", zIndex:100}}>
         {plate["reason"]}
        </p>
     </motion.div>
