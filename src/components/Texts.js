@@ -38,7 +38,7 @@ function Line({pX, pY, pZ, filter, handlePointOut, handlePointOver, hovered}){
      
           <lineDashedMaterial 
             color="black"
-            opacity={hovered ? 0.8 : 0.3}
+            opacity={hovered ? 0.8 : 0}
             transparent={true}
             linewidth={1}
             scale={2}
@@ -93,8 +93,8 @@ function MyText({pX, pY, pZ, pColor, content, filter, i, dataObj, setClickDetail
         </Text>
         <Line pX={pX} pY={pY} pZ={pZ} key={`line-${i}`} filter={filter}
 
-              handlePointOver={(event) => setHover(true)}
-              handlePointOut={(event) => setHover(false)}
+              // handlePointOver={(event) => setHover(true)}
+              // handlePointOut={(event) => setHover(false)}
               hovered = {hovered}
         />
 
@@ -112,21 +112,25 @@ function Texts({filter, wordcloud, setClickDetail}){
   
       //Draw Text
       data_filtered.forEach((d, i)=>{
+
+          if(d.long){
+            let pX = - normLong(d.long),
+            pY = normLat(d.lat),
+            pZ = normZ(d.year),
+            pColor = groupColor[d.group],
+            content = wordcloud && d.group >-1 ? termlist[d.group][0] : d.coname
+
+        textlist.push(             
+          <MyText 
+            pX={pX} pY={pY} pZ={pZ} key={`text-${i}`} 
+            pColor={pColor} content={content} filter={filter} i={i} 
+            dataObj={d}
+            setClickDetail={setClickDetail}
+          />
+          )
+          }
   
-          let pX = - normLong(d.long),
-              pY = normLat(d.lat),
-              pZ = normZ(d.year),
-              pColor = groupColor[d.group],
-              content = wordcloud && d.group >-1 ? termlist[d.group][0] : d.coname
-  
-          textlist.push(             
-            <MyText 
-              pX={pX} pY={pY} pZ={pZ} key={`text-${i}`} 
-              pColor={pColor} content={content} filter={filter} i={i} 
-              dataObj={d}
-              setClickDetail={setClickDetail}
-            />
-            )
+
       })
 
 

@@ -50,7 +50,10 @@ export function getGroupColor(){
 
 export function normZ(year){
 
-    var norm = (year - 2000 + 3)* 1.5
+    // var norm = (year - 2000 + 3)* 1.5
+
+    let norm = (year - 2000 + 3 )* 8
+
     return norm
     }
 

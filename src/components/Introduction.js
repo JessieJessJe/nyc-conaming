@@ -31,7 +31,7 @@ const plateInfo=[
     "location":"Liberty Avenue, Queens, NY",
     "year":"2021",
     "reason":`This co-naming will commemorate the contributions of the Guyanese community in Richmond Hill. Guyanese now makes up the second largest immigrant group based on the 2010 census.`,
-},{ "x":0.22,
+},{ "x":0.20,
     "y":0.08,
     "title":"Healthcare Heroes Way",
     "location":"West 168th Street, Manhattan, NY",
@@ -141,6 +141,8 @@ function PlateTextEach({plateNum, windowHeight, windowWidth}){
     let left = plate["x"] * windowWidth + 'px';
     let top = plate["y"] * windowHeight + 'px' ;
 
+    let speed = plateNum == 2 ? 1 : 2
+
     return(      
     
     <motion.div  
@@ -148,7 +150,7 @@ function PlateTextEach({plateNum, windowHeight, windowWidth}){
         initial={{ opacity: 0, x: -50 }}
         animate={{ opacity: 1, x: 0 }}
         exit={{ opacity:0,  x: 100,}}
-        transition={{ delay:0.5, duration: 2, ease:[0.58, -0.1, 0, 0.71] }}
+        transition={{ delay:0.5, duration: speed, ease:[0.58, -0.1, 0, 0.71] }}
 
         style={{ top: top, left:left}}
         className="intro-plate" id="intro-plate-wrapper">
