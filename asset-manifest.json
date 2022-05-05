@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/nyc-conaming/static/css/main.f5353d14.css",
-    "main.js": "/nyc-conaming/static/js/main.ff5ec68c.js",
-    "static/js/165.61b3e310.chunk.js": "/nyc-conaming/static/js/165.61b3e310.chunk.js",
+    "main.css": "/nyc-conaming/static/css/main.07b4fc56.css",
+    "main.js": "/nyc-conaming/static/js/main.393f2024.js",
+    "static/js/165.ec02cddd.chunk.js": "/nyc-conaming/static/js/165.ec02cddd.chunk.js",
     "static/js/787.28cb0dcd.chunk.js": "/nyc-conaming/static/js/787.28cb0dcd.chunk.js",
     "static/js/422.b1f78a2c.chunk.js": "/nyc-conaming/static/js/422.b1f78a2c.chunk.js",
     "static/media/plate0.png": "/nyc-conaming/static/media/plate0.5217c44972fc74739e9e.png",
@@ -17,14 +17,14 @@
     "static/media/ToyTrial-Regular.otf": "/nyc-conaming/static/media/ToyTrial-Regular.7ada6998f6ffc3620327.otf",
     "static/media/Raw-Bold.otf": "/nyc-conaming/static/media/Raw-Bold.3a1370a994c6336eff65.otf",
     "index.html": "/nyc-conaming/index.html",
-    "main.f5353d14.css.map": "/nyc-conaming/static/css/main.f5353d14.css.map",
-    "main.ff5ec68c.js.map": "/nyc-conaming/static/js/main.ff5ec68c.js.map",
-    "165.61b3e310.chunk.js.map": "/nyc-conaming/static/js/165.61b3e310.chunk.js.map",
+    "main.07b4fc56.css.map": "/nyc-conaming/static/css/main.07b4fc56.css.map",
+    "main.393f2024.js.map": "/nyc-conaming/static/js/main.393f2024.js.map",
+    "165.ec02cddd.chunk.js.map": "/nyc-conaming/static/js/165.ec02cddd.chunk.js.map",
     "787.28cb0dcd.chunk.js.map": "/nyc-conaming/static/js/787.28cb0dcd.chunk.js.map",
     "422.b1f78a2c.chunk.js.map": "/nyc-conaming/static/js/422.b1f78a2c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.f5353d14.css",
-    "static/js/main.ff5ec68c.js"
+    "static/css/main.07b4fc56.css",
+    "static/js/main.393f2024.js"
   ]
 }
