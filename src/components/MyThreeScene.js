@@ -11,7 +11,7 @@ import NYCMap from "./NYCMap"
 import TextsLazy from './TextsLazy';
 
 
-function MyThreeScene({filter, camera}){
+function MyThreeScene({filter, camera, setClickDetail}){
 
     const OrthographicCamera_ratio = 8
     const ref = useRef();
@@ -43,7 +43,10 @@ function MyThreeScene({filter, camera}){
             <pointLight position={[10, 10, 10]} />
 
            
-            <Group filter={filter} />
+            <Group 
+                filter={filter} 
+                setClickDetail={setClickDetail}
+                />
 
             {/* <OrbitControls />
             <TextsLazy 
@@ -65,7 +68,7 @@ function MyThreeScene({filter, camera}){
 
 export default MyThreeScene;
 
-function Group({filter}) {
+function Group({filter, setClickDetail}) {
     // This reference will give us direct access to the mesh
     const mesh = useRef()
     // Set up state for the hovered and active state
@@ -74,8 +77,10 @@ function Group({filter}) {
     const [map, setMap] = useState(true)
     // Subscribe this component to the render-loop, rotate the mesh every frame
 
+
+
     const camera = useThree((state) => state.camera)
-    console.log(camera.position, 'camera')
+
     // useFrame(() => {
 
     //     if(map){
@@ -135,6 +140,7 @@ function Group({filter}) {
             <TextsLazy 
                 filter={filter}
                 wordcloud={wordcloud}
+                setClickDetail = {setClickDetail}
             />
 
             <NYCMap />

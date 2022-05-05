@@ -4,7 +4,7 @@ import { Canvas, useFrame, extend, useThree } from '@react-three/fiber'
 import { meshBounds, Text } from "@react-three/drei";
 import * as THREE from 'three'
 
-
+import { DetailContextProvider, useDetailContextState, useDetailContextUpdater } from '../utils/detailContext';
 
 import { createBillboardMaterial } from '../utils/createBillboardMaterial'
 import { normLat, normLong, normZ, groupColor } from "../utils/helper"
@@ -53,7 +53,8 @@ function Line({pX, pY, pZ, filter, handlePointOut, handlePointOver, hovered}){
 
 
 
-function MyText({pX, pY, pZ, pColor, content, filter, i}){
+function MyText({pX, pY, pZ, pColor, content, filter, i, dataObj, setClickDetail}){
+
 
   const [hovered, setHover] = useState(false)
   const [billboardMaterial] = useState(() => createBillboardMaterial(new  THREE.MeshBasicMaterial()))
@@ -64,7 +65,7 @@ function MyText({pX, pY, pZ, pColor, content, filter, i}){
 
   return(
 
-    <React.Fragment>
+    <>
             <Text 
             anchorX='left' 
             fontSize={1} 
@@ -80,7 +81,11 @@ function MyText({pX, pY, pZ, pColor, content, filter, i}){
             outlineOpacity={hovered? 0.4 : 0}
             outlineColor={pColor}
 
-         
+            //  event listners
+            onPointerUp= {()=>{
+              setClickDetail(dataObj)
+             
+            }}
             onPointerOver={(event) => setHover(true)}
             onPointerOut={(event) => setHover(false)}>
 
@@ -93,11 +98,11 @@ function MyText({pX, pY, pZ, pColor, content, filter, i}){
               hovered = {hovered}
         />
 
-  </React.Fragment>
+  </>
   )
 }
 
-function Texts({filter, wordcloud}){
+function Texts({filter, wordcloud, setClickDetail}){
    
     ///Processing Filtered Data
     let data_filtered = filterData(data, filter)
@@ -118,7 +123,8 @@ function Texts({filter, wordcloud}){
             <MyText 
               pX={pX} pY={pY} pZ={pZ} key={`text-${i}`} 
               pColor={pColor} content={content} filter={filter} i={i} 
-  
+              dataObj={d}
+              setClickDetail={setClickDetail}
             />
             )
       })
@@ -126,11 +132,13 @@ function Texts({filter, wordcloud}){
 
 
     return (
-        <React.Fragment>
+        <>
+  
           
           {textlist}
+   
          
-        </React.Fragment>
+        </>
       )
     
 }

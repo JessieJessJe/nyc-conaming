@@ -41,7 +41,7 @@ function BarChart({filter}){
         .range([0, height]);
 
         const stacked = d3.stack().keys(subgroups)(data)
-        console.log(stacked, 'stackeds')
+  
 
         // const stacked_clean = stacked.filter( s => s[0][1] - s[0][0] > 0)
         // console.log(stacked_clean)

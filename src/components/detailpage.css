@@ -1,0 +1,32 @@
+#detail-wrapper{
+    position: fixed;
+    width: 50vw;
+    height: 100vh;
+    top:0vh;
+    left:0vh;
+    background-color: white;
+
+    z-index: 0;
+
+
+    box-sizing: border-box;
+
+    padding: 5vh 2vw;
+
+    padding-left: 7vw;
+    padding-right: 5vw;
+}
+
+.goback{
+    font-size: 2rem;
+	position: absolute;
+    top: 10vh;
+    left: 45vw;
+    transition: transform 0.5s;
+    z-index:200;
+}
+
+.goback:hover {
+    transform: rotate(90deg);
+	cursor: pointer;
+}

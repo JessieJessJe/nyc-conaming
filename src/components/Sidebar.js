@@ -14,14 +14,14 @@ const toggleSidebar = () =>{
 
     return(
 
-        <div className={expanded ? "sidebar sidebar--expanded" : "sidebar"} >
+        <div className={`${expanded ? "sidebar sidebar--expanded" : "sidebar"}`} >
 
             <div className='barchart-wrapper'>
             <button className='sidebar-btn' onClick={toggleSidebar}>{expanded ? ">>>" : "<<<"} </button> 
            <BarChart filter={filter} />
             </div> 
 
-            <div className={expanded ? "filter-wrapper filter-wrapper--expanded" : "filter-wrapper"}> 
+            <div className= {`filter--hide ${expanded ? "filter-wrapper filter-wrapper--expanded" : "filter-wrapper"}`} > 
                 
             
 

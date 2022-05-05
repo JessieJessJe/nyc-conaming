@@ -6,15 +6,21 @@ import {OrbitControls, Sky , Text, OrthographicCamera, PerspectiveCamera } from 
 import { motion } from 'framer-motion';
 
 import useScrollPosition from "../utils/useScrollPosition";
+import { DetailContextProvider, useDetailContextState, useDetailContextUpdater } from '../utils/detailContext';
 
 import Header from './Header';
 import Sidebar from './Sidebar';
 import MyThreeScene from './MyThreeScene';
+import DetailPage from './DetailPage';
 import { Preview } from '@mui/icons-material';
 
 import {initFilter, getPureFilter} from '../utils/helper'
 
+import "./three.css"
+import "./header.css"
+
 function Visualization(){
+
 
     const ref = useRef();
 
@@ -99,9 +105,13 @@ function Visualization(){
 
     const filterMemo = useMemo(()=> (filter), [getPureFilter(filter)])
 
-    return(
-        <React.Fragment>
 
+    const [clickDetail, setClickDetail] = useState(null)
+
+
+    return(
+        <>
+      <DetailContextProvider>
         <Header />
 
         <motion.div 
@@ -113,10 +123,14 @@ function Visualization(){
         
         id='three-wrapper' ref={ref}>
 
+  
+
         <MyThreeScene    
         filter={filterMemo}
 
         camera = {camera}
+
+        setClickDetail={setClickDetail}
       
         />
 
@@ -131,10 +145,15 @@ function Visualization(){
 
         />
 
-        </motion.div>
-      
+        <DetailPage 
+            clickDetail={clickDetail}
+        />
+  
 
-        </React.Fragment>
+        </motion.div>
+        </DetailContextProvider>
+
+        </>
 
     )
 }
