@@ -33,8 +33,16 @@ function DetailPage({clickDetail}){
 
     useEffect(()=>{
 
-        showDetail(clickDetail)
-        setPlate(clickDetail)
+        if (clickDetail){
+
+            showDetail(clickDetail)
+            setPlate(clickDetail)
+
+        }else{
+            hideDetail();
+        }
+
+
 
     }, [clickDetail])
 
@@ -66,7 +74,7 @@ return(
         </p>
             </motion.div>
 
-            <div className="goback"
+        <div className="goback"
             
                 onClick={()=>{ 
 

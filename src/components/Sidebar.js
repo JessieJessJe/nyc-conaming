@@ -2,26 +2,44 @@ import React, { useState, useEffect } from 'react';
 import BarChart from './BarChart';
 import Filter from "./Filter"
 
-
+import {useDetailContextState, useDetailContextUpdater} from "./../utils/detailContext"
 
 function Sidebar({filter, updateFilter, toggleCamera}){
+    
+    const [detail, show] = useDetailContextState();
+    const [showDetail, hideDetail] = useDetailContextUpdater();
 
-const [expanded, setExpanded] = useState(false);
 
-const toggleSidebar = () =>{
-    setExpanded(!expanded)
-}
+    const [expanded, setExpanded] = useState(false);
+
+    const toggleSidebar = () =>{
+
+        if(show) hideDetail();
+
+        setExpanded(!expanded)
+    }
+
+    useEffect(()=>{
+
+        if(show){
+            if(expanded) setExpanded(false);
+        }
+
+    }, [show])
 
     return(
 
-        <div className={`${expanded ? "sidebar sidebar--expanded" : "sidebar"}`} >
+        <div className="sidebar" >
 
-            <div className='barchart-wrapper'>
-            <button className='sidebar-btn' onClick={toggleSidebar}>{expanded ? ">>>" : "<<<"} </button> 
-           <BarChart filter={filter} />
+            <div 
+                className='barchart-wrapper'
+                onClick={toggleSidebar}
+                >
+            {/* <button className='sidebar-btn' onClick={toggleSidebar}>{expanded ? ">>>" : "<<<"} </button>  */}
+            <BarChart filter={filter} />
             </div> 
 
-            <div className= {`filter--hide ${expanded ? "filter-wrapper filter-wrapper--expanded" : "filter-wrapper"}`} > 
+            <div className= { ` ${show? "filter--hide": ""} ${expanded ? "filter-wrapper filter-wrapper--expanded" : "filter-wrapper"}`} > 
                 
             
 
@@ -32,8 +50,13 @@ const toggleSidebar = () =>{
                     updateFilter={updateFilter}
                     toggleCamera = {toggleCamera}
                 
-                    />
-                      <button className='sidebar-filter-btn' onClick={toggleSidebar}>Close</button> 
+                    />                 
+                </div>
+
+                <div className="goback"           
+                onClick={toggleSidebar}
+                    >
+                    ✕
                 </div>
             </div>
 

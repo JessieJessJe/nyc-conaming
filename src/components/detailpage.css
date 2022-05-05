@@ -1,9 +1,9 @@
 #detail-wrapper{
     position: fixed;
-    width: 50vw;
+    width: 45vw;
     height: 100vh;
     top:0vh;
-    left:0vh;
+    left:5vw;
     background-color: white;
 
     z-index: 0;
@@ -11,17 +11,14 @@
 
     box-sizing: border-box;
 
-    padding: 5vh 2vw;
-
-    padding-left: 7vw;
-    padding-right: 5vw;
+    padding: 5vh 5vw;
 }
 
 .goback{
     font-size: 2rem;
 	position: absolute;
     top: 10vh;
-    left: 45vw;
+    left: 40vw;
     transition: transform 0.5s;
     z-index:200;
 }

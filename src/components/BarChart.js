@@ -10,7 +10,7 @@ import mydata from "../data/mydata.json"
 
 function BarChart({filter}){
     const ref=useRef();
-    const margin = {top: 100, right: convertRemToPixels(2), bottom: 10, left: convertRemToPixels(0.7)}
+    const margin = {top: window.innerHeight*0.1, right: convertRemToPixels(2), bottom: 10, left: convertRemToPixels(0.7)}
 
     const width = window.innerWidth * 0.05 - margin.left - margin.right;
     const height = window.innerHeight * 0.9 - margin.top - margin.bottom;

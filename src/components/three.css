@@ -28,11 +28,12 @@ canvas{
     left: 0;
     width: 5vw;
 
-  
-    display: flex;
+    position: fixed;
+
+    /* display: flex;
     flex-direction: row;
     justify-content: flex-start;
-    align-items: stretch;
+    align-items: stretch; */
   
     background-color: white;
   }
@@ -51,18 +52,28 @@ canvas{
   
   }
   
-  
+.filter-wrapper{
+    opacity: 0;
+    position: fixed;
+    height: 100vh;
+    left: -50vw;
+    top: 0;
+    z-index: -100;
+}
+
 .filter-wrapper--expanded{
+    opacity: 1;
     width: 45vw;
     background-color: white;
+    left: 5vw;
 }
   
 .filter-content-wrapper{
-    top: 10vh;
+    position: relative;
+    margin-top: 10vh;
     opacity: 0;
-    z-index: -100;
-    position: absolute;
-    width: 0vw;
+    width: 100%;
+    height: 100%;
 }
   
 .filter-content-wrapper--expanded{
@@ -72,15 +83,17 @@ canvas{
 }
   
 .filter-content-wrapper{
-    font-family: Raw;
+
+    box-sizing: border-box;
+ 
 }
    
 .filter-content-wrapper > div{
-     margin: 1rem
+   
  }
    
 .filter-content-wrapper > button{
-     margin: 1rem
+    
 }
 
 .filter--hide{
