@@ -141,40 +141,45 @@ export const initFilter = {
         "angle":"map",
         "reset": false,
         "group":[1],
-        "displaySelectedGroup": true
+        "displaySelectedGroup": false
     }
 
 //subgroups
 export const subgroups = [0,1,2,3,4,5,6,7,8, -1]
 
-export function initNewFilter(mydata, initFilter){
-//!!!! data:[ {key:counts}, ...]
-   let data = dataPrep(filterData(mydata, initFilter), subgroups)
+export function initNewFilter(mydata, filter){
+//!!!! data [{key:counts, key:counts, ...}] is a object in this case, in ARRAY
+   let data = dataPrep(filterData(mydata, filter), subgroups)
 
    let initGroup = 0;
 
-   data.forEach((d)=>{
-     if ( Object.values(d)[0] >0 && Object.keys(d)[0] > initGroup) initGroup = Object.keys(d)[0];
-   })
+    for (const [key, value] of Object.entries(data[0])) {
+        if (value > 0 && key > initGroup) initGroup = key
+    }
 
-   let filter = initFilter;
-   filter["displaySelectedGroup"] = true;
-   filter["group"]=[initGroup]
+   let newFilter = filter;
+   newFilter["displaySelectedGroup"] = true;
+   newFilter["group"]=[parseInt(initGroup)]
 
-   console.log("this new filter", filter)
-   return filter
+   console.log("this new filter", newFilter, "init group", initGroup)
+   return newFilter
+}
+
+export function getOpacity(groupList, key){
+    return groupList.includes(key) ? "1" : "0.5"
 }
 
 //the following func are called by barchart - to filter, update theme group
 export function updateGroup(filter, group){
-    // let opacity = "0.5";
 
-    let newDisplay, newGroup, opacity = "0.5";
+    let newDisplay, newGroup;
 
     //first click
     if (!filter["displaySelectedGroup"]){
        newDisplay = true;
-       newGroup = [group]
+       newGroup = filter["group"]
+       newGroup.push(group)
+
     }else{
 
         //toggle groups
@@ -183,8 +188,10 @@ export function updateGroup(filter, group){
 
             newGroup = filter["group"].filter( g => g !== group)
             //check if the last to disappear
-            if (newGroup.length === 0)  newDisplay = false;
-            opacity = "1"
+            if (newGroup.length === 0){
+                newDisplay = false;
+                newGroup = [];
+            }  
 
         }else{
             newGroup = filter["group"]
@@ -192,7 +199,7 @@ export function updateGroup(filter, group){
         }
     }
 
-    return [newDisplay, newGroup, opacity];
+    return [newDisplay, newGroup];
 }
 
 ///tbd -- when filter btn clicked

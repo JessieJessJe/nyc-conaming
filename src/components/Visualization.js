@@ -48,7 +48,7 @@ function Visualization(){
     const [filter, setFilter] = useState(initFilter);
 
     //hook for barchart in case it modifies filter
-    const [newFilter, setNewFilter] = useState(initNewFilter(mydata, initFilter))
+    const [newFilter, setNewFilter] = useState(null)
 
 
     const updateFilter = (category, value)=>{
