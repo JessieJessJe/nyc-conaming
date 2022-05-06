@@ -14,10 +14,12 @@ import MyThreeScene from './MyThreeScene';
 import DetailPage from './DetailPage';
 import { Preview } from '@mui/icons-material';
 
-import {initFilter, getPureFilter} from '../utils/helper'
+import {initFilter, initNewFilter} from '../utils/helper'
 
 import "./three.css"
 import "./header.css"
+
+import mydata from "../data/mydata.json"
 
 function Visualization(){
 
@@ -25,8 +27,6 @@ function Visualization(){
     const ref = useRef();
 
     const scrollPosition = useScrollPosition();
-    const margin_left = 0.2 * window.innerWidth;
-    const aspect = window.innerWidth / window.innerHeight;
 
     useEffect(()=>{
         if (scrollPosition >= window.innerHeight * 2 ){
@@ -44,14 +44,20 @@ function Visualization(){
         setCamera(!camera)
     }
 
+    //original hook for filter
     const [filter, setFilter] = useState(initFilter);
 
+    //hook for barchart in case it modifies filter
+    const [newFilter, setNewFilter] = useState(initNewFilter(mydata, initFilter))
+
+
     const updateFilter = (category, value)=>{
-        let updateSearch = {};
+        
 
         switch(category){
             case "init":
                 setFilter(initFilter);
+               
                 break;
             case "theme_false":
                 //if not exist, insert
@@ -62,9 +68,8 @@ function Visualization(){
                             "theme": [...prev["theme"], value]}
                     })
 
-                    console.log(filter, 'update filter')
                 }
-
+                
                 return;
 
             case "theme_true":
@@ -85,6 +90,7 @@ function Visualization(){
                     "angle": value.value,
                 }
                   })
+               
                 return; 
 
             default:
@@ -94,6 +100,7 @@ function Visualization(){
                 setFilter((prev)=>{
                     return {...prev, ...updateValue}
                 })
+               
                 return;
         }
         
@@ -103,7 +110,7 @@ function Visualization(){
 
     }
 
-    const filterMemo = useMemo(()=> (filter), [getPureFilter(filter)])
+    // const filterMemo = useMemo(()=> (filter), [getPureFilter(filter)])
 
 
     const [clickDetail, setClickDetail] = useState(null)
@@ -126,7 +133,9 @@ function Visualization(){
   
 
         <MyThreeScene    
-        filter={filterMemo}
+        // filter={filterMemo}
+
+        filter={newFilter}
 
         camera = {camera}
 
@@ -142,7 +151,9 @@ function Visualization(){
     
         toggleCamera = {toggleCamera}
        
+        setNewFilter={setNewFilter}
 
+        newFilter = {newFilter}
         />
 
         <DetailPage 

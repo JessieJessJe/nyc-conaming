@@ -8,7 +8,7 @@ import { DetailContextProvider, useDetailContextState, useDetailContextUpdater }
 
 import { createBillboardMaterial } from '../utils/createBillboardMaterial'
 import { normLat, normLong, normZ, groupColor } from "../utils/helper"
-import { filterData, termlist } from '../utils/helper';
+import { filterNewData, termlist } from '../utils/helper';
 
 import data from "../data/mydata.json"
 
@@ -105,7 +105,7 @@ function MyText({pX, pY, pZ, pColor, content, filter, i, dataObj, setClickDetail
 function Texts({filter, wordcloud, setClickDetail}){
    
     ///Processing Filtered Data
-    let data_filtered = filterData(data, filter)
+    let data_filtered = filterNewData(data, filter)
 
 
     let textlist = [];

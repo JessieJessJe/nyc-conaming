@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 
 import * as d3 from "d3"
-import { filterData, getGroupColor, convertRemToPixels} from '../utils/helper';
+import { filterData, getGroupColor, updateGroup, subgroups, dataPrep, initNewFilter } from '../utils/helper';
 
 import mydata from "../data/mydata.json"
 import { easeSin } from 'd3';
@@ -9,7 +9,7 @@ import { easeSin } from 'd3';
 // reference from
 // https://d3-graph-gallery.com/graph/barplot_stacked_basicWide.html
 
-function BarChart({filter}){
+function BarChart({filter, setNewFilter, newFilter}){
     const ref=useRef();
     const margin = {top: window.innerHeight*0.1, right: 0, bottom: 0, left: window.innerWidth*0.007}
 
@@ -17,15 +17,16 @@ function BarChart({filter}){
     const height = window.innerHeight * 0.95 - margin.top - margin.bottom;
     const data_len = mydata.length;
 
-    //subgroups
-    const subgroups = [0,1,2,3,4,5,6,7,8, -1]
 
     //color palette
     const color = d3.scaleOrdinal()
     .domain(subgroups)
     .range(getGroupColor())
 
+    let opacity = "1";
+
     useEffect(()=>{
+
         const svg = d3.select(ref.current)
         svg.attr("width", width + margin.left + margin.right)
         .attr("height", height + margin.top + margin.bottom)
@@ -33,19 +34,17 @@ function BarChart({filter}){
         "translate(" + margin.left + "," + margin.top + ")")
                 
         ///get data
-        
-        const data = dataPrep(filterData(mydata, filter), subgroups)
+        let data = dataPrep(filterData(mydata, filter), subgroups)
 
+        if(!newFilter["displaySelectedGroup"])
+        setNewFilter(initNewFilter(mydata,filter)) //trigger three draw update
+        
         // Add Y axis
         const y = d3.scaleLinear()
         .domain([0, data_len])
         .range([0, height]);
 
         const stacked = d3.stack().keys(subgroups)(data)
-  
-
-        // const stacked_clean = stacked.filter( s => s[0][1] - s[0][0] > 0)
-        // console.log(stacked_clean)
 
         //data input
         svg.selectAll("rect")
@@ -84,23 +83,43 @@ function BarChart({filter}){
                 ),   
 
             )
-            .on("mouseenter", (event)=>{
+            .each(function(d){
+        
+                let that = this;
 
-                svg.selectAll("rect")
-          
-                .transition()
-                .ease(d3.easeBack)
-                .duration(300)
-                .attr("transform",
-                        "translate( 10, 0)")
-                .transition()
-                .ease(d3.easeBack)
-                .duration(100)
-                .attr("transform",
-                        "translate( 0, 0)")
+                d3.select(this)
+                  .on("click", function(){
 
+                    
+                    let [newDisplay, newGroup, opacity] = updateGroup(newFilter, d.key);
+
+                    setNewFilter((prev)=>{
+                    return {
+                        ...prev,
+                        "displaySelectedGroup":newDisplay,
+                        "group": newGroup
+                    }
+                })
+
+                    console.log(newFilter, "newfilter", newGroup)
+
+                    d3.select(that)
+                      .attr("fill-opacity", opacity)
+        
+                  })
+
+                  .on("mouseenter", function(){
+                    d3.select(that)
+                      .transition()
+                      .ease(d3.easeBack)
+                      .duration(300)
+                      .attr("transform", "scale(0.8 1)")
+                      .transition()
+                      .ease(d3.easeBack)
+                      .duration(300)
+                      .attr("transform", "scale(1 1)")
+                  })
             })
- 
 
     }, [filter])
 
@@ -114,17 +133,3 @@ return(
 
 export default BarChart;
 
-function dataPrep(data, subgroups){
-    let arr = []
-    let obj = {}
-    subgroups.forEach( g => {
-         let count = 0;
-         data.forEach( d =>{
-             if(d.group === g) count++
-         })
-
-        obj[g] = count
-    })
-    arr.push(obj)
-    return arr
- }

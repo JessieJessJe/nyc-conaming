@@ -6,7 +6,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 import {useDetailContextState, useDetailContextUpdater} from "./../utils/detailContext"
 
-function Sidebar({filter, updateFilter, toggleCamera}){
+function Sidebar({filter, updateFilter, toggleCamera, setNewFilter, newFilter}){
     
     const [detail, show] = useDetailContextState();
     const [showDetail, hideDetail] = useDetailContextUpdater();
@@ -38,10 +38,14 @@ function Sidebar({filter, updateFilter, toggleCamera}){
 
             <div 
                 className='barchart-wrapper'
-                onClick={toggleSidebar}
+                // onClick={toggleSidebar}
                 >
             {/* <button className='sidebar-btn' onClick={toggleSidebar}>{expanded ? ">>>" : "<<<"} </button>  */}
-            <BarChart filter={filter} />
+            <BarChart 
+                filter={filter} 
+                setNewFilter = {setNewFilter}
+                newFilter = {newFilter}
+            />
             </div> 
 
             <motion.div 

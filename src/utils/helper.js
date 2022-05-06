@@ -41,9 +41,6 @@ export const groupColor ={
     "8":0xe67a00};
 
 export function getGroupColor(){
-    console.log(
-        Object.values(groupColor).map( hex => '#' + hex.toString(16) ), 'color function'
-    )
   return Object.values(groupColor).map( hex => '#' + hex.toString(16) )
 }
 
@@ -52,7 +49,7 @@ export function normZ(year){
 
     // var norm = (year - 2000 + 3)* 1.5
 
-    let norm = (year - 2000 + 3 )* 8
+    let norm = (year - 2000 ) * 1.5 + 5
 
     return norm
     }
@@ -99,7 +96,14 @@ function filterTheme(data, term){
     })
 }
 
+
+function filterGroup(data, group){
+    return data.filter(d => group.includes( d.group))
+}
+
+//this func will called by hitting UPDATE btn in filter
 export function filterData(data, filter){
+    
         let data_theme = filterTheme( data, filter["theme"])
         let data_filtered_year = filterYear(data_theme, filter["year"])
         let data_filtered_borough = filterBorough(data_filtered_year, filter["borough"])
@@ -113,6 +117,21 @@ export function filterData(data, filter){
 
       }
 
+export function filterNewData(data, filter){
+        let data_group = filterGroup(data, filter["group"])
+        let data_theme = filterTheme( data_group, filter["theme"])
+        let data_filtered_year = filterYear(data_theme, filter["year"])
+        let data_filtered_borough = filterBorough(data_filtered_year, filter["borough"])
+        
+        if (filter["search"] === null){
+            return data_filtered_borough;
+        }else{
+            return filterSearch(data_filtered_borough, filter["search"]);
+
+        }
+
+}
+
 export const initFilter = {
         "year":["all"],
         "borough":["all"],
@@ -121,7 +140,86 @@ export const initFilter = {
         "search":null,
         "angle":"map",
         "reset": false,
+        "group":[1],
+        "displaySelectedGroup": true
     }
+
+//subgroups
+export const subgroups = [0,1,2,3,4,5,6,7,8, -1]
+
+export function initNewFilter(mydata, initFilter){
+//!!!! data:[ {key:counts}, ...]
+   let data = dataPrep(filterData(mydata, initFilter), subgroups)
+
+   let initGroup = 0;
+
+   data.forEach((d)=>{
+     if ( Object.values(d)[0] >0 && Object.keys(d)[0] > initGroup) initGroup = Object.keys(d)[0];
+   })
+
+   let filter = initFilter;
+   filter["displaySelectedGroup"] = true;
+   filter["group"]=[initGroup]
+
+   console.log("this new filter", filter)
+   return filter
+}
+
+//the following func are called by barchart - to filter, update theme group
+export function updateGroup(filter, group){
+    // let opacity = "0.5";
+
+    let newDisplay, newGroup, opacity = "0.5";
+
+    //first click
+    if (!filter["displaySelectedGroup"]){
+       newDisplay = true;
+       newGroup = [group]
+    }else{
+
+        //toggle groups
+
+        if (filter["group"].includes(group)){
+
+            newGroup = filter["group"].filter( g => g !== group)
+            //check if the last to disappear
+            if (newGroup.length === 0)  newDisplay = false;
+            opacity = "1"
+
+        }else{
+            newGroup = filter["group"]
+            newGroup.push(group)
+        }
+    }
+
+    return [newDisplay, newGroup, opacity];
+}
+
+///tbd -- when filter btn clicked
+export function clearGroup(filter){
+    filter["displaySelectedGroup"] = false;
+    filter["group"]=[]
+    return filter
+}
+
+
+export function dataPrep(data, subgroups){
+    let arr = []
+    let obj = {}
+    subgroups.forEach( g => {
+         let count = 0;
+         data.forEach( d =>{
+             if(d.group === g) count++
+         })
+
+        obj[g] = count
+    })
+    arr.push(obj)
+    return arr
+ }
+
+
+
 
 export function getPureFilter(filter){
    return Object.keys(filter)
