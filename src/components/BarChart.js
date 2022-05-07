@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 
 import * as d3 from "d3"
-import { filterData, getGroupColor, updateGroup, subgroups, dataPrep, initNewFilter, getOpacity } from '../utils/helper';
+import { filterData, getGroupColor, updateGroup, subgroups, dataPrep, initNewFilter, getOpacity, updateNewFilter } from '../utils/helper';
 
 import mydata from "../data/mydata.json"
 import { easeSin } from 'd3';
@@ -11,10 +11,10 @@ import { easeSin } from 'd3';
 
 function BarChart({filter, setNewFilter, newFilter}){
     const ref=useRef();
-    const margin = {top: window.innerHeight*0.1, right: 0, bottom: 0, left: window.innerWidth*0.007}
+    const margin = {top: window.innerHeight*0.15, right: 0, bottom: 0, left: window.innerWidth*0.007}
 
     const width = window.innerWidth * 0.03 - margin.left - margin.right;
-    const height = window.innerHeight * 0.95 - margin.top - margin.bottom;
+    const height = window.innerHeight * 0.90 - margin.top - margin.bottom;
     const data_len = mydata.length;
 
 
@@ -31,17 +31,6 @@ function BarChart({filter, setNewFilter, newFilter}){
                 return new Promise(resolve => setTimeout(resolve, ms));
             }
 
-            function initializeFilter(){
-
-                return new Promise( resolve => {
-                    setNewFilter(initNewFilter(mydata,filter)) 
-
-                    if (newFilter !== null) {
-                        console.log('async', newFilter)
-                        resolve()
-                    }
-                })
-            }
             setNewFilter(initNewFilter(mydata,filter)) 
 
             await sleep(200);
@@ -60,6 +49,7 @@ function BarChart({filter, setNewFilter, newFilter}){
             
         }
         else if(!newFilter["displaySelectedGroup"]){ setNewFilter(initNewFilter(mydata,filter)) }
+        else setNewFilter(updateNewFilter(filter, newFilter))
               
 
 

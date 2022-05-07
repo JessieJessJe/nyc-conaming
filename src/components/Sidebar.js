@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import BarChart from './BarChart';
 import Filter from "./Filter"
-
+import Burger from './Burger/Burger';
 import { motion, AnimatePresence } from 'framer-motion';
 
 import {useDetailContextState, useDetailContextUpdater} from "./../utils/detailContext"
@@ -36,16 +36,24 @@ function Sidebar({filter, updateFilter, toggleCamera, setNewFilter, newFilter}){
             layout
             className="sidebar" >
 
+            {/* <button className='sidebar-btn' onClick={toggleSidebar}>&#xe236;</button> */}
+            <Burger 
+             expanded={expanded}
+             toggleSidebar={toggleSidebar}
+            />
+
             <div 
                 className='barchart-wrapper'
                 // onClick={toggleSidebar}
                 >
-            {/* <button className='sidebar-btn' onClick={toggleSidebar}>{expanded ? ">>>" : "<<<"} </button>  */}
+   
+            
             <BarChart 
                 filter={filter} 
                 setNewFilter = {setNewFilter}
                 newFilter = {newFilter}
             />
+
             </div> 
 
             <motion.div 

@@ -165,6 +165,15 @@ export function initNewFilter(mydata, filter){
    return newFilter
 }
 
+export function updateNewFilter(filter, newFilter){
+
+    let updateFilter = filter;
+    updateFilter["group"] = newFilter["group"];
+    
+
+    return updateFilter
+}
+
 export function getOpacity(groupList, key){
     return groupList.includes(key) ? "1" : "0.5"
 }
