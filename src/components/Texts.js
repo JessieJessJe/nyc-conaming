@@ -68,7 +68,7 @@ function MyText({pX, pY, pZ, pColor, content, filter, i, dataObj, setClickDetail
     <>
             <Text 
             anchorX='left' 
-            fontSize={1} 
+            fontSize={1.2} 
             position={[pX, pY, pZ]} 
             color={pColor}
             material={billboardMaterial} 

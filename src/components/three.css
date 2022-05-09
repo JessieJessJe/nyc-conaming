@@ -45,7 +45,7 @@ canvas{
     
     position: fixed;
     top: 9vh;
-    left: 0.7vw;
+    left: 1.2vw;
     
 }
 
@@ -64,9 +64,9 @@ canvas{
 .filter-wrapper--expanded{
 
     opacity: 1;
-    width: 42vw;
+    width: 41vw;
     background-color: white;
-    left: 3vw;
+    left: 4vw;
 }
   
 .filter-content-wrapper{

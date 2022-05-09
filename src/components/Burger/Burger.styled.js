@@ -2,25 +2,38 @@ import styled from 'styled-components';
 
 export const StyledBurger = styled.button`
   position: absolute;
-  top: 9vh;
-  left: 0.7vw;
+  top: 8.5vh;
+  left: 1.2vw;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  width: 2.3vw;
-  height: 3vh;
+  width: 2.8vw;
+  height: 4vh;
   background: transparent;
   border: none;
   cursor: pointer;
-  padding: 0;
+
+  padding-left: 0.4vw;
+  padding-right:0.4vw;
+  padding-top:0.5vh;
+  padding-bottom:0.5vh;
   z-index: 200;
   
   &:focus {
     outline: none;
   }
+
+  &:hover {
+    outline: none;
+    background-color: black;
+
+    & > *{
+      background-color: white;
+    }
+  }
   
   div {
-    width: 2.3vw;
+    width: 2vw;
     height: 0.55vh;
     background-color: black;
     transition: all 0.3s linear;
@@ -57,7 +70,7 @@ export const StyledBurger = styled.button`
           }
       
           :nth-child(3){
-            background-color: #8a5100;
+            background-color: #226600;
             
           }
       }

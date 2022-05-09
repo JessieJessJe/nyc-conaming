@@ -18,27 +18,57 @@ export function normLong(long){
     return norm
     }
 
-export  const termlist = [['detective','nypd','9/11','police','recovery','september 11, 2001'],
-    ['woman','polish','association','she'],                 
-    ['staten island','business','career','board','jazz','council','league'],
-    ['baptist','pastor','church', 'america','rabbi'],
-    ['911 heroes'],
-    ['september 11, 2001', 'fdny','firefighter'],
-    ['gun','marine','9/11', 'combat','violence','police','september 11, 2001'],
-    ['district','attorney','health',' hiv ',' human rights','hiv/aids'],
-    ['school',' art ','civic','children','museum','award']]
+export  const termlist = [
+
+    // ['american', 'award', 'street', 'people', 'island', 'states', 'united', 'officer', 'police', 'business'] //-1 group
+    ['music', 'jazz', 'band', 'carter', 'cruz', 'album', 'albums', 'latin', 'singer', 'recorded'],
+    ['tuskegee', 'air', 'squadron', 'airmen', 'fighter', 'aircraft', '1943', 'pilot', 'enemy', 'flying'],
+    ['italian', 'italy', 'edmond', 'safra', 'soccer', 'joseph', 'brothers', 'customers', 'family', 'business'],
+    ['women', 'ms', 'education', 'children', 'worked', 'council', 'harriet', 'program', 'health', 'board'],
+    ['anniversary', 'commemorate', '100th', 'naming', 'celebrating', 'kips', 'sign', 'barnard', 'significance', '125th'],
+    ['health', 'nq', 'uhp', 'peter', 'melrose', 'regreso', 'primary', 'care', 'gay', 'development'],
+    ['section', 'law', 'amend', 'map', 'rename', 'accordingly', 'called', 'repeals', 'corresponds', '2004'],
+    ['war', 'greenpoint', 'pier', 'korean', 'ruby', 'legion', 'island', 'coney', 'sangiorgio', 'army'],
+    ['league', 'jonathan', 'science', 'chema', 'charities', '52', 'catholic', 'baseball', 'casitas', 'bronx'],
+    ['september 11, 2001', '9/11', 'firefighter', 'fdny'],
+
+    // ['detective','nypd','9/11','police','recovery','september 11, 2001'],
+    // ['woman','polish','association','she'],                 
+    // ['staten island','business','career','board','jazz','council','league'],
+    // ['baptist','pastor','church', 'america','rabbi'],
+    // ['911 heroes'],
+    // ['september 11, 2001', 'fdny','firefighter'],
+    // ['gun','marine','9/11', 'combat','violence','police','september 11, 2001'],
+    // ['district','attorney','health',' hiv ',' human rights','hiv/aids'],
+    // ['school',' art ','civic','children','museum','award']
+
+]
 
 export const groupColor ={
-    "-1":0xcccccc,
-    "0":0x8029a6,
-    "1":0x9ca2ff,
-    "2":0xfc53bc,
-    "3":0xb20061,
-    "4":0x3440eb,
-    "5":0xffcf0a, 
-    "6":0x2deb36,
-    "7":0x34ebeb,
-    "8":0xe67a00};
+    // "-1":0xcccccc, //gray
+    // "0":0x5D3754,
+    // "1":0xE56DB1,
+    // "2":0xD3273E,
+    // "3":0x3247E2,
+    // "4":0x39AEDE,
+    // "5":0x48EFF0, 
+    // "6":0x6BE74D,
+    // "7":0x007c39,
+    // "8":0xF8D048,
+    // "9":0xD97F2E,
+
+    "-1":0x7C7C7C, //gray
+    "0":0x82531A,
+    "1":0x20E500,
+    "2":0x3247E2,
+    "3":0xE01531,
+    "4":0x7E00AA,
+    "5":0xFF4DB2, 
+    "6":0x5D3754,
+    "7":0x10D4FF,
+    "8":0xDEAC00,
+    "9":0x366419,
+ };
 
 export function getGroupColor(){
   return Object.values(groupColor).map( hex => '#' + hex.toString(16) )
@@ -145,7 +175,7 @@ export const initFilter = {
     }
 
 //subgroups
-export const subgroups = [0,1,2,3,4,5,6,7,8, -1]
+export const subgroups = [0,1,2,3,4,5,6,7,8,9, -1]
 
 export function initNewFilter(mydata, filter){
 //!!!! data [{key:counts, key:counts, ...}] is a object in this case, in ARRAY

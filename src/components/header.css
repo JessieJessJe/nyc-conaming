@@ -16,7 +16,7 @@
 
 
 #header-words-wrapper{
-    margin-left: 0.5vw;
+    margin-left: 1vw;
     cursor: pointer;
   }
   
@@ -26,7 +26,7 @@
     padding: 0.3vh 0.5vw;
     margin: 0.5vh 0.2vw;
     color:white;
-    transition: transform 0.5s ease-in;
+    transition: all 0.5s linear;
 }
   
   #header-m{
@@ -74,7 +74,7 @@
   color:#226600 ;
   background-color: black;
 
-  transition: transform 0.5s ease-in;
+  transition: all 0.5s linear;
 }
   
 

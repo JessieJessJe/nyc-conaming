@@ -11,9 +11,9 @@ import { easeSin } from 'd3';
 
 function BarChart({filter, setNewFilter, newFilter}){
     const ref=useRef();
-    const margin = {top: window.innerHeight*0.15, right: 0, bottom: 0, left: window.innerWidth*0.007}
+    const margin = {top: window.innerHeight*0.15, right: 0, bottom: 0, left: window.innerWidth*0.012}
 
-    const width = window.innerWidth * 0.03 - margin.left - margin.right;
+    const width = window.innerWidth * 0.04 - margin.left - margin.right;
     const height = window.innerHeight * 0.90 - margin.top - margin.bottom;
     const data_len = mydata.length;
 

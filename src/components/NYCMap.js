@@ -10,8 +10,39 @@ import NYCGeoJson from "../data/nyc.json"
 
 let key = 0;
 
+
+function Area({shape}){
+    const ref = useRef()
+    let linelist = [];
+
+    useEffect(()=>{
+        shape[0].forEach((loc)=>{
+            let px = normLong(loc[0])
+            let py = normLat(loc[1])
+            linelist.push(new THREE.Vector3(px, py, 1)) 
+       
+        })
+       
+        ref.current.setFromPoints(linelist)
+        
+    }, [])
+
+    key ++;
+
+    return (
+
+ 
+    <mesh key={key} rotation-y={Math.PI} >
+    <bufferGeometry ref={ref}/>
+    <meshBasicMaterial color="black" />
+    </mesh>
+    )
+
+}
+
+
 function AreaMap({shape}){
-     const ref = useRef()
+    const ref = useRef()
     let linelist = [];
 
     useEffect(()=>{
