@@ -1,16 +1,23 @@
 import React, { useState, useEffect, useRef } from 'react';
 
 import * as d3 from "d3"
-import { filterData, getGroupColor, updateGroup, subgroups, dataPrep, initNewFilter, getOpacity, updateNewFilter } from '../utils/helper';
+import { group_titles, termlist, filterData, getGroupColor, updateGroup, subgroups, dataPrep, initNewFilter, getOpacity, updateNewFilter } from '../utils/helper';
 
 import mydata from "../data/mydata.json"
-import { easeSin } from 'd3';
+import './keywordsPlate.css'
+
+import { motion, AnimatePresence } from 'framer-motion';
 
 // reference from
 // https://d3-graph-gallery.com/graph/barplot_stacked_basicWide.html
 
 function BarChart({filter, setNewFilter, newFilter}){
     const ref=useRef();
+
+    const [showKeywords, setShowKeywords] = useState(false);
+    const [group, setGroup] = useState(-1);
+    const [pos, setPos] = useState(0);
+
     const margin = {top: window.innerHeight*0.15, right: 0, bottom: 0, left: window.innerWidth*0.012}
 
     const width = window.innerWidth * 0.04 - margin.left - margin.right;
@@ -149,34 +156,95 @@ function BarChart({filter, setNewFilter, newFilter}){
                     })
     
                   .on("mouseenter", function(){
+
+                    setGroup(d.key)
+                    setShowKeywords(true)
+                    setPos(y(d[0][0]) + margin.top)
+                    
+                    
+                    // d3.select(that)
+                    //   .transition()
+                    //   .ease(d3.easeBack)
+                    //   .duration(300)
+                    //   .attr("width", width/0.8 )
+                    //   .transition()
+                    //   .ease(d3.easeBack)
+                    //   .duration(300)
+                    //   .attr("width", width )
                     d3.select(that)
-                      .transition()
-                      .ease(d3.easeBack)
-                      .duration(300)
-                      .attr("width", width/0.8 )
-                      .transition()
-                      .ease(d3.easeBack)
-                      .duration(300)
-                      .attr("width", width )
+                    .attr("fill-opacity", "1")
+
                   })
 
                   .on("mouseout mouseleave", function(){
+                    setShowKeywords(false)
+
+                    // d3.select(that)
+                    // .transition()
+                    // .ease(d3.easeBack)
+                    // .duration(300)
+                    // .attr("width", width )
                     d3.select(that)
-                    .ease(d3.easeBack)
-                    .duration(300)
-                    .attr("width", width )
+                    .attr("fill-opacity", getOpacity(newFilter["group"], d.key))
+
                   })
 
             })
     }
 
 return(
+    <>
     <svg id="barchart"
     ref={ref}>
 
     </svg>
+
+   
+
+    <KeywordPlate 
+        group={group}
+        show={showKeywords}
+        pos={pos}   
+    />
+
+
+    </>
 )
 }
 
 export default BarChart;
 
+function KeywordPlate({group, show, pos}){
+    return(
+        <>
+    
+            {
+                group > -1 && (
+
+                    <div 
+    
+    
+    
+                    className={show ? 'keywords-plate' : "keywords_plate keywords-plate--hide"} style={{top: `${pos}px`}}>
+                    <p className='keywords-title text-left' style={{color: `${getGroupColor()[group]}`}}> {group_titles.get(group)}</p>
+    
+                    <div className='keywords-terms-wrapper'>
+    
+                        { termlist[group].map( (term)=>
+                        <p className='text-normal keywords-terms' style={{backgroundColor: "#ffffff", zIndex:100}}>
+                        {term}
+                        </p>
+                        )}
+                        
+                    </div>
+    
+               
+               </div>
+
+                )
+            }
+  
+       </>
+        
+    )
+}

@@ -1,0 +1,47 @@
+.keywords-plate{
+
+    position: fixed;
+    min-width: 15vw;
+    max-width: 26vw;
+    max-height: 45vh;
+    top:15vh;
+    left:4vw;
+
+    background-color: white;
+
+    z-index: 0;
+
+
+    box-sizing: border-box;
+
+    padding: 5vh 2.5vw;
+    overflow: scroll;
+    opacity: 1;
+
+    transition: all 0.3s linear;
+}
+
+
+
+.keywords-plate--hide{
+    opacity: 0;
+
+}
+
+.keywords-title{
+    margin-bottom: 1rem;
+    font-family: ITCGaramond; 
+    font-size: 1.5rem;
+    line-height: 1.2rem;
+}
+
+.keywords-terms-wrapper{
+
+}
+
+.keywords-terms{
+    display: inline-flex;
+    font-family: Raw;
+    font-size: 1.2rem;
+    margin-right: 2rem;
+}

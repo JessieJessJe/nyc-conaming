@@ -44,16 +44,31 @@ export  const termlist = [
     // ['league', 'jonathan', 'science', 'chema', 'charities', '52', 'catholic', 'baseball', 'casitas', 'bronx'],
     // ['september 11, 2001', '9/11', 'firefighter', 'fdny'],
 
-    ['music', 'jazz', 'band', 'album', 'latin', 'singer', 'art', 'arts' ,'culture', 'cultural', 'musicians', 'cuba'],
+    ['music', 'jazz', 'band', 'album', 'latin', 'singer', 'art', 'arts' ,'culture', 'musicians', 'cuba'],
     ['tuskegee','Airmen', 'squadron', 'fighter', 'aircraft', '1943', 'pilot', 'world war II', 'Iraq', 'korean',
-     'war', 'army', 'infantry', 'killed', 'combat', 'medal', 'bronze', 'duty', 'nypd', 'police'],
-    ['women', 'Ms', 'education', 'children', 'worked', 'council', 'board', 'school','committee'],
+     'war', 'army', 'infantry', 'combat', 'medal', 'bronze'],
+    ['women', 'Ms', 'education', 'children', 'equality', 'school'],
     ['customers', 'family', 'business', 'immigrants', 'immigration', 'community'],
     ["baptist", 'church', 'pastor', 'reverend', 'bishop','ministry', 'churches', 'bible', 'god', 'congregation'],
-    ['health', 'public', "civic",'nq', 'UHP', 'primary care', 'gay', 'development', 'activists', 'hospitals', 'HIV', 'AIDS', 'HIV/AIDS', "COVID-19"],
-    ['section', 'law', 'amend', 'map', 'rename', 'accordingly', 'called', 'repeals', 'corresponds', '2004'],
-
+    ['health', 'public', "civic", 'UHP', 'primary care', 'gay', 'development', 'activists', 'hospitals', 'HIV', 'AIDS', 'HIV/AIDS', "COVID-19"],
+    ['killed','duty', 'nypd', 'police'],
+    ['COVID-19'],
+    ['9/11']
 ]
+
+export const group_titles= new Map([
+    [-1, "Others"],
+    [0, "The Record-breakings and Undergrounds"],
+    [1, "Wounds of War and Violence"],
+    [2, "Bridging the Gap to Equality "],
+    [3, "We Call It Home"],
+    [4, "Religion and Belief"],
+    [5, "Public Health and Civic Rights"],
+    [6, "Law and Order"],
+    [7, "Era of Pandemic"],
+    [8, "Heroes of 911"]
+])
+
 
 
 export const options_theme = [{ label: 'all', value: [''] },
