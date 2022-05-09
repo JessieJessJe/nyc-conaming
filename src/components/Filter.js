@@ -20,21 +20,10 @@ import Select from "@mui/material/Select";
 import InputLabel from "@mui/material/InputLabel";
 import OutlinedInput from '@mui/material/OutlinedInput';
 
-import { filterData, getPureFilter } from '../utils/helper';
+import { filterData, getPureFilter, options_theme } from '../utils/helper';
 import data from "../data/mydata.json"
 
 
-const options_theme = [{ label: 'all', value: [''] },
-                        {label: '0', value:['detective','nypd','9/11','police','recovery','september 11, 2001']},
-                        {label: '1', value:['woman','polish','association','she']},                 
-                        {label: '2', value:['staten island','business','career','board','jazz','council','league']},
-                        {label: '3', value:['baptist','pastor','church', 'america','rabbi']},
-                        {label: '4', value:['911 heroes']},
-                        {label: '5', value:['september 11, 2001', 'fdny','firefighter']},
-                        {label: '6', value:['gun','marine','9/11', 'combat','violence','police','september 11, 2001']},
-                        {label: '7', value:['district','attorney','health',' hiv ',' human rights','hiv/aids']},
-                        {label: '8', value:['school',' art ','civic','children','museum','award']},
-                        {label: '-1', value: [''] },]
 
 const options_year = [ { label: 'all', value: 'all' },
                       { label: '2002', value: "2002" },

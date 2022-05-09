@@ -37,12 +37,12 @@ width: 50vw;
     font-family: ITCGaramond; 
     font-style: italic;
     font-size: 1.5rem;
-    line-height: 1rem;
+    line-height: 1.2rem;
   
 }
 
 .plate-reason{
-    max-height: 45vh;
+    max-height: 35vh;
     overflow: scroll;
 }
 

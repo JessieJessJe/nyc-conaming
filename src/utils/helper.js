@@ -19,7 +19,7 @@ export function normLong(long){
     }
 
 export  const termlist = [
-
+    //raw
     // ['american', 'award', 'street', 'people', 'island', 'states', 'united', 'officer', 'police', 'business'] //-1 group
     // ['music', 'jazz', 'band', 'carter', 'cruz', 'album', 'albums', 'latin', 'singer', 'recorded'],
     // ['tuskegee', 'air', 'squadron', 'airmen', 'fighter', 'aircraft', '1943', 'pilot', 'enemy', 'flying'],
@@ -32,6 +32,7 @@ export  const termlist = [
     // ['league', 'jonathan', 'science', 'chema', 'charities', '52', 'catholic', 'baseball', 'casitas', 'bronx'],
     // ['september 11, 2001', '9/11', 'firefighter', 'fdny'],
 
+    //modified 1
     // ['music', 'jazz', 'band', 'album', 'latin', 'singer'],
     // ['Tuskegee Airmen', 'squadron', 'fighter', 'aircraft', '1943', 'pilot'],
     // ['Italian', 'soccer', 'brothers', 'customers', 'family', 'business'],
@@ -51,21 +52,25 @@ export  const termlist = [
     ["baptist", 'church', 'pastor', 'reverend', 'bishop','ministry', 'churches', 'bible', 'god', 'congregation'],
     ['health', 'public', "civic",'nq', 'UHP', 'primary care', 'gay', 'development', 'activists', 'hospitals', 'HIV', 'AIDS', 'HIV/AIDS', "COVID-19"],
     ['section', 'law', 'amend', 'map', 'rename', 'accordingly', 'called', 'repeals', 'corresponds', '2004'],
-    // ['detective','nypd','9/11','police','recovery','september 11, 2001'],
-    // ['woman','polish','association','she'],                 
-    // ['staten island','business','career','board','jazz','council','league'],
-    // ['baptist','pastor','church', 'america','rabbi'],
-    // ['911 heroes'],
-    // ['september 11, 2001', 'fdny','firefighter'],
-    // ['gun','marine','9/11', 'combat','violence','police','september 11, 2001'],
-    // ['district','attorney','health',' hiv ',' human rights','hiv/aids'],
-    // ['school',' art ','civic','children','museum','award']
 
 ]
 
 
+export const options_theme = [{ label: 'all', value: [''] },
+                        {label: '0', value:['music', 'jazz', 'band', 'album', 'latin', 'singer', 'art', 'arts' ,'culture', 'cultural', 'musicians', 'cuba']},
+                        {label: '1', value:['tuskegee','Airmen', '1943', 'pilot', 'world war II', 'Iraq', 'korean','war', 'army', 'killed', 'nypd', 'police']},                 
+                        {label: '2', value:['women', 'Ms', 'education', 'children', 'worked', 'council', 'board', 'school','committee']},
+                        {label: '3', value:['customers', 'family', 'business', 'immigrants', 'immigration', 'community']},
+                        {label: '4', value:["baptist", 'church', 'pastor', 'reverend', 'bishop','ministry', 'churches', 'bible', 'god', 'congregation']},
+                        {label: '5', value:['health', 'public', "civic",'nq', 'UHP', 'primary care', 'gay', 'development', 'activists', 'hospitals', 'HIV', 'AIDS', 'HIV/AIDS', "COVID-19"]},
+                        {label: '6', value:['section', 'law', 'amend', 'map', 'rename', 'accordingly', 'called', 'repeals', 'corresponds', '2004']},
+                        {label: '7', value:['COVID-19']},
+                        {label: '8', value:['9/11']},
+                   
+                        {label: '-1', value: [''] },]
+
 //subgroups
-export const subgroups = [0,1,2,3,4,5,6,7, -1]
+export const subgroups = [0,1,2,3,4,5,6,7,8, -1]
 
 export const groupColor ={
 
@@ -74,15 +79,15 @@ export const groupColor ={
     "1":0x3247E2,
     "2":0x7E00AA,
     
-    "3":0xDEAC00,
+    "3":0xD97F2E,
 
     "4":0xFF4DB2,
-    "5":0x6BE74D,
+    "5":0x27CB00,
 
-    "6":0xE01531, 
+    "6":0xDF2941, 
 
-    "7":0x366419,
-
+    "7":0x17A6C6,
+    "8":0x366419,
 
  };
 
@@ -95,7 +100,7 @@ export function normZ(year){
 
     // var norm = (year - 2000 + 3)* 1.5
 
-    let norm = (year - 2000 ) * 1.5 + 5
+    let norm = (year - 2000 ) * 3 + 5
 
     return norm
     }
