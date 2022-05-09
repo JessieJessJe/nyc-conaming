@@ -18,7 +18,7 @@ import plate5 from './../images/plate5.png';
 
 const plateInfo=[
     {   
-    "x":0.32,
+    "x":0.31,
     "y":0.62, 
     "title":"Private Danny Chen Way",
     "location":"Elizabeth Street, Manhattan, NY",
@@ -31,7 +31,7 @@ const plateInfo=[
     "location":"Liberty Avenue, Queens, NY",
     "year":"2021",
     "reason":`This co-naming will commemorate the contributions of the Guyanese community in Richmond Hill. Guyanese now makes up the second largest immigrant group based on the 2010 census.`,
-},{ "x":0.20,
+},{ "x":0.25,
     "y":0.08,
     "title":"Healthcare Heroes Way",
     "location":"West 168th Street, Manhattan, NY",

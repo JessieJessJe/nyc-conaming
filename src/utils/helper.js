@@ -58,14 +58,14 @@ export  const termlist = [
 
 export const group_titles= new Map([
     [-1, "Others"],
-    [0, "The Record-breakings and Undergrounds"],
+    [0, "The Record-breakings and the Undergrounds"],
     [1, "Wounds of War and Violence"],
     [2, "Bridging the Gap to Equality "],
     [3, "We Call It Home"],
     [4, "Religion and Belief"],
     [5, "Public Health and Civic Rights"],
     [6, "Law and Order"],
-    [7, "Era of Pandemic"],
+    [7, "Era of Pandemics"],
     [8, "Heroes of 911"]
 ])
 
