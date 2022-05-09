@@ -132,6 +132,8 @@ function BarChart({filter, setNewFilter, newFilter}){
                   .on("click", function(){
 
                     let [newDisplay, newGroup] = updateGroup(newFilter, d.key);
+
+                    ////toggle keyword page
     
                     setNewFilter((prev)=>{
                     return {
@@ -140,8 +142,7 @@ function BarChart({filter, setNewFilter, newFilter}){
                         "group": newGroup
                     }
                     })
-    
-                    console.log(newFilter, "newfilter", newGroup)
+
     
                     d3.select(that)
                       .attr("fill-opacity", getOpacity(newFilter["group"], d.key))
