@@ -15,6 +15,8 @@ import MenuItem from '@mui/material/MenuItem';
 import ListItemText from '@mui/material/ListItemText';
 import ListItemIcon from '@mui/material/ListItemIcon';
 
+import Stack from '@mui/material/Stack';
+
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import InputLabel from "@mui/material/InputLabel";
@@ -119,7 +121,7 @@ const MyCheckbox = ({ filter, updateFilter, category, options})=>{
         {option.label}
       </li>
     )}
-    style={{ width: 500 }}
+    // style={{ width: 500 }}
     renderInput={(params) => (
       <TextField {...params} label={`Select ${category}`} placeholder= {category} />
     )}
@@ -152,11 +154,18 @@ function Filter({filter, updateFilter, toggleCamera}){
 
            {/* < IndeterminateCheckbox theme={options_theme[1]} /> */}
 
-          <ThemeMultiSelect
-          
-          filter={filter}
-          updateFilter={updateFilter}
-          />
+           <Stack
+             direction="column"
+             justifyContent="center"
+             alignItems="stretch"
+             spacing={1}
+           >
+
+            <ThemeMultiSelect
+            
+            filter={filter}
+            updateFilter={updateFilter}
+            />
 
             <MyCheckbox 
       
@@ -185,7 +194,9 @@ function Filter({filter, updateFilter, toggleCamera}){
              updateFilter={updateFilter}
             />
 
-        <button id='three-reset-btn' onClick={resetFilter}>Reset</button>  
+
+            <button id='three-reset-btn' onClick={resetFilter}>Reset</button>  
+        </Stack>
         </React.Fragment>
     )
 }
@@ -300,7 +311,7 @@ const IndeterminateCheckbox = ({theme, updateFilter, checkState, setCheckState})
 
   return(
     <React.Fragment>
-       <Box sx={{ display: 'flex', flexDirection: 'column', ml: 3 }}>
+      <Box sx={{ display: 'flex', flexDirection: 'column', ml: 3 }}>
       <FormControlLabel
         label={`Group ${theme.label}`}
         control={
@@ -356,17 +367,22 @@ const ThemeMultiSelect = ({filter, updateFilter})=>{
 
   return(
     <React.Fragment>
-      <FormControl sx={{ display: 'flex', flexDirection: 'column', ml: 3 }}>
-      <InputLabel id="demo-multiple-checkbox-label">Select theme</InputLabel>
+ 
+      <FormControl sx={{ display: 'flex', flexDirection: 'column' }}>
+      <InputLabel id="theme-multiple-checkbox-label">Select theme</InputLabel>
       <Select
-          labelId="demo-multiple-checkbox-label"
+          labelId="theme-multiple-checkbox-label"
+          label="Label"
+
           id="demo-multiple-checkbox"
           multiple
           value={selected}
           onChange={handleChange}  
-          input={<OutlinedInput label="Tag" />}  
+          input={<OutlinedInput label="Select theme" />}  
           renderValue={(selected) => {}}
           MenuProps={MenuProps}
+
+        
         >
         {options_theme.map((theme, idx) => (
             <MenuItem key={idx+theme} value={theme}>
@@ -383,8 +399,9 @@ const ThemeMultiSelect = ({filter, updateFilter})=>{
 
 
         </Select>
-
+      
       </FormControl>
+   
     </React.Fragment>
   )
 
@@ -522,7 +539,7 @@ const AngleCheckbox = ({ filter, updateFilter, category, options})=>{
         {option.label}
       </li>
     )}
-    style={{ width: 500 }}
+   
     renderInput={(params) => (
       <TextField {...params} label={`Select ${category}`} placeholder= {category} />
     )}
