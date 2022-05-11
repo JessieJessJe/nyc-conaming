@@ -6,7 +6,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 import {useDetailContextState, useDetailContextUpdater} from "./../utils/detailContext"
 
-function Sidebar({filter, updateFilter, toggleCamera, setNewFilter, newFilter}){
+function Sidebar({filter, updateFilter, setNewFilter, newFilter}){
     
     const [detail, show] = useDetailContextState();
     const [showDetail, hideDetail] = useDetailContextUpdater();
@@ -73,7 +73,7 @@ function Sidebar({filter, updateFilter, toggleCamera, setNewFilter, newFilter}){
                     
                     filter={filter}
                     updateFilter={updateFilter}
-                    toggleCamera = {toggleCamera}
+                  
                 
                     />                 
                 </motion.div>
@@ -85,55 +85,11 @@ function Sidebar({filter, updateFilter, toggleCamera, setNewFilter, newFilter}){
                 </div>
             </motion.div>
 
-                {/* {
-                    expanded 
-                    ? <SidebarIsOpen toggleSidebar={toggleSidebar} 
-                    
-                    filter={filter}
-                    updateFilter={updateFilter}
-
-                   
-                    toggleCamera = {toggleCamera}
-             
-                    />
-                    : <SidebarIsClose 
-                    filter={filter}
-                    toggleSidebar={toggleSidebar} />
-                } */}
-           
-
         </motion.div>
         </AnimatePresence>
         </>
     )
 
 }
-
-function SidebarIsOpen({filter,updateFilter, toggleSidebar, toggleCamera, }){
-    return(
-    <React.Fragment>
-        <button className='sidebar-btn sidebar--expanded' onClick={toggleSidebar}>Close</button> 
-
-        <Filter 
-        
-        filter={filter}
-        updateFilter={updateFilter}
- 
-        toggleCamera = {toggleCamera}
-      
-        />
-    </React.Fragment>
-    )
-}
-
-function SidebarIsClose({filter, toggleSidebar}){
-    return(
-        <React.Fragment>
-        <button className='sidebar-btn' onClick={toggleSidebar}>Open</button> 
-      
-        </React.Fragment>
-    )
-}
-
 
 export default Sidebar;

@@ -114,9 +114,9 @@ canvas{
     font-size: 1.2rem;
 
     padding: 0.3vh 0.5vw;
-    margin: 1vh 0.2vw;
+    margin: 1vh 0vw;
 
-
+    background-color: #efefef;
     color:black;
 }
 

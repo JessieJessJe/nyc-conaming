@@ -10,10 +10,11 @@ import CheckBoxIcon from '@mui/icons-material/CheckBox';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Box from '@mui/material/Box';
 
-import MenuList from '@mui/material/MenuList';
 import MenuItem from '@mui/material/MenuItem';
-import ListItemText from '@mui/material/ListItemText';
-import ListItemIcon from '@mui/material/ListItemIcon';
+
+
+import Radio from '@mui/material/Radio';
+
 
 import Stack from '@mui/material/Stack';
 
@@ -22,10 +23,15 @@ import Select from "@mui/material/Select";
 import InputLabel from "@mui/material/InputLabel";
 import OutlinedInput from '@mui/material/OutlinedInput';
 
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { ThemeOptions } from '../utils/theme';
+
 import { filterData, getPureFilter, options_theme } from '../utils/helper';
 import data from "../data/mydata.json"
 
+import "./filterFont.css"
 
+const theme = createTheme( ThemeOptions );
 
 const options_year = [ { label: 'all', value: 'all' },
                       { label: '2002', value: "2002" },
@@ -65,7 +71,7 @@ const options_borough= [
 const options_angle=[
                   { label: 'map', value: 'map' },
                   { label: 'timeline', value: "timeline" },
-                  { label: 'wordcloud', value: "wordcloud" },]
+                  { label: 'landscape', value: "landscape" },]
 
 const MyCheckbox = ({ filter, updateFilter, category, options})=>{
   const icon = <CheckBoxOutlineBlankIcon fontSize="small" />;
@@ -139,7 +145,7 @@ const MyCheckbox = ({ filter, updateFilter, category, options})=>{
 
 
 
-function Filter({filter, updateFilter, toggleCamera}){
+function Filter({filter, updateFilter}){
 
   const resetFilter = ()=>{
     updateFilter("init")
@@ -150,7 +156,7 @@ function Filter({filter, updateFilter, toggleCamera}){
 
         <React.Fragment> 
 
-            {/* <button id='three-cam-btn' onClick={toggleCamera}>Select Camera</button> */}
+           <ThemeProvider theme={theme}>
 
            {/* < IndeterminateCheckbox theme={options_theme[1]} /> */}
 
@@ -195,7 +201,11 @@ function Filter({filter, updateFilter, toggleCamera}){
              updateFilter={updateFilter}
             />
 
+          
+
         </Stack>
+
+        </ThemeProvider>
             <div id='three-reset-btn' onClick={resetFilter}>Reset</div>  
  
         </React.Fragment>
@@ -403,11 +413,14 @@ const SearchField = ({filter, updateFilter})=>{
   <Autocomplete
     freeSolo
     id="free-solo-2-demo"
-    options={data_filtered.map((d) => d.coname).concat(data_filtered.map((d) => d.location))}
-    renderInput={(params) => (
+    // options={data_filtered.map((d) => d.coname).concat(data_filtered.map((d) => d.location))}
+
+    options={data_filtered.map((d) => d.coname)}
+    renderInput={(params, option) => (
       <TextField
+        key={option}
         {...params}
-        label="Search locations"
+        label="Search co-name"
         InputProps={{
           ...params.InputProps,
           type: 'search',
@@ -494,10 +507,13 @@ const AngleCheckbox = ({ filter, updateFilter, category, options})=>{
     // getOptionLabel={(option) => option.label}
     renderOption={(props, option, { selected }) => (
       <li {...props}>
-        <Checkbox
-          icon={icon}
-          checkedIcon={checkedIcon}
-          style={{ marginRight: 8 }}
+        <Radio
+            style={{
+              color: "#000000"
+            }}
+          // icon={icon}
+          // checkedIcon={checkedIcon}
+          // style={{ marginRight: 8 }}
           checked={selected}
         />
         {option.label}

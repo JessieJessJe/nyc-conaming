@@ -115,7 +115,7 @@ export function normZ(year, type="", timeline=false){
     let norm;
 
     if (type == "text" && timeline){
-        norm = (year - 2000 ) * 10 + 5
+        norm = (year - 2000 ) * 17 + 5
     }else{
         norm = (year - 2000 ) * 3 + 5
     }

@@ -1,4 +1,4 @@
-import { ThemeOptions } from '@material-ui/core/styles/createMuiTheme';
+// import { ThemeOptions } from '@material-ui/core/styles/createMuiTheme';
 
 export const ThemeOptions = {
   palette: {
@@ -21,7 +21,7 @@ export const ThemeOptions = {
     },
   },
   typography: {
-    fontFamily: 'EB Garamond',
+    fontFamily: 'ITC',
   },
   shape: {
     borderRadius: 0,

@@ -1,25 +1,20 @@
 import React, { useState, useEffect, useContext, useRef, lazy, Suspense, useMemo } from 'react';
 
-import { Canvas, useFrame, extend, useThree } from '@react-three/fiber'
-import {OrbitControls, Sky , Text, OrthographicCamera, PerspectiveCamera } from "@react-three/drei";
-
 import { motion } from 'framer-motion';
 
 import useScrollPosition from "../utils/useScrollPosition";
-import { DetailContextProvider, useDetailContextState, useDetailContextUpdater } from '../utils/detailContext';
+import { DetailContextProvider } from '../utils/detailContext';
 
 import Header from './Header';
 import Sidebar from './Sidebar';
 import MyThreeScene from './MyThreeScene';
 import DetailPage from './DetailPage';
-import { Preview } from '@mui/icons-material';
 
-import {initFilter, initNewFilter} from '../utils/helper'
+import {initFilter} from '../utils/helper'
 
 import "./three.css"
 import "./header.css"
 
-import mydata from "../data/mydata.json"
 
 function Visualization(){
 
@@ -37,12 +32,6 @@ function Visualization(){
 
     }, [scrollPosition])
 
-//filter states
-
-    const [camera, setCamera ] = useState(true);
-    const toggleCamera = ()=>{
-        setCamera(!camera)
-    }
 
     //original hook for filter
     const [filter, setFilter] = useState(initFilter);
@@ -148,8 +137,6 @@ function Visualization(){
 
         filter={newFilter}
 
-        camera = {camera}
-
         setClickDetail={setClickDetail}
       
         />
@@ -158,9 +145,6 @@ function Visualization(){
 
         filter={filter}
         updateFilter={updateFilter}
-
-    
-        toggleCamera = {toggleCamera}
        
         setNewFilter={setNewFilter}
 

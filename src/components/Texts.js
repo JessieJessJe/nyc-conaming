@@ -102,7 +102,7 @@ function MyText({pX, pY, pZ, pColor, content, filter, i, dataObj, setClickDetail
   )
 }
 
-function Texts({filter, wordcloud, setClickDetail, timeline}){
+function Texts({filter, setClickDetail, timeline}){
    
     ///Processing Filtered Data
     let data_filtered = filterNewData(data, filter)
@@ -118,11 +118,11 @@ function Texts({filter, wordcloud, setClickDetail, timeline}){
             pY = normLat(d.lat),
             pZ = normZ(d.year, "text", timeline),
             pColor = groupColor[d.group],
-            content = wordcloud && d.group >-1 ? termlist[d.group][0] : d.coname
+            content = d.coname
 
         textlist.push(             
           <MyText 
-            pX={pX} pY={pY} pZ={pZ} key={`text-${i}`} 
+            pX={pX} pY={pY} pZ={pZ} key={`text-${d.id}`} 
             pColor={pColor} content={content} filter={filter} i={i} 
             dataObj={d}
             setClickDetail={setClickDetail}

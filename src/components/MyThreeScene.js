@@ -13,7 +13,7 @@ import NYCMap from "./NYCMap"
 import TextsLazy from './TextsLazy';
 
 
-function MyThreeScene({filter, camera, setClickDetail}){
+function MyThreeScene({filter, setClickDetail}){
 
     const OrthographicCamera_ratio = 8
     const ref = useRef();
@@ -40,8 +40,8 @@ function MyThreeScene({filter, camera, setClickDetail}){
                 right={window.innerWidth / OrthographicCamera_ratio}
                 top={window.innerHeight / OrthographicCamera_ratio}
                 bottom={-window.innerHeight / OrthographicCamera_ratio}
-                near={-10} far={1000} 
-                position={[0, 0, 200]} 
+                near={-500} far={1000} 
+                position={[0, 0, 600]} 
                 zoom={1.5}/>
 
             <ambientLight />
@@ -79,48 +79,50 @@ function MyThreeScene({filter, camera, setClickDetail}){
 export default MyThreeScene;
 
 function Group({filter, setClickDetail}) {
+   
     // This reference will give us direct access to the mesh
     const mesh = useRef()
     // Set up state for the hovered and active state
     const [timeline, setTimeline] = useState(false)
-    const [wordcloud, setWordcloud] = useState(false)
+
     const [map, setMap] = useState(true)
     // Subscribe this component to the render-loop, rotate the mesh every frame
 
-
     let v = new THREE.Vector3()
-
-    const camera = useThree((state) => state.camera)
 
     useFrame((state) => {
 
         if(map){
 
             if(mesh.current.rotation.y > 0){
-                mesh.current.rotation.y -= 0.02
+                mesh.current.rotation.y -= 0.02 
             }
-
             state.camera.position.lerp(v.set(0, 0, 600), 0.05)
+            
            
         }else if(timeline){
             // mesh.current.rotation.y = Math.PI/2;
             if(mesh.current.rotation.y < Math.PI / 2){
                 mesh.current.rotation.y += 0.02
             }
-
-            state.camera.position.lerp(v.set(1000, 0, 600), 0.05)
+            state.camera.position.lerp(v.set(2000, 0, 600), 0.05)
+           // state.camera.setViewOffset(1/OrthographicCamera_ratio, 1/OrthographicCamera_ratio, -50, 0, window.innerWidth, window.innerHeight )
+            
+        }else{
+            if(mesh.current.rotation.y > 0) {
+                mesh.current.rotation.y -= 0.2
+                state.camera.position.lerp(v.set(0, 0, 600), 0.05)
+            }
         }
        
     })
-    // Return view, these are regular three.js elements expressed in JSX
-
 
     useEffect(()=>{
 
         if (filter["angle"] === "map"){
             setMap(true)
             setTimeline(false)
-            setWordcloud(false)
+        
             // camera.position.set(0,0,500)
             // mesh.current.rotation.y = 0
             // mesh.current.rotation.x = 0
@@ -129,9 +131,7 @@ function Group({filter, setClickDetail}) {
         }else if (filter["angle"] === "timeline"){
             setTimeline(true)
             setMap(false)
-            setWordcloud(false)
 
-           
             // camera.position.set(0,0,500)
             // mesh.current.rotation.x = 0
             // mesh.current.rotation.z = 0
@@ -139,7 +139,7 @@ function Group({filter, setClickDetail}) {
         }else{
             setMap(false)
             setTimeline(false)
-            setWordcloud(true)
+           
         }
 
     }, [filter["angle"]])
@@ -155,7 +155,7 @@ function Group({filter, setClickDetail}) {
             enableDamping={true}
             dampingFactor={0.2}
 
-            zoomSpeed={0.5}
+            zoomSpeed={0.3}
             rotateSpeed={0.5}
             panSpeed={0.5}
 
@@ -168,7 +168,7 @@ function Group({filter, setClickDetail}) {
             />
             <TextsLazy 
                 filter={filter}
-                wordcloud={wordcloud}
+              
                 timeline={timeline}
                 setClickDetail = {setClickDetail}
             />
