@@ -63,7 +63,7 @@ function AreaMap({shape}){
 
  
     <line key={key} rotation-y={Math.PI} >
-    <bufferGeometry ref={ref}/>
+    <bufferGeometry castShadow ref={ref}/>
     <lineBasicMaterial color="black"  lineWidth={1} />
     </line>
     )

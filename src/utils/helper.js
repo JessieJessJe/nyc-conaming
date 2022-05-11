@@ -111,11 +111,16 @@ export function getGroupColor(){
 }
 
 
-export function normZ(year){
+export function normZ(year, type="", timeline=false){
+    let norm;
 
-    // var norm = (year - 2000 + 3)* 1.5
+    if (type == "text" && timeline){
+        norm = (year - 2000 ) * 10 + 5
+    }else{
+        norm = (year - 2000 ) * 3 + 5
+    }
 
-    let norm = (year - 2000 ) * 3 + 5
+    
 
     return norm
     }

@@ -156,9 +156,10 @@ function Filter({filter, updateFilter, toggleCamera}){
 
            <Stack
              direction="column"
-             justifyContent="center"
+             justifyContent="flex-start"
              alignItems="stretch"
              spacing={1}
+
            >
 
             <ThemeMultiSelect
@@ -194,9 +195,9 @@ function Filter({filter, updateFilter, toggleCamera}){
              updateFilter={updateFilter}
             />
 
-
-            <button id='three-reset-btn' onClick={resetFilter}>Reset</button>  
         </Stack>
+            <div id='three-reset-btn' onClick={resetFilter}>Reset</div>  
+ 
         </React.Fragment>
     )
 }
@@ -204,43 +205,6 @@ function Filter({filter, updateFilter, toggleCamera}){
 export default Filter
 
 
-const ThemeCheckbox = ({filter, updateFilter}) => {
-
-  const [selected, setSelected] = useState([])
-  return(
-    <Autocomplete
-    multiple
-    id="checkboxes-tags-demo"
-    options={options_theme} 
-
-    getOptionLabel={(option) => option.label}
-    renderOption={(props, option, { selected }) => {
-      
-      return(
-        <li>
-        < IndeterminateCheckbox 
-            theme={option}
-            updateFilter={updateFilter}
-            copyClick={selected}
-             />
-        </li>
-      )
-    } }
-    style={{ width: 500 }}
-    renderInput={(params) => (
-      <TextField {...params} label={`Select theme`} placeholder="theme" />
-    )}
-  
-    // value={selected}
-    onChange={ (event, value)=>{
-      // handleSelected( value)
-      console.log(event, value, 'theme check')
-
-    }}
-    
-  />
-  )
-}
 
 
 //FOR EACH THEME

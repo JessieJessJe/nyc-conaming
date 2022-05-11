@@ -48,7 +48,7 @@ function Visualization(){
     const [filter, setFilter] = useState(initFilter);
 
     //hook for barchart in case it modifies filter
-    const [newFilter, setNewFilter] = useState(null)
+    const [newFilter, setNewFilter] = useState(initFilter)
 
 
     const updateFilter = (category, value)=>{
@@ -56,7 +56,12 @@ function Visualization(){
 
         switch(category){
             case "init":
-                setFilter(initFilter);
+
+                if(newFilter == null) setFilter(initFilter);
+                else setFilter({...initFilter, 
+                                "group": newFilter["group"],
+                                "displaySelectedGroup": newFilter["displaySelectedGroup"]})
+                
                
                 break;
             case "theme_false":
@@ -65,7 +70,9 @@ function Visualization(){
                     
                     setFilter((prev)=>{
                         return {...prev, 
-                            "theme": [...prev["theme"], value]}
+                            "theme": [...prev["theme"], value],
+                            "group": newFilter["group"],
+                            "displaySelectedGroup": newFilter["displaySelectedGroup"]}
                     })
 
                 }
@@ -78,7 +85,9 @@ function Visualization(){
 
                     setFilter((prev)=>{
                         return{...prev, 
-                            "theme": prev["theme"].filter(f => f !== value)}
+                            "theme": prev["theme"].filter(f => f !== value),
+                            "group": newFilter["group"],
+                            "displaySelectedGroup": newFilter["displaySelectedGroup"]}
                     })
                 
                 return;
@@ -88,6 +97,8 @@ function Visualization(){
                   return{
                     ...prev,
                     "angle": value.value,
+                    "group": newFilter["group"],
+                    "displaySelectedGroup": newFilter["displaySelectedGroup"]
                 }
                   })
                

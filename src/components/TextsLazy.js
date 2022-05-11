@@ -2,13 +2,14 @@ import React, { useState, useEffect, useContext, useRef, lazy, Suspense } from '
 
 const Texts = lazy(()=> import("./Texts"));
 
-function TextsLazy({filter, wordcloud,setClickDetail }){
+function TextsLazy({filter, wordcloud,setClickDetail, timeline }){
     return (
         <Suspense>
          <Texts 
                  filter={filter}
                  wordcloud={wordcloud}
                  setClickDetail={setClickDetail}
+                 timeline={timeline}
         />
        </Suspense>
     )

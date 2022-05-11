@@ -3,6 +3,8 @@ import React, { useState, useEffect, useContext, useRef, lazy, Suspense } from '
 import { Canvas, useFrame, extend, useThree } from '@react-three/fiber'
 import {OrbitControls, Sky , OrthographicCamera } from "@react-three/drei";
 
+import * as THREE from 'three'
+
 // import { motion } from 'framer-motion';
 // import { MotionCanvas, LayoutOrthographicCamera } from "framer-motion-3d"
 
@@ -24,10 +26,13 @@ function MyThreeScene({filter, camera, setClickDetail}){
 
      
 
-            <Canvas width="100%" height="100%">
+            <Canvas width="100%" 
+                    height="100%"
+          
+                    >
                 
             <Suspense fallback={null}>
-
+           
             <OrthographicCamera
         
                 makeDefault = {true}
@@ -36,11 +41,14 @@ function MyThreeScene({filter, camera, setClickDetail}){
                 top={window.innerHeight / OrthographicCamera_ratio}
                 bottom={-window.innerHeight / OrthographicCamera_ratio}
                 near={-10} far={1000} 
-                position={[0, 0, 500]} 
-                zoom={2}/>
+                position={[0, 0, 200]} 
+                zoom={1.5}/>
 
             <ambientLight />
-            <pointLight position={[10, 10, 10]} />
+            <pointLight 
+                intensity={1}
+                position={[0, 0, 600]}
+             />
 
            
             <Group 
@@ -57,6 +65,8 @@ function MyThreeScene({filter, camera, setClickDetail}){
           
 
             {/* <Sky /> */}
+
+            {/* <Rig /> */}
 
             </ Suspense>
             </Canvas>
@@ -78,20 +88,30 @@ function Group({filter, setClickDetail}) {
     // Subscribe this component to the render-loop, rotate the mesh every frame
 
 
+    let v = new THREE.Vector3()
 
     const camera = useThree((state) => state.camera)
 
-    // useFrame(() => {
+    useFrame((state) => {
 
-    //     if(map){
-    //         mesh.current.rotation.y = 0
+        if(map){
+
+            if(mesh.current.rotation.y > 0){
+                mesh.current.rotation.y -= 0.02
+            }
+
+            state.camera.position.lerp(v.set(0, 0, 600), 0.05)
            
-    //     }else if(timeline){
-    //         mesh.current.rotation.y = Math.PI/2;
-           
-    //     }
+        }else if(timeline){
+            // mesh.current.rotation.y = Math.PI/2;
+            if(mesh.current.rotation.y < Math.PI / 2){
+                mesh.current.rotation.y += 0.02
+            }
+
+            state.camera.position.lerp(v.set(1000, 0, 600), 0.05)
+        }
        
-    // })
+    })
     // Return view, these are regular three.js elements expressed in JSX
 
 
@@ -101,19 +121,21 @@ function Group({filter, setClickDetail}) {
             setMap(true)
             setTimeline(false)
             setWordcloud(false)
-            camera.position.set(0,0,500)
-            mesh.current.rotation.y = 0
-            mesh.current.rotation.x = 0
-            mesh.current.rotation.z = 0
+            // camera.position.set(0,0,500)
+            // mesh.current.rotation.y = 0
+            // mesh.current.rotation.x = 0
+            // mesh.current.rotation.z = 0
 
         }else if (filter["angle"] === "timeline"){
             setTimeline(true)
             setMap(false)
             setWordcloud(false)
-            camera.position.set(0,0,500)
-            mesh.current.rotation.x = 0
-            mesh.current.rotation.z = 0
-            mesh.current.rotation.y = Math.PI/2;
+
+           
+            // camera.position.set(0,0,500)
+            // mesh.current.rotation.x = 0
+            // mesh.current.rotation.z = 0
+            // mesh.current.rotation.y = Math.PI/2;
         }else{
             setMap(false)
             setTimeline(false)
@@ -131,7 +153,14 @@ function Group({filter, setClickDetail}) {
             // enableRotate={map? true : false}
                   
             enableDamping={true}
-           
+            dampingFactor={0.2}
+
+            zoomSpeed={0.5}
+            rotateSpeed={0.5}
+            panSpeed={0.5}
+
+            minZoom={0.5}
+            maxZoom={10}
 
             maxAzimuthAngle={timeline? 0 : 2 * Math.PI}
             minAzimuthAngle={timeline? 0 : -1 * Math.PI}
@@ -140,6 +169,7 @@ function Group({filter, setClickDetail}) {
             <TextsLazy 
                 filter={filter}
                 wordcloud={wordcloud}
+                timeline={timeline}
                 setClickDetail = {setClickDetail}
             />
 
@@ -147,4 +177,24 @@ function Group({filter, setClickDetail}) {
         
       </group>
     )
+  }
+
+  function Rig({ v = new THREE.Vector3() }) {
+
+    const camera = useThree(state => state.camera)
+    console.log(camera)
+
+    return useFrame((state) => {
+      state.camera.position.lerp(v.set(state.mouse.x / 10, state.mouse.y / 10, 600), 0.05)
+    })
+  }
+
+
+  function Rig_Time({ v = new THREE.Vector3() }) {
+
+    const camera = useThree(state => state.camera)
+
+    return useFrame((state) => {
+      state.camera.position.lerp(v.set(0, 0, 500), 0.05)
+    })
   }

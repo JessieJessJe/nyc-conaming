@@ -41,7 +41,7 @@ export const StyledBurger = styled.button`
     transform-origin: 1px;
 
     :first-child {
-        transform: ${({ open }) => open ? 'rotate(45deg)' : 'rotate(0)'};
+        transform: ${({ open }) => open ? 'rotate(40deg)' : 'rotate(0)'};
       }
 
       :nth-child(2) {
@@ -52,7 +52,7 @@ export const StyledBurger = styled.button`
 
       :nth-child(3) {
 
-        transform: ${({ open }) => open ? 'rotate(-45deg)' : 'rotate(0)'};
+        transform: ${({ open }) => open ? 'rotate(-40deg)' : 'rotate(0)'};
       }
 
     }

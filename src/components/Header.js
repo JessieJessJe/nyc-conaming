@@ -41,9 +41,7 @@ function Header({opacity}){
           <li className='header-nav-link'>
             <Link to="/" style={{ textDecoration: 'none' }}>Home</Link>
           </li>
-          {/* <li>
-            <Link to="/introduction">About</Link>
-          </li> */}
+
           <li className='header-nav-link'>
             <Link to="/visualization" style={{ textDecoration: 'none' }}>Visualization</Link>
           </li>

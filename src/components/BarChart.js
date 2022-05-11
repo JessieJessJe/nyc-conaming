@@ -58,7 +58,9 @@ function BarChart({filter, setNewFilter, newFilter}){
         else if(!newFilter["displaySelectedGroup"]){ setNewFilter(initNewFilter(mydata,filter)) }
         else setNewFilter(updateNewFilter(filter, newFilter))
               
-
+        // else{
+        //     setNewFilter(initNewFilter(mydata,filter))
+        // }
 
 
     }, [filter])
@@ -160,17 +162,7 @@ function BarChart({filter, setNewFilter, newFilter}){
                     setGroup(d.key)
                     setShowKeywords(true)
                     setPos(y(d[0][0]) + margin.top)
-                    
-                    
-                    // d3.select(that)
-                    //   .transition()
-                    //   .ease(d3.easeBack)
-                    //   .duration(300)
-                    //   .attr("width", width/0.8 )
-                    //   .transition()
-                    //   .ease(d3.easeBack)
-                    //   .duration(300)
-                    //   .attr("width", width )
+
                     d3.select(that)
                     .attr("fill-opacity", "1")
 
@@ -179,11 +171,6 @@ function BarChart({filter, setNewFilter, newFilter}){
                   .on("mouseout mouseleave", function(){
                     setShowKeywords(false)
 
-                    // d3.select(that)
-                    // .transition()
-                    // .ease(d3.easeBack)
-                    // .duration(300)
-                    // .attr("width", width )
                     d3.select(that)
                     .attr("fill-opacity", getOpacity(newFilter["group"], d.key))
 
