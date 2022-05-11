@@ -82,10 +82,13 @@ function Visualization(){
                 return;
 
             case "angle":
+
+                    console.log("update angle filter", value)
                 setFilter((prev)=>{ 
+
                   return{
                     ...prev,
-                    "angle": value.value,
+                    "angle": value,
                     "group": newFilter["group"],
                     "displaySelectedGroup": newFilter["displaySelectedGroup"]
                 }

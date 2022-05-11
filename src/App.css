@@ -1,4 +1,4 @@
-@font-face {
+/* @font-face {
   font-family: gaya;
   src: url(./fonts/GayaTrial-Regular.otf);
 }
@@ -11,6 +11,11 @@
 @font-face {
   font-family: Basteleur;
   src: url(./fonts/Basteleur-Bold.otf);
+} */
+
+@font-face {
+  font-family: ITC;
+  src: url(./fonts/ITCGaramondStd-Lt.otf)
 }
 
 @font-face {

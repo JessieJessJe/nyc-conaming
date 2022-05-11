@@ -3,7 +3,7 @@ import React, {useEffect, useReducer, useState, useMemo} from 'react';
 import Checkbox from '@mui/material/Checkbox';
 import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
-
+import FormLabel from '@mui/material/FormLabel';
 import CheckBoxOutlineBlankIcon from '@mui/icons-material/CheckBoxOutlineBlank';
 import CheckBoxIcon from '@mui/icons-material/CheckBox';
 
@@ -11,10 +11,6 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import Box from '@mui/material/Box';
 
 import MenuItem from '@mui/material/MenuItem';
-
-
-import Radio from '@mui/material/Radio';
-
 
 import Stack from '@mui/material/Stack';
 
@@ -26,10 +22,10 @@ import OutlinedInput from '@mui/material/OutlinedInput';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { ThemeOptions } from '../utils/theme';
 
+import AngleRadio from './AngleRadio';
+
 import { filterData, getPureFilter, options_theme } from '../utils/helper';
 import data from "../data/mydata.json"
-
-import "./filterFont.css"
 
 const theme = createTheme( ThemeOptions );
 
@@ -69,9 +65,9 @@ const options_borough= [
                 ];
 
 const options_angle=[
-                  { label: 'map', value: 'map' },
-                  { label: 'timeline', value: "timeline" },
-                  { label: 'landscape', value: "landscape" },]
+                  { label: 'top-down', value: 'map' },
+                  { label: 'side', value: "timeline" },
+                  { label: '360°', value: "landscape" },]
 
 const MyCheckbox = ({ filter, updateFilter, category, options})=>{
   const icon = <CheckBoxOutlineBlankIcon fontSize="small" />;
@@ -88,7 +84,7 @@ const MyCheckbox = ({ filter, updateFilter, category, options})=>{
     // }else{
     //   setSelected(value.filter(v => v.lable !== "all"))
     // }
-
+    console.log(value, 'filter')
     setSelected(value)
   }
 
@@ -127,9 +123,9 @@ const MyCheckbox = ({ filter, updateFilter, category, options})=>{
         {option.label}
       </li>
     )}
-    // style={{ width: 500 }}
+
     renderInput={(params) => (
-      <TextField {...params} label={`Select ${category}`} placeholder= {category} />
+      <TextField {...params} placeholder= {`${category}s`} />
     )}
   
     value={selected}
@@ -158,15 +154,34 @@ function Filter({filter, updateFilter}){
 
            <ThemeProvider theme={theme}>
 
-           {/* < IndeterminateCheckbox theme={options_theme[1]} /> */}
+            <Stack
+            direction="column"
+            justifyContent="flex-start"
+            alignItems="stretch"
+            spacing={2}
+            >
 
-           <Stack
-             direction="column"
-             justifyContent="flex-start"
-             alignItems="stretch"
-             spacing={1}
+            <AngleRadio        
+            filter={filter}
+            updateFilter={updateFilter}
+            category="angle"
+            />   
 
-           >
+            
+            <Stack
+            direction="column"
+            justifyContent="flex-start"
+            alignItems="stretch"
+            spacing={1}
+            >
+            <FormLabel id="demo-group-label"      
+              sx={{
+                fontFamily: 'Raw',
+                fontSize: "1.2rem",
+              }}>
+            
+            Filter by</FormLabel>
+  
 
             <ThemeMultiSelect
             
@@ -187,20 +202,13 @@ function Filter({filter, updateFilter}){
             updateFilter={updateFilter}
             category="borough"
             options= {options_borough}
-            />  
-
-            <AngleCheckbox         
-            filter={filter}
-            updateFilter={updateFilter}
-            category="angle"
-            options= {options_angle}
-            />    
+            />     
 
             <SearchField 
              filter={filter}
              updateFilter={updateFilter}
             />
-
+           </Stack>
           
 
         </Stack>
@@ -343,7 +351,8 @@ const ThemeMultiSelect = ({filter, updateFilter})=>{
     <React.Fragment>
  
       <FormControl sx={{ display: 'flex', flexDirection: 'column' }}>
-      <InputLabel id="theme-multiple-checkbox-label">Select theme</InputLabel>
+      {/* <InputLabel id="theme-multiple-checkbox-label">Select theme</InputLabel>
+       */}
       <Select
           labelId="theme-multiple-checkbox-label"
           label="Label"
@@ -352,11 +361,11 @@ const ThemeMultiSelect = ({filter, updateFilter})=>{
           multiple
           value={selected}
           onChange={handleChange}  
-          input={<OutlinedInput label="Select theme" />}  
-          renderValue={(selected) => {}}
+          input={<OutlinedInput  />}  
+          renderValue={(selected) => "Themes"}
           MenuProps={MenuProps}
 
-        
+ 
         >
         {options_theme.map((theme, idx) => (
             <MenuItem key={idx+theme} value={theme}>
@@ -420,7 +429,7 @@ const SearchField = ({filter, updateFilter})=>{
       <TextField
         key={option}
         {...params}
-        label="Search co-name"
+        label="Search co-names"
         InputProps={{
           ...params.InputProps,
           type: 'search',
@@ -464,72 +473,3 @@ const MenuProps = {
 };
 
 
-const AngleCheckbox = ({ filter, updateFilter, category, options})=>{
-  const icon = <CheckBoxOutlineBlankIcon fontSize="small" />;
-  const checkedIcon = <CheckBoxIcon fontSize="small" />;  
-  const filterMemo = useMemo(()=> (filter), [getPureFilter(filter)])
-
-  const [selected, setSelected] = useState( options[0] );
-
-  //TO DO: all vs others checkboxes 
-  const handleSelected = (value) =>{
-    if (value){
-      setSelected(value)
-    }else{
-      setSelected(options[0])
-    }
-
-  }
-
-  useEffect(()=>{
-    
-    updateFilter(category, selected)
-    
-  }, [selected])
-
-  //handle filter reset
-  useEffect(()=>{
-
-    if (filter["reset"]){
-      setSelected(options[0])
-    }
-
-  }, [filterMemo])
-
-  
-  return(
-    <Autocomplete
-    // multiple
-    id="checkboxes-tags-demo"
-    options={options} 
-    // disableClearable
-    disableCloseOnSelect
-    // getOptionLabel={(option) => option.label}
-    renderOption={(props, option, { selected }) => (
-      <li {...props}>
-        <Radio
-            style={{
-              color: "#000000"
-            }}
-          // icon={icon}
-          // checkedIcon={checkedIcon}
-          // style={{ marginRight: 8 }}
-          checked={selected}
-        />
-        {option.label}
-      </li>
-    )}
-   
-    renderInput={(params) => (
-      <TextField {...params} label={`Select ${category}`} placeholder= {category} />
-    )}
-  
-    value={selected}
-    onChange={ (event, value)=>{
-      handleSelected( value)
-
-    }}
-    
-  />
-  )
-}
