@@ -64,10 +64,15 @@ const options_borough= [
          
                 ];
 
-const options_angle=[
-                  { label: 'top-down', value: 'map' },
-                  { label: 'side', value: "timeline" },
-                  { label: '360°', value: "landscape" },]
+//check if 'all' is selected for Mycheckbox
+const ifAll = (selected)=>{
+  return selected.map(s => s.value).includes('all')
+}
+
+//stripe away all
+const returnOthers = (value) => {
+  return value.filter( (v) => v.value !== 'all')
+}
 
 const MyCheckbox = ({ filter, updateFilter, category, options})=>{
   const icon = <CheckBoxOutlineBlankIcon fontSize="small" />;
@@ -76,16 +81,24 @@ const MyCheckbox = ({ filter, updateFilter, category, options})=>{
 
   const [selected, setSelected] = useState( [options[0]] );
 
-  //TO DO: all vs others checkboxes 
   const handleSelected = (value) =>{
     
-    // if (value[value.length-1].label === "all"){
-    //   setSelected( [options[0] ])
-    // }else{
-    //   setSelected(value.filter(v => v.lable !== "all"))
-    // }
-    console.log(value, 'filter')
-    setSelected(value)
+    //if val empty -> all default 
+
+    //if prev is all, and select others -> others
+
+    //if prev no all, select all -> all only
+
+    if (value.length == 0){
+      setSelected( [options[0]] )
+    }else if ( ifAll(selected) ){
+      setSelected(  returnOthers(value))
+    }else{
+
+      if (ifAll(value)) setSelected( [options[0]] )
+      else setSelected(value)
+
+    }
   }
 
   useEffect(()=>{
