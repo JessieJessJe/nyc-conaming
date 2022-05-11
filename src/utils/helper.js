@@ -211,7 +211,7 @@ export const initFilter = {
         "search":null,
         "angle":"map",
         "reset": false,
-        "group":[1],
+        "group":[8],
         "displaySelectedGroup": false
     }
 
@@ -230,7 +230,7 @@ export function initNewFilter(mydata, filter){
    newFilter["displaySelectedGroup"] = true;
    newFilter["group"]=[parseInt(initGroup)]
 
-   console.log("this new filter", newFilter, "init group", initGroup)
+//    console.log("this new filter", newFilter, "init group", initGroup)
    return newFilter
 }
 

@@ -55,7 +55,7 @@ function BarChart({filter, setNewFilter, newFilter}){
             initialDisplay();
             
         }
-        else if(!newFilter["displaySelectedGroup"]){ setNewFilter(initNewFilter(mydata,filter)) }
+        // else if(!newFilter["displaySelectedGroup"]){ setNewFilter(initNewFilter(mydata,filter)) }
         else setNewFilter(updateNewFilter(filter, newFilter))
               
         // else{
