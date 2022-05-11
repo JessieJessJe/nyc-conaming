@@ -83,7 +83,7 @@ function Visualization(){
 
             case "angle":
 
-                    console.log("update angle filter", value)
+                 
                 setFilter((prev)=>{ 
 
                   return{
