@@ -36,11 +36,9 @@ function AngleRadio({ filter, updateFilter, category="angle"}){
       //handle filter reset
     useEffect(()=>{
 
-        if (filter["reset"]){
-        setSelected(options[0].value)
-        }
+        setSelected(options[0].value)    
 
-    }, [filter])
+    }, [filter["reset"]])
 
 return (
 

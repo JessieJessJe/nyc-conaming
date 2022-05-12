@@ -10,7 +10,7 @@ import Sidebar from './Sidebar';
 import MyThreeScene from './MyThreeScene';
 import DetailPage from './DetailPage';
 
-import {initFilter} from '../utils/helper'
+import {initFilter, getPureFilter} from '../utils/helper'
 
 import "./three.css"
 import "./header.css"
@@ -96,6 +96,21 @@ function Visualization(){
                
                 return; 
 
+            case  "search":
+
+                setFilter((prev)=>{
+                    return {...prev, 
+                        "search": value}
+                })
+                return;
+
+            // case "reset":
+
+            //     setFilter({...initFilter, 
+            //         "group": newFilter["group"],
+            //         "displaySelectedGroup": newFilter["displaySelectedGroup"]})
+            //     return;
+
             default:
                 let updateValue = {};
                 updateValue[category] = value;
@@ -113,8 +128,9 @@ function Visualization(){
 
     }
 
-    // const filterMemo = useMemo(()=> (filter), [getPureFilter(filter)])
+    const filterMemo = useMemo(()=> (filter), [getPureFilter(filter)])
 
+    const newFilterMemo = useMemo(()=> (newFilter), [getPureFilter(newFilter)])
 
     const [clickDetail, setClickDetail] = useState(null)
 
@@ -138,7 +154,7 @@ function Visualization(){
         <MyThreeScene    
         // filter={filterMemo}
 
-        filter={newFilter}
+        filter={newFilterMemo}
 
         setClickDetail={setClickDetail}
       
@@ -146,12 +162,12 @@ function Visualization(){
 
         <Sidebar
 
-        filter={filter}
+        filter={filterMemo}
         updateFilter={updateFilter}
        
         setNewFilter={setNewFilter}
 
-        newFilter = {newFilter}
+        newFilter = {newFilterMemo}
         />
 
         <DetailPage 

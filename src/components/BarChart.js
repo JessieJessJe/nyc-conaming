@@ -214,7 +214,7 @@ function KeywordPlate({group, show, pos}){
                     <div className='keywords-terms-wrapper'>
     
                         { termlist[group].map( (term)=>
-                        <p className='text-normal keywords-terms' style={{backgroundColor: "#ffffff", zIndex:100}}>
+                        <p key={'keyword'+term} className='text-normal keywords-terms' style={{backgroundColor: "#ffffff", zIndex:100}}>
                         {term}
                         </p>
                         )}

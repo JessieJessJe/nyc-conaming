@@ -16,7 +16,6 @@ import TextsLazy from './TextsLazy';
 function MyThreeScene({filter, setClickDetail}){
 
     const OrthographicCamera_ratio = 8
-    const ref = useRef();
 
     // useFrame(() => (ref.current.rotation.x = ref.current.rotation.y = ref.current.rotation.z += 0.01))
     // useFrame(({ clock, camera }) => {
@@ -54,7 +53,7 @@ function MyThreeScene({filter, setClickDetail}){
             <Group 
                 filter={filter} 
                 setClickDetail={setClickDetail}
-                />
+            />
 
             {/* <OrbitControls />
             <TextsLazy 

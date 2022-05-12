@@ -23,46 +23,12 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { ThemeOptions } from '../utils/theme';
 
 import AngleRadio from './AngleRadio';
+import Search from './Search';
+import { filterData, getPureFilter, options_theme, options_year, options_borough  } from '../utils/helper';
 
-import { filterData, getPureFilter, options_theme } from '../utils/helper';
-import data from "../data/mydata.json"
 
 const theme = createTheme( ThemeOptions );
 
-const options_year = [ { label: 'all', value: 'all' },
-                      { label: '2002', value: "2002" },
-                      { label: '2003', value: "2003" },
-                      { label: '2004', value: "2004" },
-                      { label: '2005', value: "2005" },
-                      { label: '2006', value: "2006" },
-                      { label: '2007', value: "2007" },
-                      { label: '2008', value: "2008" },
-                      { label: '2009', value: "2009" },
-                      { label: '2010', value: "2010" },
-                      { label: '2011', value: "2011" },
-                      { label: '2012', value: "2012" },
-                      { label: '2013', value: "2013" },
-                      { label: '2014', value: "2014" },
-                      { label: '2015', value: "2015" },
-                      { label: '2016', value: "2016" },
-                      { label: '2017', value: "2017" },
-                      { label: '2018', value: "2018" },
-                      { label: '2019', value: "2019" },
-                      { label: '2020', value: "2020" },
-                      { label: '2021', value: "2021" },
-                      { label: '2022', value: "2022" },
-                 
-                  ];
-              
-const options_borough= [
-                    { label: 'all', value: 'all' },
-                    { label: 'Manhattan', value: "Manhattan" },
-                    { label: 'Queens', value: "Queens" },
-                    { label: 'Brooklyn', value: "Brooklyn" },
-                    { label: 'Bronx', value: 'Bronx' },
-                    { label: 'Staten Island', value: 'Staten Island' },
-         
-                ];
 
 //check if 'all' is selected for Mycheckbox
 const ifAll = (selected)=>{
@@ -77,6 +43,7 @@ const returnOthers = (value) => {
 const MyCheckbox = ({ filter, updateFilter, category, options})=>{
   const icon = <CheckBoxOutlineBlankIcon fontSize="small" />;
   const checkedIcon = <CheckBoxIcon fontSize="small" />;  
+
   const filterMemo = useMemo(()=> (filter), [getPureFilter(filter)])
 
   const [selected, setSelected] = useState( [options[0]] );
@@ -110,11 +77,9 @@ const MyCheckbox = ({ filter, updateFilter, category, options})=>{
   //handle filter reset
   useEffect(()=>{
 
-    if (filter["reset"]){
-      setSelected([options[0]])
-    }
+      setSelected([options[0]])   
 
-  }, [filterMemo])
+  }, [filter["reset"]])
 
   
   return(
@@ -157,8 +122,9 @@ const MyCheckbox = ({ filter, updateFilter, category, options})=>{
 function Filter({filter, updateFilter}){
 
   const resetFilter = ()=>{
-    updateFilter("init")
-    updateFilter("reset", true)
+    // updateFilter("init")
+    
+    updateFilter("reset", !filter["reset"]) //why thsi? double refreshing
   }
 
     return(
@@ -217,9 +183,10 @@ function Filter({filter, updateFilter}){
             options= {options_borough}
             />     
 
-            <SearchField 
-             filter={filter}
-             updateFilter={updateFilter}
+
+            <Search 
+              filter={filter}
+              updateFilter={updateFilter}
             />
            </Stack>
           
@@ -406,63 +373,7 @@ const ThemeMultiSelect = ({filter, updateFilter})=>{
 
 
 
-const SearchField = ({filter, updateFilter})=>{
-  const filterMemo = useMemo(()=> (filter), [getPureFilter(filter)])
 
-  let data_filtered = filterData(data, filter)
-  const [search, setSearch] = useState("");
-
-  useEffect(()=>{
-
-    if(!filter["reset"]){
-      updateFilter("search", search)
-    }
-
-  }, [search])
-
-  //handle filter reset
-  useEffect(()=>{
-
-    if (filter["reset"]){
-      setSearch("")
-      updateFilter("reset", false)
-    }
-
-
-  }, [filterMemo])
-
-  return(  
-  <Autocomplete
-    freeSolo
-    id="free-solo-2-demo"
-    // options={data_filtered.map((d) => d.coname).concat(data_filtered.map((d) => d.location))}
-
-    options={data_filtered.map((d) => d.coname)}
-    renderInput={(params, option) => (
-      <TextField
-        key={option}
-        {...params}
-        label="Search co-names"
-        InputProps={{
-          ...params.InputProps,
-          type: 'search',
-        }}
-      />
-    )}
-    value={search}
-    onChange= {(event, value, reason)=>{
-
-      if (value === null){
-        setSearch("")
-      }else{
-        setSearch(value);
-      }
-    }}
-  />
-  
-  )
-
-}
 
 const ITEM_HEIGHT = 100;
 const ITEM_PADDING_TOP = 8;

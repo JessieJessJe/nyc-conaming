@@ -58,18 +58,52 @@ export  const termlist = [
 
 export const group_titles= new Map([
     [-1, "Others"],
-    [0, "The Record-breakings and the Undergrounds"],
+    [0, "Arts and Culture"],
     [1, "Wounds of War and Violence"],
     [2, "Bridging the Gap to Equality "],
     [3, "We Call It Home"],
     [4, "Religion and Belief"],
     [5, "Public Health and Civic Rights"],
-    [6, "Law and Order"],
+    [6, "Law & Order and First Responder"],
     [7, "Era of Pandemics"],
     [8, "Heroes of 911"]
 ])
 
-
+export const options_year = [ { label: 'all', value: 'all' },
+                      { label: '2001', value: "2001" },
+                      { label: '2002', value: "2002" },
+                      { label: '2003', value: "2003" },
+                      { label: '2004', value: "2004" },
+                      { label: '2005', value: "2005" },
+                      { label: '2006', value: "2006" },
+                      { label: '2007', value: "2007" },
+                      { label: '2008', value: "2008" },
+                      { label: '2009', value: "2009" },
+                      { label: '2010', value: "2010" },
+                      { label: '2011', value: "2011" },
+                      { label: '2012', value: "2012" },
+                      { label: '2013', value: "2013" },
+                      { label: '2014', value: "2014" },
+                      { label: '2015', value: "2015" },
+                      { label: '2016', value: "2016" },
+                      { label: '2017', value: "2017" },
+                      { label: '2018', value: "2018" },
+                      { label: '2019', value: "2019" },
+                      { label: '2020', value: "2020" },
+                      { label: '2021', value: "2021" },
+                      { label: '2022', value: "2022" },
+                 
+                  ];
+              
+export const options_borough= [
+                    { label: 'all', value: 'all' },
+                    { label: 'Manhattan', value: "Manhattan" },
+                    { label: 'Queens', value: "Queens" },
+                    { label: 'Brooklyn', value: "Brooklyn" },
+                    { label: 'Bronx', value: 'Bronx' },
+                    { label: 'Staten Island', value: 'Staten Island' },
+         
+                ];
 
 export const options_theme = [{ label: 'all', value: [''] },
                         {label: '0', value:['music', 'jazz', 'band', 'album', 'latin', 'singer', 'art', 'arts' ,'culture', 'cultural', 'musicians', 'cuba']},
@@ -147,9 +181,13 @@ export function filterBorough(data, borough){
       
       }
 
-export function filterSearch(data, term){
+
+export function filterSearchAll(data, term){
     return data.filter( d=>{
-        return d.coname.includes(term) || d.location.includes(term)
+        return d.coname.toLowerCase().includes(term.toLowerCase()) 
+                || d.location.toLowerCase().includes(term.toLowerCase())
+                ||  d.reason.toLowerCase().includes(term.toLowerCase())
+                ||  d.postal.includes(term)
     })
 }
       
@@ -161,7 +199,7 @@ function filterTheme(data, term){
         let result = true;
 
         term.forEach( f =>{
-            if (f !== "" && d.reason.includes(f)) result = false;  
+            if (f !== "" && d.reason.toLowerCase().includes(f.toLowerCase())) result = false;  
         })
         return result;
     })
@@ -179,10 +217,10 @@ export function filterData(data, filter){
         let data_filtered_year = filterYear(data_theme, filter["year"])
         let data_filtered_borough = filterBorough(data_filtered_year, filter["borough"])
         
-        if (filter["search"] === null){
+        if (filter["search"] === null || filter["search"] === ""){
             return data_filtered_borough;
         }else{
-            return filterSearch(data_filtered_borough, filter["search"]);
+            return filterSearchAll(data_filtered_borough, filter["search"]);
 
         }
 
@@ -194,10 +232,10 @@ export function filterNewData(data, filter){
         let data_filtered_year = filterYear(data_theme, filter["year"])
         let data_filtered_borough = filterBorough(data_filtered_year, filter["borough"])
         
-        if (filter["search"] === null){
+        if (filter["search"] === null || filter["search"] === ""){
             return data_filtered_borough;
         }else{
-            return filterSearch(data_filtered_borough, filter["search"]);
+            return filterSearchAll(data_filtered_borough, filter["search"]);
 
         }
 
