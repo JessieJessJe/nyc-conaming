@@ -60,13 +60,13 @@ export const group_titles= new Map([
     [-1, "Others"],
     [0, "Arts and Culture"],
     [1, "Wounds of War and Violence"],
-    [2, "Bridging the Gap to Equality "],
+    [2, "Bridging the Gap to Equality"],
     [3, "We Call It Home"],
     [4, "Religion and Belief"],
     [5, "Public Health and Civic Rights"],
     [6, "Law & Order and First Responder"],
     [7, "Era of Pandemics"],
-    [8, "Heroes of 911"]
+    [8, "9/11 Heroes"]
 ])
 
 export const options_year = [ { label: 'all', value: 'all' },
@@ -105,18 +105,18 @@ export const options_borough= [
          
                 ];
 
-export const options_theme = [{ label: 'all', value: [''] },
-                        {label: '0', value:['music', 'jazz', 'band', 'album', 'latin', 'singer', 'art', 'arts' ,'culture', 'cultural', 'musicians', 'cuba']},
-                        {label: '1', value:['tuskegee','Airmen', '1943', 'pilot', 'world war II', 'Iraq', 'korean','war', 'army', 'killed', 'nypd', 'police']},                 
-                        {label: '2', value:['women', 'Ms', 'education', 'children', 'worked', 'council', 'board', 'school','committee']},
-                        {label: '3', value:['customers', 'family', 'business', 'immigrants', 'immigration', 'community']},
-                        {label: '4', value:["baptist", 'church', 'pastor', 'reverend', 'bishop','ministry', 'churches', 'bible', 'god', 'congregation']},
-                        {label: '5', value:['health', 'public', "civic",'nq', 'UHP', 'primary care', 'gay', 'development', 'activists', 'hospitals', 'HIV', 'AIDS', 'HIV/AIDS', "COVID-19"]},
-                        {label: '6', value:['section', 'law', 'amend', 'map', 'rename', 'accordingly', 'called', 'repeals', 'corresponds', '2004']},
-                        {label: '7', value:['COVID-19']},
-                        {label: '8', value:['9/11']},
-                   
-                        {label: '-1', value: [''] },]
+export const options_theme = [
+                        {label: 'Arts and Culture', value:['music', 'jazz', 'band', 'latin', 'singer', 'art','culture', 'musicians']},
+                        {label: 'Wounds of War and Violence', value:['Tuskegee','Airmen', 'Iraq', 'korean','war', 'army']},                 
+                        {label: 'Bridging the Gap to Equality', value:['women', 'education', 'children', 'school','equality']},
+                        {label: 'We Call It Home', value:['family', 'business', 'immigrants', 'immigration', 'community', 'customers']},
+                        {label: 'Religion and Belief', value:["baptist", 'church', 'pastor', 'reverend', 'bishop','ministry', 'church']},
+                        {label: 'Public Health and Civic Rights', value:['health', 'public', "civic",'nq', 'UHP', 'primary care', 'gay', 'activists', 'hospitals', 'HIV', 'AIDS', 'HIV/AIDS']},
+                        {label: 'Law & Order and First Responder', value:['nypd', 'police', 'duty', 'legislation','fdny', 'officer', 'gun']},
+                        {label: 'Era of Pandemics', value:['COVID-19']},
+                        {label: '9/11 Heroes', value:['9/11']},]
+                        // { label: 'all', value: [''] },
+                        // {label: '-1', value: [''] },]
 
 //subgroups
 export const subgroups = [0,1,2,3,4,5,6,7,8, -1]
@@ -148,7 +148,7 @@ export function getGroupColor(){
 export function normZ(year, type="", timeline=false){
     let norm;
 
-    if (type == "text" && timeline){
+    if (type === "text" && timeline){
         norm = (year - 2000 ) * 17 + 5
     }else{
         norm = (year - 2000 ) * 3 + 5
@@ -244,7 +244,6 @@ export function filterNewData(data, filter){
 export const initFilter = {
         "year":["all"],
         "borough":["all"],
-        "angle":["map"],
         "theme":[""],
         "search":null,
         "angle":"map",

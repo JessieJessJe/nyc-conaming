@@ -4,6 +4,7 @@ import IconButton from '@mui/material/IconButton';
 import InputAdornment from '@mui/material/InputAdornment';
 import SearchIcon from  '@mui/icons-material/Search';
 
+
 function Search({filter, updateFilter}){
 
     const [search, setSearch] = useState(null);
@@ -51,6 +52,7 @@ function Search({filter, updateFilter}){
     }, [filter["reset"]])
 
     return(
+
 
         <TextField
           key="search-filter"
@@ -141,3 +143,33 @@ export default Search;
 //     )
   
 //   }
+
+
+{/* <TextField
+          key="search-filter"
+          placeholder=" Search ( locations, names, postal codes...) "
+          onKeyPress={handleSearch}
+          onChange = {(event, value)=>{
+              
+            setInput(value)
+          }} 
+        
+        value={input}
+        startAdornment={(
+              <InputAdornment
+
+              position="start"
+    
+              >
+                <IconButton
+                 edge="end"
+                 onClick={handleSearchbyClick} 
+                >
+                  <SearchIcon />
+                </IconButton>
+              </InputAdornment>
+            )}
+      
+        />
+
+    ) */}

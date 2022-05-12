@@ -275,7 +275,7 @@ const IndeterminateCheckbox = ({theme, updateFilter, checkState, setCheckState})
     <React.Fragment>
       <Box sx={{ display: 'flex', flexDirection: 'column', ml: 3 }}>
       <FormControlLabel
-        label={`Group ${theme.label}`}
+        label={`${theme.label}`}
         control={
           <Checkbox
             checked={ifAllChecked()}

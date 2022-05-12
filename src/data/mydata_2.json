@@ -3955,9 +3955,9 @@
     "id": "2003170",
     "coname": "Laura Angilletta Avenue",
     "location": "Ocean Avenue between Guilford Street and Robin Road",
-    "lat": "40.5964528",
-    "long": "-74.0640311",
-    "borough": "Staten Island",
+    "lat": "51.5233424",
+    "long": "-0.1203615",
+    "borough": "",
     "loc_result": "Guilford St, London, UK",
     "postal": "",
     "reason": "In honor of heroes and loved ones who were killed by the terrorist attack upon the World Trade Center on September 11, 2001",
@@ -4100,7 +4100,7 @@
     "location": "Catalpa Avenue between Woodward Avenue and Onderdonk Avenue",
     "lat": "40.707223",
     "long": "-73.912694",
-    "borough": "Queens",
+    "borough": "",
     "loc_result": "Onderdonk Ave, New York, NY, USA",
     "postal": "",
     "reason": "In honor of heroes and loved ones who were killed by the terrorist attack upon the World Trade Center on September 11, 2001",
@@ -4411,8 +4411,8 @@
     "coname": "Arthur Warren Scullin Way",
     "location": "193rd Street between Northern Boulevard and 45th Avenue",
     "lat": "40.7887673",
-    "long": "-73.7906774",
-    "borough": "Queens",
+    "long": "-73.7055947",
+    "borough": "",
     "loc_result": "Northern Blvd, New York, USA",
     "postal": "",
     "reason": "In honor of heroes and loved ones who were killed by the terrorist attack upon the World Trade Center on September 11, 2001",
@@ -4514,9 +4514,9 @@
     "id": "2003314",
     "coname": "Captain Walter G. Hynes",
     "location": "Beach 93rd Street between Holland",
-    "lat": "40.5851966",
-    "long": "-73.8154489",
-    "borough": "Queens",
+    "lat": "52.132633",
+    "long": "5.291265999999999",
+    "borough": "",
     "loc_result": "Netherlands",
     "postal": "",
     "reason": "In honor of heroes and loved ones who were killed by the terrorist attack upon the World Trade Center on September 11, 2001",
@@ -4631,9 +4631,9 @@
     "id": "2003329",
     "coname": "Firefighter Eric T. Allen Way",
     "location": "Ridge Boulevard between 71st Street and 72nd Street",
-    "lat": "40.6341738",
-    "long": " -74.0296704",
-    "borough": "Brooklyn",
+    "lat": "41.7662871",
+    "long": "-87.56151849999999",
+    "borough": "",
     "loc_result": "E 71st St & E 72nd St, Chicago, IL 60649, USA",
     "postal": "60649",
     "reason": "In honor of heroes and loved ones who were killed by the terrorist attack upon the World Trade Center on September 11, 2001",
@@ -4644,9 +4644,9 @@
     "id": "2003330",
     "coname": "Stephen G. Hoffman Way",
     "location": "Manse Street between 68th Avenue and 69th Avenue",
-    "lat": "40.7143767",
-    "long": "-73.8585898",
-    "borough": "Queens",
+    "lat": "45.533478",
+    "long": "-122.5918552",
+    "borough": "",
     "loc_result": "NE 68th Ave & NE 69th Ave, Portland, OR 97213, USA",
     "postal": "97213",
     "reason": "In honor of heroes and loved ones who were killed by the terrorist attack upon the World Trade Center on September 11, 2001",
@@ -4657,9 +4657,9 @@
     "id": "2003331",
     "coname": "Jennifer Mazzota Way",
     "location": "72nd Place between 53rd Road and Grand Avenue",
-    "lat": "40.7305978",
-    "long": "-73.8924785",
-    "borough": "Queens",
+    "lat": "33.7449853",
+    "long": "-118.1174056",
+    "borough": "",
     "loc_result": "72nd Pl, Long Beach, CA 90803, USA",
     "postal": "90803",
     "reason": "In honor of heroes and loved ones who were killed by the terrorist attack upon the World Trade Center on September 11, 2001",
@@ -4709,9 +4709,9 @@
     "id": "2003336",
     "coname": "Lisa Bella Di Fato Cannava",
     "location": "Stafford Avenue from Delmar Avenue",
-    "lat": "40.5439725",
-    "long": "-74.1940217",
-    "borough": "Staten Island",
+    "lat": "41.3858398",
+    "long": "-75.6641454",
+    "borough": "",
     "loc_result": "Stafford Ave, Pennsylvania 18505, USA",
     "postal": "18505",
     "reason": "In honor of heroes and loved ones who were killed by the terrorist attack upon the World Trade Center on September 11, 2001",
@@ -4722,9 +4722,9 @@
     "id": "2003337",
     "coname": "Michael DiRienzo Street",
     "location": "Tudor Street between Dewey Street and Nahant Street",
-    "lat": "40.557323",
-    "long": "-74.1476824",
-    "borough": "Staten Island",
+    "lat": "42.4971932",
+    "long": "-71.0606064",
+    "borough": "",
     "loc_result": "Nahant St, Wakefield, MA 01880, USA",
     "postal": "01880",
     "reason": "In honor of heroes and loved ones who were killed by the terrorist attack upon the World Trade Center on September 11, 2001",
@@ -6731,7 +6731,7 @@
     "postal": "10309",
     "reason": "Peter N. Catello was the owner of Catello Electrical Contracting for almost 50 years, and worked for six months as an electrician at the Fresh Kills Recovery site, working day and night to maintain the electrical and lights for the recovery operation. He will be included on the wall at the 9/11 Responders Remembered Park. He later sent several of his crews out to affected areas after Hurricane Sandy to help people restore power. He died of 9/11 related illness.",
     "year": "2021",
-    "group": 8
+    "group": -1
   },
   {
     "id": "202111",
@@ -6874,7 +6874,7 @@
     "postal": "10472",
     "reason": "Joe Torres decided from a young age that he wanted to become a cook and eventually he opened Joe\u2019s Place, renowned for its Puerto Rican cuisine. Many famous people visited Joe\u2019s Place and author Kevin Fitzpatrick referred to Mr. Torres as one of the most beloved chefs in the Bronx in his book, 111 Places in the Bronx That You Must Not Miss. He died of the coronavirus.",
     "year": "2021",
-    "group": 7
+    "group": -1
   },
   {
     "id": "202123",
@@ -7134,7 +7134,7 @@
     "postal": "",
     "reason": "John Toomey was assigned to Brooklyn\u2019s Ladder Company 123. He died in the line of duty when he suffered a heart attack while fighting a fire in a building on Crown Street.",
     "year": "2021",
-    "group": 6
+    "group": 0
   },
   {
     "id": "202143",
@@ -7615,7 +7615,7 @@
     "postal": "",
     "reason": "Madonia Bakery was established in the Bronx in 1918, selling traditional Italian breads and later expanding to desserts. Through its existence, the bakery has lasted through economic downturns and ownership changes. Still, the bakery draws many foodies and tourists from around the world each year.",
     "year": "2021",
-    "group": 3
+    "group": -1
   },
   {
     "id": "202180",
@@ -7901,7 +7901,7 @@
     "postal": "11368",
     "reason": "Pietro Cesare Alberti was born in Venice and became the first Italian to settle in America.  He prospered in New Amsterdam as the owner of a mansion and a farm built on land which later became the Brooklyn Navy Yard.  He also owned property near Broad Street in Manhattan.  His prominence in the early colonial history of New York City is evidenced by a street in Corona, Queens which once bore the name Albertus Avenue, the Dutch version of his name.  Also, the 103rd Street Corona Plaza station on the IRT Flushing Line was once named the Albertus Avenue station in honor of Alberti.  The American Italian Cultural Roundtable, an organization with several of its members and their extended families lived in Corona for many years walked along Albertus Avenue and exited the IRT trains at Albertus Avenue Station during the 1920\u2019s and referred to both the street and the station by the original name Albertus for many years.  The life of Pietro Cesare Alberti is emblematic for the success of many immigrants who came to America and helped build the nation.",
     "year": "2011",
-    "group": 3
+    "group": 0
   },
   {
     "id": "201110",
@@ -8759,7 +8759,7 @@
     "postal": "11358",
     "reason": "Section 3. Glenn J. Travers Sr. 9/11 Memorial Way, Borough of Queens",
     "year": "2004",
-    "group": 8
+    "group": -1
   },
   {
     "id": "2004134",
@@ -9487,7 +9487,7 @@
     "postal": "",
     "reason": "Luke M. Parlatore died in 2002 from complications after a car accident, at the age of 17.  After 9/11, he volunteered for the Red Cross and obtained supplies for workers at the  site.  He also received citations from the Vietnam Veterans\u2019 Association and the Alzheimer Foundation for his volunteer efforts.",
     "year": "2008",
-    "group": 1
+    "group": -1
   },
   {
     "id": "200845",
@@ -10293,7 +10293,7 @@
     "postal": "10305",
     "reason": "This co-naming will commemorate the United States Coast Guard.  Many members of the US Coast Guards\u2019 New York Sector, including the Captain of the Port, have residences on Staten Island.",
     "year": "2017",
-    "group": 1
+    "group": -1
   },
   {
     "id": "201768",
@@ -10371,7 +10371,7 @@
     "postal": "11693",
     "reason": "Christian Hoobs dedicated  his life to the Broad Channel community as an activist, local business owner and operator.  He voluntarily helped build both the Broad Channel Volunteer Fire Department (BCVFD) and St. Virgilius Church buildings, that both strongly stand today.  He was a brave firefighter that risked his life for others in the community.  He was elected the BCVFD\u2019s fourth Chief of Department in December of 1912 holding the office until his untimely death on June 14, 1917, he was only 48 years old.   On June 14th while eating dinner, he heard the fire bell ring.  Chief Hoobs hurried to lead his men into the fire, but experienced a heart attack while responding to the fire.    ",
     "year": "2017",
-    "group": 3
+    "group": 0
   },
   {
     "id": "2017161",
@@ -10722,7 +10722,7 @@
     "postal": "10314",
     "reason": "FDNY Battalion Chief Robert P. Miuccio joined the FDNY in 1968 and retired in 2007. He was assigned to L45, L113, L147 and Batt 22. He spent three months at Ground Zero after the 9/11 attacks and later was diagnosed with cancer. He died as a result of 9/11 related illness.  ",
     "year": "2020",
-    "group": 8
+    "group": -1
   },
   {
     "id": "202052",
@@ -11320,7 +11320,7 @@
     "postal": "11377",
     "reason": "John Downing, 40 years of age, was one of three firefighters who died and 50 others who were injured in a Father\u2019s Day fire in Astoria, Queens on June 17, 2001.  Survived by his wife Anne and children Joanne, age 7, and Michael, age 3, John Downing had an extended family that ranged from Queens County to Ireland.  An eleven year Fire Department veteran, at the time of his tragic death he was assigned to Ladder Company 163.  ",
     "year": "2001",
-    "group": 6
+    "group": 0
   },
   {
     "id": "200135",
@@ -11372,7 +11372,7 @@
     "postal": "",
     "reason": "A lifelong resident of the Great Kills section of Staten Island, Christopher J. Siedenberg was one of three firefighters who died in the line of duty fighting a blaze in lower Manhattan in March 1994.  While growing up on Staten Island, Christopher Siedenberg\u2019s oft-stated ambition was to become a fireman.  Prior to joining the New York City Fire Department, Christopher Siedenberg was certified as a New York State Emergency Medical Technician.  He joined the Volunteer Heart Resuscitation Unit of Staten Island and continued to volunteer there even after being appointed to the Fire Department in 1991.\n        Evergreen Park is located directly behind Christopher Siedenberg\u2019s boyhood home.  He spent many enjoyable hours in that park when he was growing up.  It is for that reason that Evergreen Park is to be renamed in his memory.\n",
     "year": "2001",
-    "group": 6
+    "group": 0
   },
   {
     "id": "200140",
@@ -11404,9 +11404,9 @@
     "id": "200142",
     "coname": "Met Life Plaza",
     "location": "Bridge Plaza North, between 27th Street and 28th Street",
-    "lat": "40.7497229",
-    "long": "--73.9397047",
-    "borough": "Queens",
+    "lat": "40.8555829",
+    "long": "-73.9687643",
+    "borough": "",
     "loc_result": "Bridge Plaza N, Fort Lee, NJ 07024, USA",
     "postal": "07024",
     "reason": "The Metropolitan Life Insurance Company is consolidating and relocating a substantial portion of its New York City operations from its space at One Madison Avenue in Manhattan to Long Island City.  At least 800 Met Life employees are now in the process of being relocated to this new Long Island City location. There is a possibility of another 1,000 employees being assigned to the immediate area if a requested zoning change in enacted. Along with a zoning change, Met Life has requested and received, from the United States Postal Service, an address designation as \u201cOne Met Life Plaza.\u201d This legislation seeks to give dual designation status to the area of Bridge Plaza North, between 27th Street and 28th Street, the area in front of the new Met Life offices, as \u201cMet Life Plaza\u201d.",
@@ -13182,6 +13182,19 @@
     "group": -1
   },
   {
+    "id": "2004129",
+    "coname": "Coleman Square",
+    "location": "159th Avenue the southeast corner of the intersection of 159th Avenue and Coleman Square",
+    "lat": "40.6605005",
+    "long": "-73.8306336",
+    "borough": "Queens",
+    "loc_result": "Coleman Square & 159th Ave, Queens, NY 11414, USA",
+    "postal": "11414",
+    "reason": "This street name change is being done to help alleviate a confusion at this intersection.",
+    "year": "2004",
+    "group": -1
+  },
+  {
     "id": "2004131",
     "coname": "Daesean Hill Drive",
     "location": "Hendrix Street between Sutter Avenue and Blake Avenue",
@@ -13647,7 +13660,7 @@
     "postal": "10011",
     "reason": "Jane Wood, a legendary tenant activist in Chelsea, passed away at age 96 this year. She was a passionately committed activist whose work was the like of which we may never see again. Whether one agreed with Wood\u2019s leftist politics or not, one could not help but admire her dedication to affordable housing and to New York City itself. In her energetic activism and compassion for others, in the many lives that she touched and the people she inspired, Jane Wood was a role model to be emulated and admired. She made a difference that was immeasurable.",
     "year": "2004",
-    "group": 5
+    "group": -1
   },
   {
     "id": "2004172",
@@ -14778,7 +14791,7 @@
     "postal": "",
     "reason": "This road leads to the Rikers Island Correctional Facility and it is in honor of all Correctional Officers who keep that Correctional Facility safe.",
     "year": "2006",
-    "group": 6
+    "group": -1
   },
   {
     "id": "200612",
@@ -14895,7 +14908,7 @@
     "postal": "11224",
     "reason": "This street name change stands as a fitting reminder of the many Brooklynites who lost their lives during the infamous 9-11 disaster.",
     "year": "2006",
-    "group": 8
+    "group": -1
   },
   {
     "id": "200625",
@@ -15064,7 +15077,7 @@
     "postal": "10006",
     "reason": "Emeric Harvey was raised in Brooklyn and served in the United States Air Force. He was dedicated to helping people in many ways especially helping people find a job do to his open door policy with his own company. He was a role model for so many people that he helped in his life.",
     "year": "2006",
-    "group": 6
+    "group": -1
   },
   {
     "id": "200646",
@@ -15454,7 +15467,7 @@
     "postal": "10034",
     "reason": "Thomas C. Brick was born in Flushing, New York and attended St. Kevin\u2019s Grammar School where he served as an altar boy in the church. He later attended Holy Cross High School and Nassau Community College in Garden City. As an adult, Thomas volunteered at his church and served in his parish youth guild. Later he became a member of The Ancient Order of Hibernians and was known for carrying its banner in the St. Patrick\u2019s Day Parade. Thomas was in the first group of new \u201cprobies\u201d hired by the New York City Fire Department after 9/11, and earned a medal for bravery battling a four-alarm fire and saving several Inwood residents during his first tour of duty as a firefighter. He was a beloved husband, father and friend committed to public service when his life ended on December 16, 2003 while valiantly fighting a fire on Tenth Avenue near 206th Street.",
     "year": "2006",
-    "group": 6
+    "group": 0
   },
   {
     "id": "200685",
@@ -16728,7 +16741,7 @@
     "postal": "",
     "reason": "W.E.B. DuBois was a sociologist, educator and an accomplished author and was one of the founders of the NAACP.  He was a longtime resident of .  Mr. DuBois also was a consultant to the United Nations upon its formation in  in 1945 as head of the Council of African Affairs, and received a Grand International Prize from the World Peace Council.  ",
     "year": "2008",
-    "group": 5
+    "group": -1
   },
   {
     "id": "200834",
@@ -16910,7 +16923,7 @@
     "postal": "10310",
     "reason": "Lt. Vic Navarra served as a New York City Firefighter and participated in the early New York City Marathons.  He loved track and field and competed for the Staten Island Athletic Club as a kid and continued his racing career at St. Peter\u2019s High School.  He later became the start coordinator for many years for the Marathons, a thankless job that involved thousands of hours of preparation each year.  Vic Navarra organized the Events Management Group and had success in ,  and  instructing race directors on effective ways to manage a marathon.  ",
     "year": "2008",
-    "group": 6
+    "group": 0
   },
   {
     "id": "200857",
@@ -17391,7 +17404,7 @@
     "postal": "11209",
     "reason": "Richard Sherry served as a New York City Firefighter for over thirty years and was an active union leader for members of the FDNY.  He was very active in his community, participating in the 68th Precinct Youth Council for over 15 years by serving as a coach, indoor soccer commissioner, baseball director and treasurer.",
     "year": "2008",
-    "group": 6
+    "group": 0
   },
   {
     "id": "200899",
@@ -18093,7 +18106,7 @@
     "postal": "10030",
     "reason": "James Weldon Johnson was a songwriter, poet, novelist, journalist, critic, and autobiographer. He was a man who bridged several historical and literary trends. He was born in 1871, during the optimism of the Reconstruction period, in .  In 1897, he became the first African-American admitted to the  bar since the end of the Reconstruction period in 1877.  He co-composed songs with his brother John Rosamond such as Lift Every Voice and Sing, Louisiana Lize, Nobody's Lookin' but de Owl and de Moon, Under the Bamboo Tree and Congo Love Song and Lift Every Voice and Sing, which would later become known as the Negro National Anthem.  He also served as a field secretary for the NAACP and as a publisher, diplomat, educator, translator, librettist, anthologist, and English professor.  He was one of the prime movers of the Harlem Renaissance.",
     "year": "2009",
-    "group": 0
+    "group": -1
   },
   {
     "id": "200927",
@@ -18613,7 +18626,7 @@
     "postal": "",
     "reason": "This co-naming will represent the sizable number of individuals of Ecuadorian decent who live in the 21st Council District and the City of .  It is estimated that 40.6% of the population are Ecuadorian decent.",
     "year": "2009",
-    "group": 3
+    "group": -1
   },
   {
     "id": "200971",
@@ -19225,6 +19238,84 @@
     "reason": "Mike Lee dedicated his personal life and business life to improving  and giving its residents a chance to pursue their goals.  Through his architectural skills, he preserved and maintained many historic buildings.  He also encouraged local children and seniors throughout the community to engage in many artistic activities.",
     "year": "2009",
     "group": 3
+  },
+  {
+    "id": "2009124",
+    "coname": "Burlingame Court",
+    "location": "163rd Road Between 104th Street and Hawtree Basin",
+    "lat": "40.6502394",
+    "long": "-73.8305113",
+    "borough": "Queens",
+    "loc_result": "Hawtree Basin, Queens, NY, USA",
+    "postal": "",
+    "reason": "This section of the bill would co-name what is now called  in , .",
+    "year": "2009",
+    "group": -1
+  },
+  {
+    "id": "2009125",
+    "coname": "James Court",
+    "location": "163rd Drive Between 104th Street and Hawtree Basin",
+    "lat": "40.6502394",
+    "long": "-73.8305113",
+    "borough": "Queens",
+    "loc_result": "Hawtree Basin, Queens, NY, USA",
+    "postal": "",
+    "reason": "This section of the bill would co-name what is now called  in , .",
+    "year": "2009",
+    "group": -1
+  },
+  {
+    "id": "2009126",
+    "coname": "McKee Court",
+    "location": "164th Avenue Between 104th Street and Hawtree Basin",
+    "lat": "40.6502394",
+    "long": "-73.8305113",
+    "borough": "Queens",
+    "loc_result": "Hawtree Basin, Queens, NY, USA",
+    "postal": "",
+    "reason": "This section of the bill would co-name what is now called  in , .",
+    "year": "2009",
+    "group": -1
+  },
+  {
+    "id": "2009127",
+    "coname": "Calhoun Court",
+    "location": "164th Road Between 104th Street and Hawtree Basin",
+    "lat": "40.6502394",
+    "long": "-73.8305113",
+    "borough": "Queens",
+    "loc_result": "Hawtree Basin, Queens, NY, USA",
+    "postal": "",
+    "reason": "This section of the bill would co-name what is now called  in , .",
+    "year": "2009",
+    "group": -1
+  },
+  {
+    "id": "2009128",
+    "coname": "Moncrief Court",
+    "location": "164th Drive Between 104th Street and Hawtree Basin",
+    "lat": "40.6502394",
+    "long": "-73.8305113",
+    "borough": "Queens",
+    "loc_result": "Hawtree Basin, Queens, NY, USA",
+    "postal": "",
+    "reason": "This section of the bill would co-name what is now called  in , .",
+    "year": "2009",
+    "group": -1
+  },
+  {
+    "id": "2009129",
+    "coname": "Lockwood Court",
+    "location": "165th Avenue Between 104th Street and Hawtree Basin",
+    "lat": "40.6502394",
+    "long": "-73.8305113",
+    "borough": "Queens",
+    "loc_result": "Hawtree Basin, Queens, NY, USA",
+    "postal": "",
+    "reason": "This section of the bill would co-name what is now called  in , .",
+    "year": "2009",
+    "group": -1
   },
   {
     "id": "20121",
@@ -20121,7 +20212,7 @@
     "postal": "",
     "reason": "This co-naming will commemorate the burial ground for enslaved Africans in the area encompassing Schenck, New Lots and Livonia Avenues and Barbey Street in the borough of Brooklyn. ",
     "year": "2013",
-    "group": 3
+    "group": -1
   },
   {
     "id": "20135",
@@ -21174,7 +21265,7 @@
     "postal": "10306",
     "reason": "John \u201cJack\u201d Hynes was a World War II veteran and Purple Heart recipient who later became a decorated New York City Firefighter.  During WWII, he was hit by shrapnel at the Battle of the Bulge in Bastogne, Belgium.  He underwent five operations and had no feeling in his left calf as a result of his injuries.  After the war, he resumed his soccer career in the ASL and was selected for the United States national team that traveled to Mexico City for the North American Zone Championships where he set up a pair of goals as the U.S. team earned a spot in the World Cup by beating Cuba.  In 1956, he led the ASL in scoring and was named Most Valuable Player.  After his soccer career ended, he served on the New York City Fire Department.  He started the soccer program at Monsignor Farrell High School where he had an outstanding coaching record and also served as president of the Silver Lake Soccer Club.  He was selected to the National Soccer Hall of Fame in 1977 and was later elected into the Staten Island Sports Hall of Fame. ",
     "year": "2013",
-    "group": 1
+    "group": 0
   },
   {
     "id": "201392",
@@ -21369,7 +21460,7 @@
     "postal": "11216",
     "reason": "This co-naming will commemorate Birdel\u2019s Records, a record store that was open for more than a half century until recently.  Birdel\u2019s Records opened in 1944 in Bedford-Stuyvesant.  Through the years, the store drew such R&B legends as James Brown, Al Green, Patti LaBelle and Barry White who came to sign autographs.      ",
     "year": "2013",
-    "group": 0
+    "group": -1
   },
   {
     "id": "20141",
@@ -21616,7 +21707,7 @@
     "postal": "11375",
     "reason": "Sergei Dovlatov was from the Soviet Union who immigrated to the United States in 1979 after being harassed by Soviet authorities.  He lived in Forest Hills, Queens.  He published several books, including \u201cThe Invisible Book,\u201d \u201cThe Compromise,\u201d \u201cOurs\u201d and \u201cThe Suitcase.\u201d He also worked for Radio Liberty as a freelance script writer.  He grew up in Leningrad and later was assigned to a military unit guarding Siberian state prison camps.  In the late 1960's, he became a journalist.  His attempts to publish his fiction in the Soviet Union met resistance from publishers, and he suffered increasing harassment from the authorities as his involvement in dissident literary circles grew.  However, since glasnost, his novels have been published in the Soviet Union and become extremely popular. The New Yorker published several of his short stories and from 1980 to 1982, he edited The New American, a weekly magazine.",
     "year": "2014",
-    "group": 1
+    "group": -1
   },
   {
     "id": "201423",
@@ -21643,6 +21734,19 @@
     "reason": "George Carlin was a five-time Grammy Award winning American comedian, writer, social critic and actor.  He performed 14 stand-up comedy specials for HBO, wrote three best-selling books and released 23 comedy albums.  He was born in Manhattan and dropped out of school when he was 14 years-old and later joined the United States Air Force.  He worked for several years as a disc jockey and later formed a duo with comic Jack Burns.  He would be known for transforming comedy by speaking about a variety of topics and also writing his most famous routine, Seven Words You Can Never Say on Television.  This routine got him arrested on charges of obscenity after performing in Milwaukee in 1972.  The case was thrown out, however the bit played a significant role in the U.S. Supreme Court case that upheld the FCC\u2019s ability to regulate indecent programming on public airwaves.  He received the Lifetime Achievement Award in 2001, was ranked second on Comedy Central\u2019s Greatest Stand-ups of All Time, appeared on The Tonight Show more than 130 times and hosted the first Saturday Night Live.",
     "year": "2014",
     "group": 1
+  },
+  {
+    "id": "201425",
+    "coname": "Barnard College 125th Year Anniversary",
+    "location": "At the intersection of 116th Street and Broadway",
+    "lat": "40.8079878",
+    "long": "-73.96381629999999",
+    "borough": "Manhattan",
+    "loc_result": "Broadway & W 116th St, New York, NY 10027, USA",
+    "postal": "10027",
+    "reason": "This co-naming will commemorate the 125th Anniversary of Barnard College.",
+    "year": "2014",
+    "group": -1
   },
   {
     "id": "201426",
@@ -21785,7 +21889,7 @@
     "postal": "10310",
     "reason": "Kenneth Cubas worked on the 97th floor in Tower 2 of the World Trade Center.  He was killed when he went back into the Tower to try and help others.",
     "year": "2014",
-    "group": 8
+    "group": 0
   },
   {
     "id": "201438",
@@ -23605,7 +23709,7 @@
     "postal": "10312",
     "reason": "John R. Graziano served on the FDNY for 26 years.  He was promoted to Lieutenant in 1994 and to Captain in 2003.  He died of pancreatic cancer as a result of a 9/11 related illness.",
     "year": "2016",
-    "group": 8
+    "group": -1
   },
   {
     "id": "201622",
@@ -24854,6 +24958,19 @@
     "reason": "This co-naming will recognize the culture and heritage of the Mexican population in Brooklyn.  Cinco de Mayo commemorates the Mexican Army\u2019s victory over French forces at the Battle of Puebla on May 5, 1862. ",
     "year": "2017",
     "group": 0
+  },
+  {
+    "id": "201721",
+    "coname": "Children\u2019s Court",
+    "location": "At the northeast corner of Third Avenue and East 22nd Street",
+    "lat": "40.7381736",
+    "long": "-73.9836341",
+    "borough": "Manhattan",
+    "loc_result": "E 22nd St & 3rd Ave, New York, NY 10010, USA",
+    "postal": "10010",
+    "reason": "This co-naming will commemorate the 100th Anniversary of the opening of the court and the significance of its impact in the improvement of the lives of New Yorkers.",
+    "year": "2017",
+    "group": -1
   },
   {
     "id": "201722",
@@ -26582,7 +26699,7 @@
     "postal": "10035",
     "reason": "William E. Woodlon was one of twelve African-Americans in his class when he joined the FDNY in January 1982, and was assigned to Engine 39 in Manhattan and was later transferred to Engine 21 in Murray Hill.  He assisted in the search and rescue attempts at Ground Zero after the 9/11 attacks.  He died as a result of 9/11 illness.",
     "year": "2018",
-    "group": 8
+    "group": -1
   },
   {
     "id": "20182",
@@ -27674,7 +27791,7 @@
     "postal": "11234",
     "reason": "William J. Gormley was a veteran of the United States Marine Corps. and later joined the FDNY in 1988.  He retired from the East Flatbush Ladder Company 174 in 2006.  He died as a result of illness from being a first responder on 9/11.",
     "year": "2018",
-    "group": 8
+    "group": -1
   },
   {
     "id": "201893",
@@ -28467,7 +28584,7 @@
     "postal": "11416",
     "reason": "Ronald Spadafora was a 40-year veteran of the FDNY who supervised rescue and recovery efforts at Ground Zero and was the chief of safety for the entire 9/11 recovery operation.  He died of 9/11 related illnesses.",
     "year": "2019",
-    "group": 8
+    "group": -1
   },
   {
     "id": "201966",
@@ -28714,7 +28831,7 @@
     "postal": "11205",
     "reason": "Walt Whitman was an American poet, journalist and essayist who is considered one of America\u2019s most influential poets. He published Leaves of Grass, which is considered a landmark in American literature. He worked as a volunteer nurse during the Civil War which inspired him to write a collection called Drum Taps, in connection to the experiences of soldiers. ",
     "year": "2019",
-    "group": 0
+    "group": 1
   },
   {
     "id": "201987",
@@ -30859,7 +30976,7 @@
     "postal": "68022",
     "reason": "Madonia Bakery was established in the Bronx in 1918, selling traditional Italian breads and later expanding to desserts. Through its existence, the bakery has lasted through economic downturns and ownership changes. Still, the bakery draws many foodies and tourists from around the world each year.",
     "year": "2022",
-    "group": 3
+    "group": -1
   },
   {
     "id": "202263",
@@ -32016,7 +32133,7 @@
     "postal": "10302",
     "reason": "Cpl. Vincent Kechner died on December 7, 1941 while giving medical aid to soldiers during the attack on Pearl Harbor. ",
     "year": "2022",
-    "group": 1
+    "group": -1
   },
   {
     "id": "2022158",
