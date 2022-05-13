@@ -44,16 +44,15 @@ export  const termlist = [
     // ['league', 'jonathan', 'science', 'chema', 'charities', '52', 'catholic', 'baseball', 'casitas', 'bronx'],
     // ['september 11, 2001', '9/11', 'firefighter', 'fdny'],
 
-    ['music', 'jazz', 'band', 'album', 'latin', 'singer', 'art', 'arts' ,'culture', 'musicians', 'cuba'],
-    ['tuskegee','Airmen', 'squadron', 'fighter', 'aircraft', '1943', 'pilot', 'world war II', 'Iraq', 'korean',
-     'war', 'army', 'infantry', 'combat', 'medal', 'bronze'],
-    ['women', 'Ms', 'education', 'children', 'equality', 'school'],
-    ['customers', 'family', 'business', 'immigrants', 'immigration', 'community'],
-    ["baptist", 'church', 'pastor', 'reverend', 'bishop','ministry', 'churches', 'bible', 'god', 'congregation'],
-    ['health', 'public', "civic", 'UHP', 'primary care', 'gay', 'development', 'activists', 'hospitals', 'HIV', 'AIDS', 'HIV/AIDS', "COVID-19"],
-    ['killed','duty', 'nypd', 'police'],
-    ['COVID-19'],
-    ['9/11']
+//     ['music', 'jazz', 'band', 'latin', 'singer', 'art','culture', 'musicians'],
+//     ['Tuskegee','Airmen', 'Iraq', 'korean','war', 'army'],                 
+//     ['woman', 'education', 'children', 'school','equality'],
+//    ['family', 'business', 'immigrants', 'immigration', 'community', 'customers'],
+//    ["baptist", 'church', 'pastor', 'reverend', 'bishop','ministry'],
+//    ['health', 'public', "civic",'nq', 'UHP', 'primary care', 'gay', 'activists', 'hospitals', 'HIV', 'AIDS', 'HIV/AIDS']},
+// ['nypd', 'police', 'duty', 'legislation','fdny', 'officer', 'gun']},
+// ['COVID-19']},
+// ['9/11']},]
 ]
 
 export const group_titles= new Map([
@@ -64,7 +63,7 @@ export const group_titles= new Map([
     [3, "We Call It Home"],
     [4, "Religion and Belief"],
     [5, "Public Health and Civic Rights"],
-    [6, "Law & Order and First Responder"],
+    [6, "Law & Order and First Responders"],
     [7, "Era of Pandemics"],
     [8, "9/11 Heroes"]
 ])
@@ -108,11 +107,11 @@ export const options_borough= [
 export const options_theme = [
                         {label: 'Arts and Culture', value:['music', 'jazz', 'band', 'latin', 'singer', 'art','culture', 'musicians']},
                         {label: 'Wounds of War and Violence', value:['Tuskegee','Airmen', 'Iraq', 'korean','war', 'army']},                 
-                        {label: 'Bridging the Gap to Equality', value:['women', 'education', 'children', 'school','equality']},
+                        {label: 'Bridging the Gap to Equality', value:['woman', 'education', 'children', 'school','equality']},
                         {label: 'We Call It Home', value:['family', 'business', 'immigrants', 'immigration', 'community', 'customers']},
-                        {label: 'Religion and Belief', value:["baptist", 'church', 'pastor', 'reverend', 'bishop','ministry', 'church']},
+                        {label: 'Religion and Belief', value:["baptist", 'church', 'pastor', 'reverend', 'bishop','ministry']},
                         {label: 'Public Health and Civic Rights', value:['health', 'public', "civic",'nq', 'UHP', 'primary care', 'gay', 'activists', 'hospitals', 'HIV', 'AIDS', 'HIV/AIDS']},
-                        {label: 'Law & Order and First Responder', value:['nypd', 'police', 'duty', 'legislation','fdny', 'officer', 'gun']},
+                        {label: 'Law & Order and First Responders', value:['nypd', 'police', 'duty', 'legislation','fdny', 'officer', 'gun']},
                         {label: 'Era of Pandemics', value:['COVID-19']},
                         {label: '9/11 Heroes', value:['9/11']},]
                         // { label: 'all', value: [''] },

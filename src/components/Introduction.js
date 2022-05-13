@@ -346,26 +346,20 @@ function Introduction(){
                     
             <div id='intro-content-0'>
 
-                    <div className='sectionTitle'>Street names, redefined</div>
+                    <div className='sectionTitle introductionTitle'>Street names, redefined</div>
 
                     <div className='text-normal text-center' >
 
-                    Street names are how we recognize and navigate the physical spaces. They also manifest the intangibles, the local, historical, cultural, or political legacies of spaces.
-
-                    NYC honorary street names, or co-names by the City Council, are one way local activists, communities, and politicians lean on to remap our city in a local sense, interweaving its past, present, and future.
-
+              
                     </div>
             </div>
 
             <div id='intro-content-1'>
-                    <div className='sectionTitle' id="intro-title">Street matters, manifested</div>
+                    <div className='sectionTitle introductionTitle' id="intro-title">Street matters, manifested</div>
 
                     <div className='text-normal text-center'>
 
-                    Street names are how we recognize and navigate the physical spaces. They also manifest the intangibles, the local, historical, cultural, or political legacies of spaces.
-
-                    NYC honorary street names, or co-names by the City Council, are one way local activists, communities, and politicians lean on to remap our city in a local sense, interweaving its past, present, and future.
-
+              
                     </div>
             </div>
 

@@ -4,13 +4,6 @@ import { motion } from 'framer-motion';
 
 import useScrollPosition from "../utils/useScrollPosition";
 
-import plate0 from './../images/plate0.png';
-import plate1 from './../images/plate1.png';
-import plate2 from './../images/plate2.png';
-import plate3 from './../images/plate3.png';
-import plate4 from './../images/plate4.png';
-import plate5 from './../images/plate5.png';
-
 import Introduction from './Introduction'
 
 import './imgPlates.css'

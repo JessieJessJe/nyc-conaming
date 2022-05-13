@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 
 import * as d3 from "d3"
-import { group_titles, termlist, filterData, getGroupColor, updateGroup, subgroups, dataPrep, initNewFilter, getOpacity, updateNewFilter } from '../utils/helper';
+import { group_titles, options_theme, filterData, getGroupColor, updateGroup, subgroups, dataPrep, initNewFilter, getOpacity, updateNewFilter } from '../utils/helper';
 
 import mydata from "../data/mydata.json"
 import './keywordsPlate.css'
@@ -198,6 +198,9 @@ return(
 export default BarChart;
 
 function KeywordPlate({group, show, pos}){
+
+    const termlist = options_theme.map((opt) => opt.value)
+
     return(
         <>
     
@@ -213,8 +216,8 @@ function KeywordPlate({group, show, pos}){
     
                     <div className='keywords-terms-wrapper'>
     
-                        { termlist[group].map( (term)=>
-                        <p key={'keyword'+term} className='text-normal keywords-terms' style={{backgroundColor: "#ffffff", zIndex:100}}>
+                        { termlist[group].map( (term) =>
+                        <p key={'keyword'+ term } className='text-normal keywords-terms' style={{backgroundColor: "#ffffff", zIndex:100}}>
                         {term}
                         </p>
                         )}
