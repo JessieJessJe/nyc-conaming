@@ -252,9 +252,17 @@ function Introduction(){
     let navigate = useNavigate();
 
     const scrollPosition = useScrollPosition();
+
+    const responsive = (size) =>{
+        if (window.innerWidth < 400){
+            return size*2
+        }else{
+            return size
+        }
+    }
     
-    const [windowWidth, setWindowWidth] = useState(window.innerWidth)
-    const [windowHeight, setWindowHeight] = useState(window.innerHeight)
+    const [windowWidth, setWindowWidth] = useState( window.innerWidth)
+    const [windowHeight, setWindowHeight] = useState( window.innerHeight)
 
     const [isPlate, setIsPlate] = useState(true);
 
@@ -262,14 +270,17 @@ function Introduction(){
 
     const [showNext, setNext] = useState(false)
 
-    const handleResize = () => {
-        setWindowHeight(window.innerHeight);
-        setWindowWidth(window.innerWidth);
-    }
+    // const handleResize = () => {
+    //     setWindowHeight(window.innerHeight);
+    //     setWindowWidth(window.innerWidth);
+    // }
 
-    useEffect(()=>{
-        window.onresize = handleResize;
-    }, [])
+    //todo: working?
+    // useEffect(()=>{
+    //     window.onresize = handleResize;
+    // }, [])
+
+
 
     useEffect(()=>{
 

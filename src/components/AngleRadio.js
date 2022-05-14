@@ -7,9 +7,10 @@ import FormControl from '@mui/material/FormControl';
 import FormLabel from '@mui/material/FormLabel';
 
 const options=[
+  { label: '360°', value: "landscape" },
     { label: 'top-down', value: 'map' },
     { label: 'side', value: "timeline" },
-    { label: '360°', value: "landscape" },]
+   ]
 
 
 function AngleRadio({ filter, updateFilter, category="angle"}){

@@ -208,8 +208,8 @@ function KeywordPlate({group, show, pos}){
                 group > -1 && (
 
                     <div 
-    
-    
+                 
+                   
     
                     className={show ? 'keywords-plate' : "keywords_plate keywords-plate--hide"} style={{top: `${pos}px`}}>
                     <p className='keywords-title text-left' style={{color: `${getGroupColor()[group]}`}}> {group_titles.get(group)}</p>

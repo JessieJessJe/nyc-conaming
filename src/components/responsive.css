@@ -13,7 +13,8 @@
     }
 
     .landing-plate-plate{
-      font-size: 20px
+      font-size: 20px;
+      background-color: white;
     }
 
       
@@ -37,6 +38,19 @@
 
     .intro-plate{
         width: 55vw;
+    }
+
+    .filter-wrapper--expanded, .filter-content-wrapper--expanded{
+        width: 91vw !important;
+    }
+
+    #detail-wrapper{
+        width: 91vw !important;
+    }
+
+    .keywords-plate{
+        min-width: 91vw !important;
+        
     }
   }
   

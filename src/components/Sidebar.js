@@ -33,7 +33,7 @@ function Sidebar({filter, updateFilter, setNewFilter, newFilter}){
         <>
         <AnimatePresence>
         <motion.div 
-            layout
+            layout = "position"
             className="sidebar" >
 
             {/* <button className='sidebar-btn' onClick={toggleSidebar}>&#xe236;</button> */}
@@ -57,13 +57,13 @@ function Sidebar({filter, updateFilter, setNewFilter, newFilter}){
             </div> 
 
             <motion.div 
-            layout
+            layout = "position"
             className= { ` ${show? "filter--hide": ""} ${expanded ? "filter-wrapper filter-wrapper--expanded" : "filter-wrapper"}`} > 
                 
             
 
                 <motion.div 
-                    layout
+                    layout = "position"
                     initial={{x:-30, opacity:0}}
                     animate={{x:0, opacity:1}}
                     exit={{x:-30, opacity:0} }

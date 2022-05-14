@@ -1,3 +1,4 @@
+
 #three-wrapper{
     position: fixed;
     width: 100vw;
@@ -70,6 +71,7 @@ canvas{
     width: 41vw;
     background-color: white;
     left: 4vw;
+
 }
   
 .filter-content-wrapper{
@@ -93,18 +95,12 @@ canvas{
  
 }
    
-.filter-content-wrapper > div{
-   
- }
 
  .filter-content-wrapper > div:hover{
    cursor: pointer;
  
 }
-   
-.filter-content-wrapper > button{
-    
-}
+
 
 .filter--hide{
     opacity: 0;

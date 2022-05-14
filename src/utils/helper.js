@@ -31,28 +31,6 @@ export  const termlist = [
     // ['war', 'greenpoint', 'pier', 'korean', 'ruby', 'legion', 'island', 'coney', 'sangiorgio', 'army'],
     // ['league', 'jonathan', 'science', 'chema', 'charities', '52', 'catholic', 'baseball', 'casitas', 'bronx'],
     // ['september 11, 2001', '9/11', 'firefighter', 'fdny'],
-
-    //modified 1
-    // ['music', 'jazz', 'band', 'album', 'latin', 'singer'],
-    // ['Tuskegee Airmen', 'squadron', 'fighter', 'aircraft', '1943', 'pilot'],
-    // ['Italian', 'soccer', 'brothers', 'customers', 'family', 'business'],
-    // ['women', 'Ms.', 'education', 'children', 'worked', 'council', 'health', 'board'],
-    // ['anniversary', 'commemorate', '100th', 'naming', 'celebrating', 'significance'],
-    // ['health', 'Nos Quedamos(WE STAY)', 'UHP', 'melrose', 'regreso', 'primary care', 'gay rights', 'development'],
-    // ['section', 'law', 'amend', 'map', 'rename', 'accordingly', 'called', 'repeals', 'corresponds', '2004'],
-    // ['Korean War', 'Greenpoint', 'pier', 'ruby', 'legion', 'Coney Island', 'sangiorgio', 'army'],
-    // ['league', 'jonathan', 'science', 'chema', 'charities', '52', 'catholic', 'baseball', 'casitas', 'bronx'],
-    // ['september 11, 2001', '9/11', 'firefighter', 'fdny'],
-
-//     ['music', 'jazz', 'band', 'latin', 'singer', 'art','culture', 'musicians'],
-//     ['Tuskegee','Airmen', 'Iraq', 'korean','war', 'army'],                 
-//     ['woman', 'education', 'children', 'school','equality'],
-//    ['family', 'business', 'immigrants', 'immigration', 'community', 'customers'],
-//    ["baptist", 'church', 'pastor', 'reverend', 'bishop','ministry'],
-//    ['health', 'public', "civic",'nq', 'UHP', 'primary care', 'gay', 'activists', 'hospitals', 'HIV', 'AIDS', 'HIV/AIDS']},
-// ['nypd', 'police', 'duty', 'legislation','fdny', 'officer', 'gun']},
-// ['COVID-19']},
-// ['9/11']},]
 ]
 
 export const group_titles= new Map([
