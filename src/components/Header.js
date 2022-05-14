@@ -25,6 +25,7 @@ function Header({opacity}){
         
     }
 
+
     return(
         <React.Fragment>
 
@@ -43,7 +44,7 @@ function Header({opacity}){
           </li>
 
           <li className='header-nav-link'>
-            <Link to="/visualization" style={{ textDecoration: 'none' }}>Visualization</Link>
+            <Link to="/visualization" style={{ textDecoration: 'none' }}>{ window.innerWidth > 400 ? 'Visualization' : 'Viz'}</Link>
           </li>
         </ul>
       </nav>
