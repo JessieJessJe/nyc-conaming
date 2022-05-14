@@ -18,10 +18,11 @@ function BarChart({filter, setNewFilter, newFilter}){
     const [group, setGroup] = useState(-1);
     const [pos, setPos] = useState(0);
 
-    const margin = {top: window.innerHeight*0.15, right: 0, bottom: 0, left: window.innerWidth*0.012}
+    // const margin = {top: window.innerHeight*0.15, right: 0, bottom: 0, left: window.innerWidth*0.012}
+    const margin = {top: 0, right: 0, bottom: 0, left: 0}
 
-    const width = window.innerWidth * 0.04 - margin.left - margin.right;
-    const height = window.innerHeight * 0.90 - margin.top - margin.bottom;
+    const width = window.innerWidth * (0.04-0.012) - margin.left - margin.right;
+    const height = window.innerHeight * 0.75 - margin.top - margin.bottom;
     const data_len = mydata.length;
 
 
@@ -157,7 +158,7 @@ function BarChart({filter, setNewFilter, newFilter}){
 
                     setGroup(d.key)
                     setShowKeywords(true)
-                    setPos(y(d[0][0]) + margin.top)
+                    setPos(y(d[0][0]) + window.innerHeight * 0.15)
 
                     d3.select(that)
                     .attr("fill-opacity", "1")

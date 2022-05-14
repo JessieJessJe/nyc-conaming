@@ -5,6 +5,12 @@
       font-size: 12px;
     }
 
+    #landing-page-text{
+      
+        width: 90%;
+        
+    }
+
     .landing-plate-wrapper{
         height: 50vh;
         display: grid;
@@ -14,7 +20,7 @@
 
     .landing-plate-plate{
       font-size: 20px;
-      background-color: white;
+      
     }
 
       
