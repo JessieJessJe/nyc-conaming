@@ -383,7 +383,7 @@ function Introduction(){
                     {/* Data Source: New York City Council  */}
                     <br/>
                     <br/>
-                    <MouseScroll />
+                    {/* <MouseScroll /> */}
                     </div>
             </div>
 
