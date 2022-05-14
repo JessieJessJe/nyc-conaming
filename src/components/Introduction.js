@@ -2,11 +2,11 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Link, Outlet, useNavigate, useLocation } from "react-router-dom";
 import { motion, LayoutGroup, AnimatePresence} from 'framer-motion';
 
-import './imgPlates.css'
-import './textPlates.css'
-import './intro.css'
+
 
 import useScrollPosition from "../utils/useScrollPosition";
+
+import MouseScroll from './Mouse/MouseScroll';
 
 import plate0 from './../images/plate0.png';
 import plate1 from './../images/plate1.png';
@@ -19,7 +19,7 @@ import plate5 from './../images/plate5.png';
 const plateInfo=[
     {   
     "x":0.31,
-    "y":0.61, 
+    "y":0.63, 
     "title":"Private Danny Chen Way",
     "location":"Elizabeth Street, Manhattan, NY",
     "year":"2013",
@@ -150,14 +150,16 @@ function PlateTextEach({plateNum, windowHeight, windowWidth}){
         initial={{ opacity: 0, x: -50 }}
         animate={{ opacity: 1, x: 0 }}
         exit={{ opacity:0,  x: 100,}}
-        transition={{ delay:0.5, duration: speed, ease:[0.58, -0.1, 0, 0.71] }}
+        // transition={{ delay:0.5, duration: speed, ease:[0.58, -0.1, 0, 0.71] }}
+        transition={{ delay:0.5, duration: 1,  type: "spring", stiffness: 500,
+        damping: 60,
+        mass: 1, }}
 
         style={{ top: top, left:left}}
         className="intro-plate" id="intro-plate-wrapper">
     
     <motion.div 
-        layout
-
+        layout = "position"
         ref={ref}
         className="intro-plate-each" >
 
@@ -346,7 +348,7 @@ function Introduction(){
                     
             <div id='intro-content-0'>
 
-                    <div className='sectionTitle introductionTitle'>Street names, redefined</div>
+                    <div className='sectionTitle large-titles'>Street names, redefined</div>
 
                     <div className='text-normal text-center' >
 
@@ -355,7 +357,7 @@ function Introduction(){
             </div>
 
             <div id='intro-content-1'>
-                    <div className='sectionTitle introductionTitle' id="intro-title">Street matters, manifested</div>
+                    <div className='sectionTitle large-titles' id="intro-title">Street matters, manifested</div>
 
                     <div className='text-normal text-center'>
 
@@ -364,14 +366,13 @@ function Introduction(){
             </div>
 
             <div id='intro-content-2'>
-                    <div className='sectionTitle'>A Generated NYC Map</div>
+                    <div className='sectionTitle large-titles'>A Generated NYC Map</div>
 
                     <div className='text-normal text-center'>
-
-                    Street names are how we recognize and navigate the physical spaces. They also manifest the intangibles, the local, historical, cultural, or political legacies of spaces.
-
-                    NYC honorary street names, or co-names by the City Council, are one way local activists, communities, and politicians lean on to remap our city in a local sense, interweaving its past, present, and future.
-
+                    {/* Data Source: New York City Council  */}
+                    <br/>
+                    <br/>
+                    <MouseScroll />
                     </div>
             </div>
 

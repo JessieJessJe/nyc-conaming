@@ -6,8 +6,11 @@ import useScrollPosition from "../utils/useScrollPosition";
 
 import Introduction from './Introduction'
 
+import './layout.css'
 import './imgPlates.css'
-
+import './textPlates.css'
+import './intro.css'
+import './responsive.css'
 
 function LandingPlate(){
     const navigate = useNavigate();

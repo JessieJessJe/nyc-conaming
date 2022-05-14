@@ -6,6 +6,10 @@
     color: white;
 }
 
+.large-titles{
+    font-size: 5rem;
+}
+
 #intro-wrapper{
     position: relative;
     width: 100vw;

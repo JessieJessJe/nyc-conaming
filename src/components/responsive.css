@@ -1,0 +1,42 @@
+@media only screen and (max-width:400px){
+
+  
+    #landing-page-text, .text-normal{
+      font-size: 12px;
+    }
+
+    .landing-plate-wrapper{
+        height: 50vh;
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-rows: repeat(20, 1fr);
+    }
+
+    .landing-plate-plate{
+      font-size: 20px
+    }
+
+      
+    .sectionTitle, #landing-page-subtitle{
+        font-size: 20px;
+    }
+
+    #landing-page-subtitle{
+        grid-row: 10;
+        width: 60vw;
+    }
+
+    #landing-page-subtitle,#landing-page-text{
+        grid-column: 6;
+    }
+
+    .plate-text-loc, .plate-text-year{
+        font-size: 12px;
+        margin-bottom: 0;
+    }
+
+    .intro-plate{
+        width: 55vw;
+    }
+  }
+  
