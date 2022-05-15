@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 
 import * as d3 from "d3"
-import { group_titles, options_theme, filterData, getGroupColor, updateGroup, subgroups, dataPrep, initNewFilter, getOpacity, updateNewFilter } from '../utils/helper';
+import { group_titles, options_theme, filterData, getGroupColor, updateGroup, subgroups, dataPrep, initNewFilter, getOpacity, updateNewFilter, initFilter } from '../utils/helper';
 
 import mydata from "../data/mydata.json"
 import './keywordsPlate.css'
@@ -23,7 +23,7 @@ function BarChart({filter, setNewFilter, newFilter}){
 
     const width = window.innerWidth * (0.04-0.012) - margin.left - margin.right;
     const height = window.innerHeight * 0.75 - margin.top - margin.bottom;
-    const data_len = mydata.length;
+    const data_len = filterData(mydata, initFilter).length;
 
 
     //color palette

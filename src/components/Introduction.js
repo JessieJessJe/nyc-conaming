@@ -19,7 +19,7 @@ import plate5 from './../images/plate5.png';
 const plateInfo=[
     {   
     "x":0.31,
-    "y":0.63, 
+    "y":0.65, 
     "title":"Private Danny Chen Way",
     "location":"Elizabeth Street, Manhattan, NY",
     "year":"2013",
