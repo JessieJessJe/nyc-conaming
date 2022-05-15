@@ -42,9 +42,12 @@ const plateInfo=[
 function ImgPlates({toggleIntro, windowWidth, showNext}){
 
 const transition_img = {              
-    stiffness:314,
-    damping: 26,
-    mass: 2.3,  
+    // stiffness:314,
+    // damping: 26,
+    // mass: 1.5,  
+    stiffness: 500,
+    damping: 60,
+    mass: 1,
     type: "spring",
     delay:0,
     duration:1
@@ -70,11 +73,19 @@ const getImgClass = (idx) => {
         <AnimatePresence>
 
         <motion.div 
-        layout = "position"
-        initial= {{ opacity:1 }}
-        animate={{opacity:1}}
-        exit={{ opacity:0 }}
-        transition={{ delay:0, duration: 1, ease: "linear" }}
+        // layout = "position"
+        // initial= {{ opacity:1 }}
+        // animate={{opacity:1}}
+        // exit={{ opacity:0 }}
+        // transition={{ delay:0, duration: 1, ease: "linear" }}
+
+        // initial={{ opacity: 0, x: -50 }}
+        // animate={{ opacity: 1, x: 0 }}
+        // exit={{ opacity:0,  x: 100,}}
+        // transition={{ delay:0.5, duration: speed, ease:[0.58, -0.1, 0, 0.71] }}
+        // transition={{duration: 1,  type: "spring", stiffness: 500,
+        // damping: 60,
+        // mass: 1, }}
 
         className= {`images landing-images ${toggleIntro ? "intro-images" : ""} ${showNext ? "intro-images-out" : ""}`}>
 
@@ -150,10 +161,11 @@ function PlateTextEach({plateNum, windowHeight, windowWidth}){
         initial={{ opacity: 0, x: -50 }}
         animate={{ opacity: 1, x: 0 }}
         exit={{ opacity:0,  x: 100,}}
+        transition={{ delay:0.5, duration: 1, ease: "linear" }}
         // transition={{ delay:0.5, duration: speed, ease:[0.58, -0.1, 0, 0.71] }}
-        transition={{ delay:0.5, duration: 1,  type: "spring", stiffness: 500,
-        damping: 60,
-        mass: 1, }}
+        // transition={{ delay:0.5, duration: 1,  type: "spring", stiffness: 500,
+        // damping: 60,
+        // mass: 1, }}
 
         style={{ top: top, left:left}}
         className="intro-plate" id="intro-plate-wrapper">
@@ -349,9 +361,9 @@ function Introduction(){
         <React.Fragment>
 
         <motion.div id='intro-wrapper'
-              initial={{ scaleY: 0 }}
-              animate={{ scaleY: 1 }}
-              exit={{ scaleY: 0 }}
+            //   initial={{ scaleY: 0 }}
+            //   animate={{ scaleY: 1 }}
+            //   exit={{ scaleY: 0 }}
         >
             
             <div id ='intro-bg-rect'></div>
@@ -359,7 +371,7 @@ function Introduction(){
                     
             <div id='intro-content-0'>
 
-                    <div className='sectionTitle large-titles'>Street names, redefined</div>
+                    <div className='sectionTitle large-titles'>Street Names, Redefined</div>
 
                     <div className='text-normal text-center' >
 
@@ -368,7 +380,7 @@ function Introduction(){
             </div>
 
             <div id='intro-content-1'>
-                    <div className='sectionTitle large-titles' id="intro-title">Street matters, manifested</div>
+                    <div className='sectionTitle large-titles' id="intro-title">Street Matters, Manifested</div>
 
                     <div className='text-normal text-center'>
 
