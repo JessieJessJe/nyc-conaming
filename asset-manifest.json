@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/nyc-conaming/static/css/main.745299db.css",
-    "main.js": "/nyc-conaming/static/js/main.bcdbfcd0.js",
+    "main.js": "/nyc-conaming/static/js/main.26fe7939.js",
     "static/js/165.75c0bcc7.chunk.js": "/nyc-conaming/static/js/165.75c0bcc7.chunk.js",
     "static/js/787.28cb0dcd.chunk.js": "/nyc-conaming/static/js/787.28cb0dcd.chunk.js",
     "static/js/422.2b33068f.chunk.js": "/nyc-conaming/static/js/422.2b33068f.chunk.js",
@@ -16,13 +16,13 @@
     "static/media/Raw-Bold.otf": "/nyc-conaming/static/media/Raw-Bold.3a1370a994c6336eff65.otf",
     "index.html": "/nyc-conaming/index.html",
     "main.745299db.css.map": "/nyc-conaming/static/css/main.745299db.css.map",
-    "main.bcdbfcd0.js.map": "/nyc-conaming/static/js/main.bcdbfcd0.js.map",
+    "main.26fe7939.js.map": "/nyc-conaming/static/js/main.26fe7939.js.map",
     "165.75c0bcc7.chunk.js.map": "/nyc-conaming/static/js/165.75c0bcc7.chunk.js.map",
     "787.28cb0dcd.chunk.js.map": "/nyc-conaming/static/js/787.28cb0dcd.chunk.js.map",
     "422.2b33068f.chunk.js.map": "/nyc-conaming/static/js/422.2b33068f.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.745299db.css",
-    "static/js/main.bcdbfcd0.js"
+    "static/js/main.26fe7939.js"
   ]
 }
